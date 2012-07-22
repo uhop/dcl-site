@@ -22,11 +22,10 @@ Description of all arguments and a return value:
 
 * `base` is a base "class". It can be one of three:
   * `null` - no base "class" &rArr; base it directly on `Object`.
-  * constructor object - a function created with `dcl` or a generic JavaScript constructor function. New "class" will be
+  * **constructor object** - a function created with `dcl` or a generic JavaScript constructor function. New "class" will be
     based on it using a single inheritance.
-  * array of constructors - a C3 superclass linearization will be performed on this array, and the result will be used
-    to create a new constructor using a single inheritance. Effectively it sorts all bases topologically preserving
-    their relative order and removing duplicates.
+  * **array of constructors** - a C3 superclass linearization will be performed on this array, and the result will be used
+    to create a new constructor using a single inheritance. This array should be non-empty.
 * `props` is an object, whose properties are used to specify unique features of the "class" &mdash; methods, and
   class-level variables. Following properties have a special meaning for `dcl()`:
   * `constructor` - an optional function, which will be called when an object is created. A base constructor (if any) is
@@ -198,6 +197,9 @@ base constructor.
 4. If a constructor returns a value, it will be ignored.
 5. All unchained methods (the default), and other properties, override properties with the same name in base classes.
 6. Always use `new` keyword when creating objects with a constructor produced by `dcl()`.
+7. Methods in `props` will be decorated with a meta information, and possibly copied. Because of that it is not
+recommended to reuse them for different classes. In general `props` should be an object literal. `dcl()` will assume
+full control over it.
 
 ## FAQ
 
@@ -269,3 +271,14 @@ See [superCall()](/docs/mini/supercall) for more details.
 
 See discussion of object invariants in [OOP and JS](http://lazutkin.com/blog/2012/jan/18/oop-and-js/) and in
 [OOP in JS revisited](http://lazutkin.com/blog/2012/jul/17/oop-n-js-slides/).
+
+### Can I use `[]` instead of `null` as my base?
+
+No. `null` is a constant, which is shared, while `[]` is a newly-created object. The latter comes with a penalty (it
+has to be created, and it will add a load to the garbage collector afterwards. `null` is cheaper, and clearly
+demonstrates programmer's intent.
+
+### Can I use `[base]` instead of `base` as my base?
+
+Yes, but why? The former will create an additional array object, which will be discarded right after the `dcl()` call
+increasing the load on the garbage collector. The latter is clearly cheaper, and more intentional.
