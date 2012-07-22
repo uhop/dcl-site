@@ -7,17 +7,17 @@ sharing: true
 footer: true
 ---
 
-A minimalistic yet complete JavaScript package for node.js and browsers that implements OOP with mixins + AOP at both
-"class" and object level.
+A minimalistic yet complete JavaScript package for [node.js](http://nodejs.org) and browsers that implements OOP with
+mixins + AOP at both "class" and object level.
 
 Highlights:
 
-* Works in node.js and browsers, fully supports AMD.
+* Works in [node.js](http://nodejs.org) and browsers, fully supports AMD.
 * Implements C3 MRO to support a Python-like multiple inheritance.
 * Targets object-oriented programming with mixins technology.
 * Efficient supercalls &mdash; no run-time penalty, ultimate debuggability.
 * Automatic constructor chaining, you can specify chaining for any method.
-* Full support for AOP (before, around, after, after throwing advices).
+* Full support for AOP (before, around, after returning, and after throwing advices).
 * Comes with a mini library with some useful generic building blocks.
 * Extensively tested, uses continuous integration with 85 automated tests.
 * Fully compatible with the strict mode.

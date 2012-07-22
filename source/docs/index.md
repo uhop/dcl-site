@@ -7,26 +7,26 @@ sharing: true
 footer: true
 ---
 
-dcl is a micro library written in JavaScript for node.js and browsers that implements OOP with mixins + AOP at both
-"class" and object level.
+`dcl` is a micro library written in JavaScript for [node.js](http://nodejs.org) and browsers that implements OOP with
+mixins + AOP at both "class" and object level.
 
 ## Getting started
 
 *This documentation is a work in progress.*
 
-* [Tutorial](/docs/tutorial) - *hands-on with dcl*
+* [Tutorial](/docs/tutorial) - *hands-on with `dcl`*
 * [Cheatsheet](/docs/cheatsheet) - *look up common operations*
 
 ## Module documentation
 
 *This documentation is a work in progress.*
 
-* [mini.js](/docs/mini) - *minimal dcl kernel, you might want to use it on browsers to conserve bandwidth*
+* [mini.js](/docs/mini) - *minimal `dcl` kernel, you might want to use it on browsers to conserve bandwidth*
   * [dcl()](/docs/mini/dcl) - *the composition engine*
   * [superCall()](/docs/mini/supercall) - *super call decorator*
   * [mix()](/docs/mini/mix) - *mix in one object with another*
   * [delegate()](/docs/mini/delegate) - *delegate from one object to another*
-* [dcl.js](/docs/dcl) - *full dcl kernel that includes chaining control and AOP support*
+* [dcl.js](/docs/dcl) - *full `dcl` kernel that includes chaining control and AOP support*
   * [advise()](/docs/dcl/advise) - *general advice decorator*
   * [before()](/docs/dcl/before) - *"before" advice decorator*
   * [around()](/docs/dcl/around) - *"around" advice decorator*

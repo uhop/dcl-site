@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Module advise.js"
+title: "advise.js"
 date: 2012-07-21 13:21
 comments: false
 sharing: true

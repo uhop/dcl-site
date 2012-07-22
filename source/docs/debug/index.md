@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Module debug.js"
+title: "debug.js"
 date: 2012-07-21 13:21
 comments: false
 sharing: true

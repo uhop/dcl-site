@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "supercall"
+title: "superCall()"
 date: 2012-07-21 13:53
 comments: false
 sharing: true

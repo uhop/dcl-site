@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Module inherited.js"
+title: "inherited.js"
 date: 2012-07-21 13:21
 comments: false
 sharing: true
