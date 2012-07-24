@@ -146,26 +146,26 @@ console.log(c instanceof C);
 // true
 {% endcodeblock %}
 
-We can base our classes on native JavaScript constructors as well:
+We can base our classes on normal JavaScript constructors as well:
 
 {% codeblock Single inheritance II lang:js %}
 function A(){
-	console.log("A is constructed natively");
+	console.log("A is constructed manually");
 }
 A.prototype{
 	hi: function(){
-		console.log("Hi from native land!");
+		console.log("Hi from manual land!");
 	},
 	lo: function(){
-		console.log("Lo from native land!");
+		console.log("Lo from manual land!");
 	}
 };
 var a = new A();
-// A is constructed natively
+// A is constructed manually
 a.hi();
-// Hi from native land!
+// Hi from manual land!
 a.lo();
-// Lo from native land!
+// Lo from manual land!
 
 var B = dcl(A, {
 	constructor: function(){
@@ -176,12 +176,12 @@ var B = dcl(A, {
 	}
 });
 var b = new B();
-// A is constructed natively
+// A is constructed manually
 // B is constructed
 b.hi();
 // Hi from dcl()!
 b.lo();
-// Lo from native land!
+// Lo from manual land!
 
 console.log(b instanceof A);
 // true
@@ -336,7 +336,7 @@ linearizing bases, eliminating duplicates, and checking the overall consistency 
 
 Many JS OOP packages skip the correct linearization step hoping that everything will be right as is. Unfortunately it
 can be a source of extremely hard-to-find bugs. Besides mixins use inheritance routinely to indicate their relative
-dependencies so duplicates will occure natirally.
+dependencies so duplicates will occure naturally.
 
 ### I write only small programs. I don't need no linearization, right?
 
