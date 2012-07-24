@@ -14,7 +14,7 @@ and super calls. Additionally it provides useful utilities to work with objects.
 
 The return value of this module is a function, which in this documentation it is called `dcl()`.
 
-[dcl()](/docs/mini/dcl) is the main composition engine. While it is important by itself, it hosts a number of
+[dcl()](/docs/mini/dcl) is the main "class" composition engine. While it is important by itself, it hosts a number of
 public properties.
 
 Main properties:

@@ -7,8 +7,21 @@ sharing: true
 footer: true
 ---
 
-`dcl()` is a main function of the whole package. It is defined in [mini.js](/docs/mini) and can be extended by
-[dcl.js](/docs/dcl). Both these modules return it as their value.
+`dcl()` is the "class" composition helper, which simplifies creating constructors for new classes of objects:
+
+* It reduces a boilerplate to set up a single inheritance.
+* In case of mixin-based multiple inheritance it correctly linearizes all dependencies.
+* While composing constructors, it can process advanced features:
+  * Super calls, when you need to call a method of a super class (a base).
+  * AOP advices.
+  * Automatic chaining of arbitrary methods.
+
+Of course, an experienced programmer can do all this stuff manually, but `dcl()` offers a less error-prone and more
+compact way to achieve what you need. But, just in case, it will play nice with hand-made constructors, so your
+constructors can inherit from them, or mix them in as mixins.
+
+`dcl()` is a main function of the whole package. It is defined in [mini.js][] and can be extended by
+[dcl.js][]. Both these modules return it as their value.
 
 ## Description
 
@@ -32,10 +45,10 @@ Description of all arguments and a return value:
     always called before a derived constructor. There is no restrictions on what arguments can be used for
     a constructor. A return value of constructor (if any) is ignored.
   * `declaredClass` - an optional human-readable string, which is used to identify the created class in error messages
-    or logs. See [debug.js](/docs/debug) for more details.
+    or logs. See [debug.js][] for more details.
 * `dcl()` returns a constructor created according to user' specifications.
 
-`dcl()` is returned by [mini.js](/docs/mini) and [dcl.js](/docs/dcl) and used to host additional properties. Look at
+`dcl()` is returned by [mini.js][] and [dcl.js][] and used to host additional properties. Look at
  specific modules to learn what public properties are available.
 
 
@@ -43,7 +56,7 @@ Description of all arguments and a return value:
 
 ### `base` is `null`
 
-In this case produced "classes" have no parent, or, to be more precise, are derived directly from `Object`.
+In this case produced "classes" are derived directly from `Object`.
 
 {% codeblock No base lang:js %}
 var Counter = dcl(null, {
@@ -103,6 +116,11 @@ b.hi();
 b.lo();
 // Lo from A!
 
+console.log(b instanceof A);
+// true
+console.log(b instanceof B);
+// true
+
 var C = dcl(null, {
 	constructor: function(){
 		console.log("C is constructed");
@@ -119,6 +137,13 @@ c.hi();
 // Hi from B!
 c.lo();
 // Lo from C!
+
+console.log(c instanceof A);
+// true
+console.log(c instanceof B);
+// true
+console.log(c instanceof C);
+// true
 {% endcodeblock %}
 
 We can base our classes on native JavaScript constructors as well:
@@ -157,6 +182,11 @@ b.hi();
 // Hi from dcl()!
 b.lo();
 // Lo from native land!
+
+console.log(b instanceof A);
+// true
+console.log(b instanceof B);
+// true
 {% endcodeblock %}
 
 ### Multiple inheritance with mixins
@@ -188,6 +218,44 @@ var c = new C();
 // C
 {% endcodeblock %}
 
+Generally a "class", which inherits from an array, tries to use the first item as its base. In some cases it is not
+possible due constraints on relative position of all bases. If that is the case, the innermost base class of the
+first item is used.
+
+{% codeblock Multiple inheritance base lang:js %}
+var A = dcl(null, {declaredClass: "A"});
+var B = dcl(null, {declaredClass: "B"});
+var C = dcl(null, {declaredClass: "C"});
+
+var D = dcl([A, B], {declaredClass: "D"});
+var E = dcl([C, B], {declaredClass: "E"});
+
+var F = dcl([D, E], {declaredClass: "F"});
+
+var dclDebug = require("dcl/debug");
+
+// let's inspect D:
+dclDebug.log(D);
+// *** class D depends on 2 classes
+//     dependencies: B, A
+//     class method constructor is CHAINED AFTER (length: 0)
+
+// let's inspect F:
+dclDebug.log(F);
+// *** class F depends on 5 classes
+//     dependencies: E, D, B, C, A
+//     class method constructor is CHAINED AFTER (length: 0)
+{% endcodeblock %}
+
+If `F` can be based on `D`, our right-most list of dependencies should look like this: `D, B, A`, which is not the case.
+`dcl()` cannot preserve this list because `C` should go before `B` as defined in `E`. It forces `dcl()` to base `F`
+directly on `A`.
+
+For more debugging information take a look at [debug.js][] and its [log()](/docs/debug/log) method.
+
+If you want to test if an object is inherited directly (in JavaScript sense) or indirectly (e.g., as a mixin), consider
+using [isInstanceOf()](/docs/dcl/isinstanceof), which is defined in [dcl.js][].
+
 ## Notes
 
 1. Constructors are chained using "after" chaining, meaning that a derived constructor will be called only *after* its
@@ -205,7 +273,7 @@ full control over it.
 
 ### What is the difference between `mini.js` and `dcl.js` modules and when should I use `mini.js`?
 
-Both [mini.js](/docs/mini) and [dcl.js](/docs/dcl) return the same object. `mini.js` provides the core functionality
+Both [mini.js][] and [dcl.js][] return the same object. `mini.js` provides the core functionality
 (mixin support, and super calls), while `dcl.js` adds chaining, and class-level AOP advices. By default, when you
 request `dcl`, it loads `dcl.js`:
 
@@ -223,6 +291,33 @@ targeting mobile browsers), you may want to request `mini.js` explicitly (assumi
 define(["dcl/mini"], function(dcl){
 	// code
 });
+{% endcodeblock %}
+
+### How can I detect, if my class inherits directly or indirectly from `A`?
+
+You can always use [isInstanceOf()](/docs/dcl/isinstanceof), which is defined in [dcl.js][]:
+
+{% codeblock isInstanceOf() lang:js %}
+var A = dcl(null, {declaredClass: "A"});
+var B = dcl(null, {declaredClass: "B"});
+var C = dcl(null, {declaredClass: "C"});
+
+var D = dcl([A, B], {declaredClass: "D"});
+var E = dcl([C, B], {declaredClass: "E"});
+
+var F = dcl([D, E], {declaredClass: "F"});
+
+var f = new F();
+
+console.log(f instanceof A);
+// true
+console.log(f instanceof C);
+// false
+
+console.log(dcl.isInstanceOf(f, A));
+// true
+console.log(dcl.isInstanceOf(f, C));
+// true
 {% endcodeblock %}
 
 ### How does `dcl()` linearize superclasses?
@@ -250,13 +345,13 @@ If you write only small programs, chances are you don't need OOP. See discussion
 
 ### Can I use hand-made constructors as bases or mixins with `dcl()`?
 
-Yes, you can &mdash; the code example is above. Obviously your classes cannot use advanced techniques like super calls,
-or class-level advices, but other than that they can be used without restrictions.
+Yes, you can. It was demonstrated in the code example above. Obviously your hand-made classes cannot use `dcl()`-based
+facilities like super calls, or class-level advices, but other than that they can be used without restrictions.
 
-### Is it possible to chain methods other constructor?
+### Is it possible to chain methods other than constructor?
 
 Yes. See [chainBefore()](/docs/dcl/chainbefore) and [chainAfter()](/docs/dcl/chainafter) directives provided by
-[dcl.js](/docs/dcl).
+[dcl.js][].
 
 ### Is it possible to use advices with constructors?
 
@@ -274,11 +369,17 @@ See discussion of object invariants in [OOP and JS](http://lazutkin.com/blog/201
 
 ### Can I use `[]` instead of `null` as my base?
 
-No. `null` is a constant, which is shared, while `[]` is a newly-created object. The latter comes with a penalty (it
-has to be created, and it will add a load to the garbage collector afterwards. `null` is cheaper, and clearly
-demonstrates programmer's intent.
+No, it wouldn't work.
+
+In any case `null` is a constant, which is shared, while `[]` is a newly-created object. The latter comes with
+a penalty (it has to be created, and it will add a load to the garbage collector afterwards. `null` is cheaper, and
+clearly demonstrates programmer's intent.
 
 ### Can I use `[base]` instead of `base` as my base?
 
 Yes, but why? The former will create an additional array object, which will be discarded right after the `dcl()` call
 increasing the load on the garbage collector. The latter is clearly cheaper, and more intentional.
+
+[mini.js]:  /docs/mini  mini.js
+[dcl.js]:   /docs/dcl   dcl.js
+[debug.js]: /docs/debug debug.js
