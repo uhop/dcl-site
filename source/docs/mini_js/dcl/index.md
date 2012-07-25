@@ -251,10 +251,10 @@ If `F` can be based on `D`, our right-most list of dependencies should look like
 `dcl()` cannot preserve this list because `C` should go before `B` as defined in `E`. It forces `dcl()` to base `F`
 directly on `A`.
 
-For more debugging information take a look at [debug.js][] and its [log()](/docs/debug/log) method.
+For available debugging facilities take a look at [debug.js][] and its [log()](/docs/debug_js/log) method.
 
 If you want to test if an object is inherited directly (in JavaScript sense) or indirectly (e.g., as a mixin), consider
-using [isInstanceOf()](/docs/dcl/isinstanceof), which is defined in [dcl.js][].
+using [isInstanceOf()](/docs/dcl_js/isinstanceof), which is defined in [dcl.js][].
 
 ## Notes
 
@@ -295,7 +295,7 @@ define(["dcl/mini"], function(dcl){
 
 ### How can I detect, if my class inherits directly or indirectly from `A`?
 
-You can always use [isInstanceOf()](/docs/dcl/isinstanceof), which is defined in [dcl.js][]:
+You can always use [isInstanceOf()](/docs/dcl_js/isinstanceof), which is defined in [dcl.js][]:
 
 {% codeblock isInstanceOf() lang:js %}
 var A = dcl(null, {declaredClass: "A"});
@@ -350,7 +350,7 @@ facilities like super calls, or class-level advices, but other than that they ca
 
 ### Is it possible to chain methods other than constructor?
 
-Yes. See [chainBefore()](/docs/dcl/chainbefore) and [chainAfter()](/docs/dcl/chainafter) directives provided by
+Yes. See [chainBefore()](/docs/dcl_js/chainbefore) and [chainAfter()](/docs/dcl_js/chainafter) directives provided by
 [dcl.js][].
 
 ### Is it possible to use advices with constructors?
@@ -362,7 +362,7 @@ Yes. The full set of advices can be used with constructors.
 While it is not advised due to possible violation of object invariants, and potential maintenance problems, you can do
 it with super calls &mdash; just define a super call and doesn't call a super.
 
-See [superCall()](/docs/mini/supercall) for more details.
+See [superCall()](/docs/mini_js/supercall) for more details.
 
 See discussion of object invariants in [OOP and JS](http://lazutkin.com/blog/2012/jan/18/oop-and-js/) and in
 [OOP in JS revisited](http://lazutkin.com/blog/2012/jul/17/oop-n-js-slides/).
@@ -380,6 +380,6 @@ clearly demonstrates programmer's intent.
 Yes, but why? The former will create an additional array object, which will be discarded right after the `dcl()` call
 increasing the load on the garbage collector. The latter is clearly cheaper, and more intentional.
 
-[mini.js]:  /docs/mini  mini.js
-[dcl.js]:   /docs/dcl   dcl.js
-[debug.js]: /docs/debug debug.js
+[mini.js]:  /docs/mini_js  mini.js
+[dcl.js]:   /docs/dcl_js   dcl.js
+[debug.js]: /docs/debug_js debug.js
