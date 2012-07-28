@@ -31,7 +31,7 @@ var dcl = require("dcl");
 var Ctr = dcl(base, props);
 {% endcodeblock %}
 
-Description of all arguments and a return value:
+Arguments and a return value:
 
 * `base` is a base "class". It can be one of three:
   * `null` - no base "class" &rArr; base it directly on `Object`.
