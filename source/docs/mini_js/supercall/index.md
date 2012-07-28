@@ -10,11 +10,11 @@ footer: true
 `superCall()` is a light-weight way to call a method with the same name from the base "class", if any. Essentially
 it is a way to call a method that was overridden by the current method. It is used as a method decorator.
 
-It is defined as a property on `dcl` in [mini.js][] and [dcl.js][].
+It is defined as a property on `dcl` returned by [mini.js][] and [dcl.js][].
 
 ## Description
 
-When you need to do a supercall, you decorate (wrap) a method with `dcl.superCall()` using a double function pattern:
+When you need to do a supercall, you decorate/wrap a method with `dcl.superCall()` using a double function pattern:
 
 {% codeblock Double function pattern lang:js %}
 	method: dcl.superCall(function(sup){
@@ -80,9 +80,9 @@ possible modifications/refactoring may subtly change your assumptions making the
 constructor definition".
    1. It makes super calls as cheap as possible. No extra expences per call.
    2. It makes debugging simple: going inside a super call brings a programmer directly to the next method without any
-      stubs or wrapper functions.
-   3. Even if a programmer failed to check if `sup` is truthy, JavaScript will generate an exception pointing directly
-      to the site of failure without any intermediaries.
+      stubs, thunks, or wrapper functions.
+   3. Even if a programmer failed to check if `sup` is truthy and called it anyway, JavaScript will generate
+      an exception pointing directly to the site of failure without any intermediaries.
    4. Both functions should be unique and created dynamically exactly like in examples.
 4. If a super method throw an exception, it is a programmer's responsibility to catch it, to ignore it, or to pass it
    through.
