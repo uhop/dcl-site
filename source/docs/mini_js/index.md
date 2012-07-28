@@ -20,6 +20,9 @@ public properties.
 Main properties:
 
 * [superCall()](/docs/mini_js/supercall) - *super call decorator*
+
+Utilities:
+
 * [mix()](/docs/mini_js/mix) - *mix in one object with another*
 * [delegate()](/docs/mini_js/delegate) - *delegate from one object to another*
 
