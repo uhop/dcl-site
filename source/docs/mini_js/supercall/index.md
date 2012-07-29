@@ -8,7 +8,8 @@ footer: true
 ---
 
 `dcl.superCall()` is a light-weight way to call a method with the same name from the base "class", if any. Essentially
-it is a way to call a method that was overridden by the current method. It is used as a method decorator.
+it is a way to call a method that was overridden by the current method. It is used as a method
+[decorator](/docs/general/decorator).
 
 It is defined as a property on `dcl` returned by [mini.js][] and [dcl.js][].
 
@@ -32,6 +33,31 @@ In doing its work it can optionally call its super method.
 
 It is possible that there is no super method to call (e.g., this "class" is the first one in line). In this case the
 injected `sup` will be falsy. It is a good idea to check `sup` for presence.
+
+The reason to use the double function pattern is desribed in [Supercalls in JS](/docs/general/supercalls).
+
+Transitioning from a regular method to a method, which can execute a supercall is very simple:
+
+{% codeblock Before applying a decorator lang:js %}
+	method: function X(a, b, c){
+		return a * b * c;
+	}
+{% endcodeblock %}
+
+In the example above we transition a method called `method`, which is implemented by a function called `X`.
+Let's transition it to a supercalling method:
+
+{% codeblock After applying a decorator lang:js %}
+	method: dcl.superCall(function(sup){
+		return function X(a, b, c){
+			return a * b * c;
+		};
+	})
+{% endcodeblock %}
+
+As you can see our `X` function is completely preserved &mdash; all arguments are the same, its code, and its return
+value is completely intact. We just added a decorator and a trivial wrapper function that returns `X`. Now our method
+can take advantage of a supercall, which is injected using `sup` argument of the wrapper.
 
 
 ## Example
@@ -97,7 +123,7 @@ Yes.
 var A = dcl(null, {
 	toString: dcl.superCall(function(sup){
 		return function(){
-			// no need to check if sup exists
+			// no need to check if sup exists here
 			return "prefix-" + sup.call(this) + "-postfix";
 		};
 	})
