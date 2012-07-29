@@ -46,8 +46,8 @@ mixins + AOP at both "class" and object level.
 * [Decorator](/docs/general/decorator) - *explains the concept of decorators, and how they are used in `dcl`*
 * [Supercalls in JS](/docs/general/supercalls) - *discussion of different methods to do supercalls in JavaScript,
   their pros and cons, and what was selected for `dcl` and why*
-* [Best practices for constructors](/docs/genereal/constructors) - *desigining robust mixin-aware constructors*
-* [Multi-stage construction](/docs/general/mutli-stage-construction) - *implementing multi-stage construction*
+* [Best practices for constructors](/docs/general/constructors) - *desigining robust mixin-aware constructors*
+* [Multi-stage construction](/docs/general/multi-stage-construction) - *implementing multi-stage construction*
 * [OOP and JS](http://lazutkin.com/blog/2012/jan/18/oop-and-js/) - *discussion of advanced OOP, its deficiencies,
   and ways to overcome its problems*
 * [OOP in JS slides](http://lazutkin.com/blog/2012/jul/17/oop-n-js-slides/) - *my presentation at
