@@ -12,20 +12,21 @@ and super calls. Additionally it provides useful utilities to work with objects.
 
 ## Module API
 
-The return value of this module is a function, which in this documentation it is called `dcl()`.
+The return value of this module is a function, which is called `dcl()` in this documentation.
 
 [dcl()](/docs/mini_js/dcl) is the main "class" composition engine. While it is important by itself, it hosts a number of
 public properties.
 
 Main properties:
 
-* [superCall()](/docs/mini_js/supercall) - *super call decorator*
+* [dcl.superCall()](/docs/mini_js/supercall) - *super call decorator*
 
 Utilities:
 
-* [mix()](/docs/mini_js/mix) - *mix in one object with another*
-* [delegate()](/docs/mini_js/delegate) - *delegate from one object to another*
+* [dcl.mix()](/docs/mini_js/mix) - *mix in one object with another*
+* [dcl.delegate()](/docs/mini_js/delegate) - *delegate from one object to another*
 
 Auxiliary properties:
 
-* [Super](/docs/mini_js/super) - *constructor used by [superCall()](/docs/mini_js/supercall) to create a decorator*
+* [dcl.Super](/docs/mini_js/super) - *constructor used by [dcl.superCall()](/docs/mini_js/supercall)
+  to create a decorator*

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "dcl.delegate()"
-date: 2012-07-21 13:52
+title: "dcl.around()"
+date: 2012-07-29 00:07
 comments: false
 sharing: true
 footer: true

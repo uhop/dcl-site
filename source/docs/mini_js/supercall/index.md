@@ -1,13 +1,13 @@
 ---
 layout: page
-title: "superCall()"
+title: "dcl.superCall()"
 date: 2012-07-21 13:53
 comments: false
 sharing: true
 footer: true
 ---
 
-`superCall()` is a light-weight way to call a method with the same name from the base "class", if any. Essentially
+`dcl.superCall()` is a light-weight way to call a method with the same name from the base "class", if any. Essentially
 it is a way to call a method that was overridden by the current method. It is used as a method decorator.
 
 It is defined as a property on `dcl` returned by [mini.js][] and [dcl.js][].
@@ -139,8 +139,8 @@ var c = new C();
 // C
 {% endcodeblock %}
 
-The same can be done with any chained method. See [chainedBefore()](/docs/dcl_js/chainedbefore) and
-[chainedAfter()](/docs/dcl_js/chainedafter) for more details.
+The same can be done with any chained method. See [chainBefore()](/docs/dcl_js/chainbefore) and
+[chainAfter()](/docs/dcl_js/chainafter) for more details.
 
 [mini.js]:  /docs/mini_js  mini.js
 [dcl.js]:   /docs/dcl_js   dcl.js

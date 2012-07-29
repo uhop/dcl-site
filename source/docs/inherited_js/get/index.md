@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "dcl.delegate()"
-date: 2012-07-21 13:52
+title: "get()"
+date: 2012-07-29 00:15
 comments: false
 sharing: true
 footer: true

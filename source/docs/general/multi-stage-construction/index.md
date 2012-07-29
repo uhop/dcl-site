@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "dcl.delegate()"
-date: 2012-07-21 13:52
+title: "Multi-stage construction"
+date: 2012-07-29 01:23
 comments: false
 sharing: true
 footer: true
