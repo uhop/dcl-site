@@ -20,7 +20,7 @@ mixins + AOP at both "class" and object level.
 * Extensively tested
   * Uses [continuous integration](http://travis-ci.org/uhop/dcl) running 85 automated tests.
 * Liberally licensed.
-  * Available onder new BSD or AFLv2 &mdash; your choice.
+  * Available under new BSD or AFLv2 &mdash; your choice.
 * Legally clean code.
   * Developed in the open.
   * All contributions are covered by CLA.
