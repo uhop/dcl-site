@@ -6,3 +6,5 @@ comments: false
 sharing: true
 footer: true
 ---
+
+{% docco tutorial.js %}
