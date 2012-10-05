@@ -10,6 +10,9 @@ footer: true
 A minimalistic yet complete JavaScript package for [node.js][] and browsers that implements OOP with
 mixins + AOP at both "class" and object level.
 
+It is written by [Eugene Lazutkin](http://lazutkin.com/blog/), and publicly available in
+[repository on GitHub](https://github.com/uhop/dcl).
+
 ## Overview
 
 * Works in [node.js][] and browsers, fully supports AMD.
