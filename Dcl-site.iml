@@ -10,7 +10,7 @@
     <orderEntry type="library" scope="PROVIDED" name="RedCloth (v4.2.9, RVM: ruby-1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="albino (v1.3.3, RVM: ruby-1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="blankslate (v2.1.2.4, RVM: ruby-1.9.3-p194) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.1.5, RVM: ruby-1.9.3-p194) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.2.0, RVM: ruby-1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="chunky_png (v1.2.5, RVM: ruby-1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="classifier (v1.3.3, RVM: ruby-1.9.3-p194) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="compass (v0.12.2, RVM: ruby-1.9.3-p194) [gem]" level="application" />
