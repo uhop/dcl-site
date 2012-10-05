@@ -31,10 +31,41 @@ in the inner function, which does the useful job. The outer function always retu
 The inner function takes as many arguments as required and returns the actual value. It is the workhorse of the tandem.
 In doing its work it can optionally call its super method.
 
+It is worth noting that `sup` is an unadorned super method. Most probably you want to call it in context of a current
+object. Do not forget to use standard `apply()` or `call()` methods to supply an object, and/or arguments:
+
+{% codeblock Calling a super lang:js %}
+	calcPrice: dcl.superCall(function(sup){
+	    // let's inflate price by 200%
+		return function(x){
+		    // asking for a real price in three different yet equivalent ways:
+			var realPrice1 = sup.apply(this, arguments);
+			var realPrice2 = sup.apply(this, [x]);
+			var realPrice3 = sup.call(this, x);
+			// now let's return it tripled
+			return realPrice1 + realPrice2 + realPrice3;
+		};
+	})
+{% endcodeblock %}
+
 It is possible that there is no super method to call (e.g., this "class" is the first one in line). In this case the
 injected `sup` will be falsy. It is a good idea to check `sup` for presence.
 
-The reason to use the double function pattern is desribed in [Supercalls in JS](/docs/general/supercalls).
+{% codeblock Handling possibly missing super lang:js %}
+	log: dcl.superCall(function(sup){
+		return function(msg){
+		    var newMsg = "LOG: " + msg;
+		    if(sup){
+		        sup.call(this, newMsg);
+		    }else{
+		        console.log(newMsg);
+		    }
+		};
+	})
+{% endcodeblock %}
+
+
+The reason to use the double function pattern is described in [Supercalls in JS](/docs/general/supercalls).
 
 Transitioning from a regular method to a method, which can execute a supercall is very simple:
 
