@@ -105,11 +105,16 @@ module Jekyll
           code.each do |line|
             if empty_code && !line.strip.empty?
               empty_code = false
-              contents << "```#{LANGUAGES[@type.to_sym][:name]}"
+              #contents << "```#{LANGUAGES[@type.to_sym][:name]}"
+              contents << "{% codeblock file.js %}"
             end
             contents << line
           end
-          contents << "```" unless empty_code
+          if !empty_code
+            #contents << "```"
+            contents << "{% endcodeblock %}"
+            contents << "<div class='docco-section-end'></div>"
+          end
         end
         contents = contents.join "\n"
         # render the result
