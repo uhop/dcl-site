@@ -7,14 +7,14 @@ sharing: true
 footer: true
 ---
 
-This is a convenience decorator to define a `around` advice.
+This is a convenience decorator to define a `around` advice based on [dcl.advise()](/docs/dcl_js/advise).
 
 ## Description
 
 This is a shortcut function to define one `around` advice. Logically it is defined as a synonym for
 [dcl.superCall()](/docs/mini_js/supercall):
 
-{% codeblock dcl.before() lang:js %}
+{% codeblock dcl.around() lang:js %}
 dcl.around = function(advice){
   return dcl.superCall(advice);
 };
@@ -39,6 +39,11 @@ Of course you can always do it like that too:
 {% codeblock Supercall lang:js %}
 method: dcl.superCall(advice)
 {% endcodeblock %}
+
+### Advice function
+
+Essentially it is the same as [dcl.superCall()](/docs/mini_js/supercall). It uses the same double function pattern,
+and its behavior is the same.
 
 ## Notes
 

@@ -7,7 +7,7 @@ sharing: true
 footer: true
 ---
 
-This is a convenience decorator to define a `after` advice.
+This is a convenience decorator to define a `after` advice based on [dcl.advise()](/docs/dcl_js/advise).
 
 ## Description
 
@@ -34,3 +34,14 @@ It is possible to write a shorter version:
 {% codeblock Short lang:js %}
 method: dcl.after(advice)
 {% endcodeblock %}
+
+### Advice function
+
+This type of advice is a regular function. It is called with the same context as an advised method. It takes
+two parameters: `args` is an `arguments` object (a pseudo-array) used to call an advised method, and `result`,
+which is a returned value or a thrown exception object. Its returned value is ignored.
+
+It is not recommended to modify parameters or a returned value inside `after` advice. Use `around` advice for that.
+
+It is recommended to derive all exception objects from the standard `Error` object, so erroneous and normal
+result values would be distinct.

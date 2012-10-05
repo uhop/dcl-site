@@ -7,7 +7,7 @@ sharing: true
 footer: true
 ---
 
-This is a convenience decorator to define a `before` advice.
+This is a convenience decorator to define a `before` advice based on [dcl.advise()](/docs/dcl_js/advise).
 
 ## Description
 
@@ -34,3 +34,10 @@ It is possible to write a shorter version:
 {% codeblock Short lang:js %}
 method: dcl.before(advice)
 {% endcodeblock %}
+
+### Advice function
+
+This type of advice is a regular function. It is called with the same context and the same arguments as
+an advised method. Its return value is ignored.
+
+It is not recommended to modify parameters inside `before` advice. Use `around` advice for that.

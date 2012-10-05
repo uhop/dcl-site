@@ -7,12 +7,12 @@ sharing: true
 footer: true
 ---
 
-This is a decorator, which is used to weave AOP advices.
+This is a decorator, which is used to weave AOP advices while building new "classes".
 
 ## Description
 
 `dcl.advise()` is a decorator function, which takes an object with properties `before`, `around`, and/or `after` and
-combines an existing method with supplied examples.
+combines an existing method with supplied advices.
 
 {% codeblock dcl.advise() lang:js %}
 var A = dcl(null, {
@@ -68,7 +68,7 @@ result values would be distinct.
 ### Around
 
 Essentially it is the same as [dcl.superCall()](/docs/mini_js/supercall). It uses the same double function pattern,
-and its behavior the same.
+and its behavior is the same.
 
 ### Order of advices
 
@@ -207,7 +207,8 @@ wrapAfter(x, "a", function(){ console.log("after"); });
 // after
 {% endcodeblock %}
 
-In general the relative order of different advices will depend on their definition order, while in true AOP it is rigid.
+In general the relative order of different wrapper-based advices will depend on their definition order,
+while in true AOP it is rigid.
 
 While the order difference looks harmless, it prevents from using some important AOP techniques. For example,
 it prevents setting up a hook function (an after advice) that runs after all "normal" methods.
