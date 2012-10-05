@@ -7,8 +7,8 @@ sharing: true
 footer: true
 ---
 
-This is a function that weaves AOP advices dynamically. Unlike [dcl.advise()][/docs/dcl_js/advise]
-it is works on objects, rather than "classes". All advices can be "unadvised" at any moment.
+This is a function that weaves AOP advices dynamically. Unlike [dcl.advise()](/docs/dcl_js/advise)
+it works on objects, rather than "classes". All advices can be "unadvised" at any moment.
 
 ## Description
 
