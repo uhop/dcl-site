@@ -20,25 +20,23 @@ header[role=banner] {
   display: none;
 }
 
-#docco {
+.docco {
   figcaption, .gutter {
     display: none;
   }
 }
 
-#docco.collapse-sidebar {
-  article {
-    padding-right: 20px;
-    @include background-image(linear-gradient(left, transparent 520px, $pre-bg 520px));
-  }
-  article > h1,
-  article > h2,
-  article > h3,
-  article > h4,
-  article > h5,
-  article > h6,
-  article > p,
-  article > pre {
+.collapse-sidebar .docco {
+  @include background-image(linear-gradient(left, transparent 470px, $pre-bg 470px));
+  padding-right: 20px;
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6,
+  > p,
+  > pre {
     float: left;
     clear: left;
     max-width: 450px;
