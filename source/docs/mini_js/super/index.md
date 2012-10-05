@@ -27,3 +27,6 @@ for(var name in o){
   }
 }
 {% endcodeblock %}
+
+The example above is not going to work on fully constructed objects because by that time all `dcl.Super` objects
+would be replaced by generated functions.
