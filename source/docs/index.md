@@ -51,5 +51,5 @@ mixins + AOP at both "class" and object level.
 * [OOP and JS](http://lazutkin.com/blog/2012/jan/18/oop-and-js/) - *discussion of advanced OOP, its deficiencies,
   and ways to overcome its problems*
 * [OOP in JS slides](http://lazutkin.com/blog/2012/jul/17/oop-n-js-slides/) - *my presentation at
-  [ClubAjax](http://clubajax.org) partially based on the blog post above; `dcl` was introduced as an experiement
+  [ClubAjax](http://clubajax.org) partially based on the blog post above; `dcl` was introduced as an experiment
   to create a balanced OOP + AOP package, which helps leverage mixin-based techniques*

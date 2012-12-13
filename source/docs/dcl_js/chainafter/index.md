@@ -33,3 +33,5 @@ Following rules should be followed:
 ## Notes
 
 By default, all constructors produced by `dcl` use "after" chaining.
+
+It is possible to declare chaining for a method without actually declaring the method.

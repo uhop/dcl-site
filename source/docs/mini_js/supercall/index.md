@@ -141,7 +141,7 @@ constructor definition".
    3. Even if a programmer failed to check if `sup` is truthy and called it anyway, JavaScript will generate
       an exception pointing directly to the site of failure without any intermediaries.
    4. Both functions should be unique and created dynamically exactly like in examples.
-4. If a super method throw an exception, it is a programmer's responsibility to catch it, to ignore it, or to pass it
+4. If a super method throws an exception, it is a programmer's responsibility to catch it, to ignore it, or to pass it
    through.
 
 ## FAQ

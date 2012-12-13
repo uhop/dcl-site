@@ -7,8 +7,13 @@ sharing: true
 footer: true
 ---
 
-`debug.js` is a debug helper for `dcl`. It augments [dcl()](/docs/mini_js/dcl) with enhanced error reporting, and
-provides debugging helpers. This module was designed primarily to be used during development.
+Debuggability is one of the main concerns for any public library. It should provide
+a concise picture of produced, yet it should not affect size nor performance of
+said library.
+
+`debug.js` is a debug helper for `dcl`. It augments [dcl()](/docs/mini_js/dcl)
+with enhanced error reporting, and provides debugging helpers. This module was
+designed primarily to be used during development.
 
 ## Module API
 

@@ -33,3 +33,5 @@ Following rules should be followed:
 ## Notes
 
 Chaining using "before" is frequently used for destructors or similar methods.
+
+It is possible to declare chaining for a method without actually declaring the method.
