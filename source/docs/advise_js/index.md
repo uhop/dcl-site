@@ -10,6 +10,24 @@ footer: true
 `advise.js` provides general AOP facilities to advise object methods dynamically. Unlike [dcl.js][] it is not used
 to weave methods of "classes", but works with objects.
 
+It can be included with following commands:
+
+{% codeblock Include advise lang:js %}
+// node.js
+var advise = require("dcl/advise");
+...
+
+// AMD (code)
+require(["dcl/advise"], function(advise){
+  ...
+});
+
+// AMD (definition)
+define(["dcl/advise"], function(advise){
+  ...
+});
+{% endcodeblock %}
+
 ## Module API
 
 The return value of this module is a function, which is called `advise()` in this documentation.
