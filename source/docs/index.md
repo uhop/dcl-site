@@ -7,22 +7,24 @@ sharing: true
 footer: true
 ---
 
-*This documentation is a work in progress.*
-
-`dcl` is a micro library written in JavaScript for [node.js](http://nodejs.org) and browsers that implements OOP with
-mixins + AOP at both "class" and object level.
+`dcl` is a micro library written in JavaScript for [node.js](http://nodejs.org)
+and modern browsers that implements OOP with mixins + AOP at both "class" and
+object level.
 
 ## Getting started
 
+* [Installation](/docs/installation) - *super-simple ways to install `dcl`*
 * [Tutorial](/docs/tutorial) - *hands-on with `dcl`*
 * [Cheatsheet](/docs/cheatsheet) - *look up common operations*
 
 ## Module documentation
 
-* [mini.js](/docs/mini_js) - *minimal `dcl` kernel, you might want to use it on browsers to conserve bandwidth*
+* [mini.js](/docs/mini_js) - *minimal `dcl` kernel, you might want to use it
+on browsers to conserve bandwidth*
   * [dcl()](/docs/mini_js/dcl) - *the composition engine*
   * [dcl.superCall()](/docs/mini_js/supercall) - *super call decorator*
-* [dcl.js](/docs/dcl_js) - *full `dcl` kernel that includes chaining control and AOP support*
+* [dcl.js](/docs/dcl_js) - *full `dcl` kernel that includes chaining control and
+AOP support*
   * [dcl.advise()](/docs/dcl_js/advise) - *general advice decorator*
   * [dcl.chainBefore()](/docs/dcl_js/chainbefore) - *"before" chaining directive*
   * [dcl.chainAfter()](/docs/dcl_js/chainafter) - *"after" chaining directive*
