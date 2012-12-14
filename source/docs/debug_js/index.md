@@ -15,6 +15,24 @@ said library.
 with enhanced error reporting, and provides debugging helpers. This module was
 designed primarily to be used during development.
 
+It can be included with following commands:
+
+{% codeblock Include debug lang:js %}
+// node.js
+var dclDebug = require("dcl/debug");
+...
+
+// AMD (code)
+require(["dcl/debug"], function(dclDebug){
+  ...
+});
+
+// AMD (definition)
+define(["dcl/debug"], function(dclDebug){
+  ...
+});
+{% endcodeblock %}
+
 ## Module API
 
 The return value of this module is an object, which is called `dclDebug` in this documentation.

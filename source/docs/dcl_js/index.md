@@ -10,6 +10,24 @@ footer: true
 `dcl.js` is a standard kernel of `dcl`. It augments [mini.js][]. While [mini.js][] implements OOP facilities,
 and supercalls, `dcl.js` adds AOP, chaining, and more utilities.
 
+It can be included with following commands:
+
+{% codeblock Include dcl lang:js %}
+// node.js
+var dcl = require("dcl");
+...
+
+// AMD (code)
+require(["dcl"], function(dcl){
+  ...
+});
+
+// AMD (definition)
+define(["dcl"], function(dcl){
+  ...
+});
+{% endcodeblock %}
+
 ## Module API
 
 The return value of this module is a function, which is called `dcl()` in this documentation.

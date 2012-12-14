@@ -7,8 +7,27 @@ sharing: true
 footer: true
 ---
 
-`mini.js` is a minimal kernel of `dcl`. It implements OOP facilities for single and multiple inheritance using mixins,
-and super calls. Additionally it provides useful utilities to work with objects.
+`mini.js` is a minimal kernel of `dcl`. It implements OOP facilities for single and
+multiple inheritance using mixins, and super calls. Additionally it provides useful
+utilities to work with objects.
+
+It can be included with following commands:
+
+{% codeblock Include mini lang:js %}
+// node.js
+var dcl = require("dcl/mini");
+...
+
+// AMD (code)
+require(["dcl/mini"], function(dcl){
+  ...
+});
+
+// AMD (definition)
+define(["dcl/mini"], function(dcl){
+  ...
+});
+{% endcodeblock %}
 
 ## Module API
 

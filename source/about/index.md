@@ -40,16 +40,35 @@ It is written by [Eugene Lazutkin](http://lazutkin.com/blog/), and publicly avai
 
 ## Stress on debuggability
 
-The package was written with debuggability of your code in mind. It comes with a special debug module that verifies
-created objects, explains mistakes, and helps to keep track of AOP advices. Because the package uses direct static calls
-to super methods, you don't need to step over unnecessary stubs. In places where stubs are unavoidable (chains or
-advices) they are small, and intuitive.
+The package was written with debuggability of your code in mind. It comes with
+a special debug module that verifies created objects, explains mistakes, and helps
+to keep track of AOP advices. Because the package uses direct static calls
+to super methods, you don't need to step over unnecessary stubs. In places
+where stubs are unavoidable (chains or advices) they are small, and intuitive.
+
+## Installation
+
+If you plan to use it in your [node.js][] project install it
+like this:
+
+{% codeblock %}
+npm install dcl
+{% endcodeblock %}
+
+For your browser-based projects I suggest to use [volo.js][]:
+
+{% codeblock %}
+volo install uhop/dcl
+{% endcodeblock %}
+
 
 <!--
-If you migrate your code from a legacy framework that implements dynamic (rather than static) supercalls, take a look at
-the module [inherited](/docs/inherited_js) that dispatches supercalls dynamically trading off the simplicity of the code
-for some run-time CPU use, and a little bit less convenient debugging of such calls due to an extra stub between your
-methods.
+If you migrate your code from a legacy framework that implements dynamic
+(rather than static) supercalls, take a look at the module [inherited](/docs/inherited_js)
+that dispatches supercalls dynamically trading off the simplicity of the code
+for some run-time CPU use, and a little bit less convenient debugging of such calls
+due to an extra stub between your methods.
 -->
 
 [node.js]:  http://nodejs.org   node.js
+[volo.js]:  http://volojs.org   volo.js
