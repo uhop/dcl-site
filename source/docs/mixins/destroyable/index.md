@@ -45,6 +45,8 @@ As you can see it containes no code! The only important part is a chaining direc
 When you mix it in to your "classes" it will weave all found `destroy()` methods
 properly.
 
+Read a background on destruction in [Destructors](/docs/general/destructors).
+
 ## Examples
 
 {% codeblock Destroyable example lang:js %}

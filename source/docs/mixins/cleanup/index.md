@@ -33,6 +33,8 @@ define(["dcl/mixins/Cleanup"], function(Cleanup){
 
 ## Description
 
+Read a background on destruction in [Destructors](/docs/general/destructors).
+
 `Cleanup` defines following API:
 
 {% codeblock Cleanup lang:js %}
@@ -103,7 +105,7 @@ Cleans up all accumulated resources removing them from the stack.
 A required method for [Destroyable](/docs/mixins/destroyable) protocol.
 It simply calls `cleanup()`.
 
-### Examples
+## Examples
 
 {% codeblock Cleanup example lang:js %}
 var ManagedNode = dcl(Destroyable, {
