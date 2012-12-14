@@ -61,7 +61,6 @@ For your browser-based projects I suggest to use [volo.js][]:
 volo install uhop/dcl
 {% endcodeblock %}
 
-
 <!--
 If you migrate your code from a legacy framework that implements dynamic
 (rather than static) supercalls, take a look at the module [inherited](/docs/inherited_js)
