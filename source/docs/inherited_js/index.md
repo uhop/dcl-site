@@ -42,5 +42,5 @@ exposed publicly as `dcl.inherited()`. Additionally it hosts some public propert
 
 Main properties:
 
-* [getInherited()](/docs/inherited_js/getInherited) - *gets next-in-line super method dynamically*
-* [inherited.get()](/docs/inherited_js/get) - *alias for [getInherited()](/docs/inherited_js/getInherited) on [inherited()](/docs/inherited_js/inherited)*
+* [getInherited()](/docs/inherited_js/getinherited) - *gets next-in-line super method dynamically*
+* [inherited.get()](/docs/inherited_js/get) - *alias for [getInherited()](/docs/inherited_js/getinherited) on [inherited()](/docs/inherited_js/inherited)*
