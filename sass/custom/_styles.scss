@@ -29,6 +29,7 @@ header[role=banner] {
 .collapse-sidebar .docco {
   @include background-image(linear-gradient(left, transparent 470px, $pre-bg 470px));
   padding-right: 20px;
+  min-width: 1000px;
   > h1,
   > h2,
   > h3,
@@ -39,6 +40,7 @@ header[role=banner] {
   > pre {
     float: left;
     clear: left;
+    width: 450px;
     max-width: 450px;
     min-width: 450px;
     padding-right: 20px;
