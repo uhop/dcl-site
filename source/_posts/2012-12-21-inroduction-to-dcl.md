@@ -3,7 +3,7 @@ layout: post
 title: "Inroduction to dcl"
 date: 2012-12-21 01:05
 comments: false
-categories: announce
+categories: announce tutorial
 ---
 
 [David Walsh](http://davidwalsh.name/about-david-walsh) has asked me
