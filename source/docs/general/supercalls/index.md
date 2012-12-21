@@ -153,16 +153,27 @@ Cons:
 
 * It reserves a special name. In the example above it was `this.inherited()`.
 * `this.inherited()` figures out a super method dynamically.
-  * The algorithm is much more complex (and more expensive) than the wrapper's one making it very expensive for small
-  frequently called methods.
-  * JavaScript lacks required introspection mechanisms forcing to prepare a metadata, when creating an object or
-  a "class".
-    * Just like with auto-wrapping above a special "class" creator function is required to produce such metadata.
-* Call to a super is effectively wrapped, which is a negative factor for debugging (more unrelated code to skip).
+  * The algorithm is much more complex (and more expensive) than the wrapper's
+    one making it very expensive for small frequently called methods.
+  * JavaScript lacks required introspection mechanisms forcing to prepare
+    a metadata, when creating an object or a "class".
+    * Just like with auto-wrapping above a special "class" creator function
+      is required to produce such metadata.
+* Call to a super is effectively wrapped, which is a negative factor for
+  debugging (more unrelated code to skip).
+* `this.inherited()` as in the example above does not work in strict mode.
+  It needs to know its caller to figure out what to call next, and it takes
+  a caller from `arguments` using `arguments.callee`. This is a smart
+  move, which simplifies life of a programmer, yet it is prohibited in
+  strict mode.
+  * This can be remedied by specifying the caller (itself) explicitly.
+    It does the job, but the elegance is lost.
 
-The performance aspect can be relieved by elaborate caching mechanism, yet it cannot be more performant than a wrapper.
+The performance aspect can be relieved by an elaborate caching mechanism,
+yet it cannot be more performant than a wrapper.
 
-The complexity: one extra function call with a non-trivial algorithm inside per supercall.
+The complexity: one extra function call with a non-trivial algorithm inside
+per supercall.
 
 ### Double function/closure
 
@@ -182,44 +193,59 @@ var B = dcl(A, {
 });
 {% endcodeblock %}
 
-As you can see the internal function pulls a super method from the outer function. It allows for the outer function
-to be called during "class"/object creation time, it returns its internal function, which is called as a method.
+As you can see the internal function pulls a super method from the outer
+function. It allows for the outer function to be called during "class"/object
+creation time, it returns its internal function, which is called as a method.
+
+The outer function is called once per "class" creation, and returns
+the closure (the inner function) with its super bound. After that its never
+called, and all calls to super methods are done directly to the inner function.
+This way we have no performance penalty per call.
 
 Let's count pros:
 
 * No need to reserve a name like with wrappers and `this.inherited()` techniques.
-* No price to pay for methods not using supercalls both statically and dynamically.
+* No price to pay for methods not using supercalls both statically and
+  dynamically.
 * No price to pay for supercalls.
   * No wrappers whatsoever.
   * Debugging is completely straight-forward.
 
 Cons:
 
-* The pattern looks weird. It can be mistyped.
+* The pattern looks weird. Like all patterns it can be mistyped.
 * All super-calling methods should be converted to it.
   * There is no automation like with other techniques.
 * Super-calling methods are not directly usable.
-  * A "class" creator function is required that should instantiate necessary super-calling methods.
+  * A "class" creator function is required that should instantiate necessary
+    super-calling methods.
 
 ## Discussion
 
-All techniques have pros and cons. Usually a programmer makes a conscience decision selecting strong features and
-trade-offs, which are right for their application. A library writer cannot afford to make choices that penalize
+All techniques have pros and cons. Usually a programmer makes a conscience
+decision selecting strong features and trade-offs, which are right for their
+application. A library writer cannot afford to make choices that penalize
 application developers. An example of such decision would be a performance.
 
-Out of last three techniques the double function one is virtually without a run-time penalty per call (only a small
-setup "fee" per "class" is expected), and makes debugging comfortable. Thus it was selected to be implemented as
+Out of last three techniques the double function one is virtually without
+a run-time penalty per call (only a small setup "fee" per "class" is expected),
+and makes debugging comfortable. Thus it was selected to be implemented as
 a major mechanism for supercalls: [dcl.superCall()](/docs/mini_js/supercall).
 
-Building on experience with [Dojo][] `this.inherited()` technique was selected for implementation too:
-[inherited.js](/docs/inherited_js). Its strong suit is user-friendliness, and known price per supercall,
-while method calls come always for free.
+Building on experience with [Dojo][] `this.inherited()` technique was selected
+for implementation too: [inherited.js](/docs/inherited_js). Its strong suit is
+user-friendliness, and known price per supercall, while method calls come
+always for free. Both Dojo-like and strict mode friendly versions are
+implemented.
 
 Both implemented methods do not tax programmers, who do not use these facilities.
 
-The double function technique is recommended for all new code, while the `this.inherited()` technique is more suitable
-when refactoring legacy code because it doesn't require much modification to call a super method. Working with
-an existing codebase a programmer can start by converting their "classes" to [dcl()](/docs/mini_js/dcl) syntax, and
-calling super methods with `this.inherited()`, while the final product should use the double function technique.
+The double function technique is recommended for all new code, while the `this.
+inherited()` technique is more suitable when refactoring legacy code because it
+doesn't require much modification to call a super method. Working with
+an existing codebase a programmer can start by converting their "classes" to
+[dcl()](/docs/mini_js/dcl) syntax, and calling super methods with 
+`this.inherited()`, while the final product should use the double function
+technique.
 
 [Dojo]:  http://dojotoolkit.org  Dojo
