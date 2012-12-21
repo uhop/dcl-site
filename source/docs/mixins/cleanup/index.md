@@ -55,7 +55,7 @@ The whole system operates in a stack-like fashion reflecting common embedded sta
 
 ### Constructor
 
-Constructor initializes an internal state required for `Cleranup` to function.
+Constructor initializes an internal state required for `Cleanup` to function.
 It creates a single property on an instance called `__cleanupStack`.
 
 ### `pushCleanup(resource, cleanup)`
