@@ -195,11 +195,11 @@ var B = dcl(A, {
 
 As you can see the internal function pulls a super method from the outer
 function. It allows for the outer function to be called during "class"/object
-creation time, it returns its internal function, which is called as a method.
+creation time, which returns its internal function to be called as a method.
 
 The outer function is called once per "class" creation, and returns
 the closure (the inner function) with its super bound. After that its never
-called, and all calls to super methods are done directly to the inner function.
+called, and all calls to super methods go directly to the inner function.
 This way we have no performance penalty per call.
 
 Let's count pros:
@@ -240,11 +240,11 @@ implemented.
 
 Both implemented methods do not tax programmers, who do not use these facilities.
 
-The double function technique is recommended for all new code, while the `this.
-inherited()` technique is more suitable when refactoring legacy code because it
-doesn't require much modification to call a super method. Working with
-an existing codebase a programmer can start by converting their "classes" to
-[dcl()](/docs/mini_js/dcl) syntax, and calling super methods with 
+The double function technique is recommended for all new code, while
+`this.inherited()` technique is more suitable when refactoring legacy code
+because it doesn't require much modifications to call a super method. Working
+with an existing codebase a programmer can start by converting their "classes"
+to [dcl()](/docs/mini_js/dcl) syntax, and calling super methods with
 `this.inherited()`, while the final product should use the double function
 technique.
 
