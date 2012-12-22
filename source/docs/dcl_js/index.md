@@ -26,6 +26,18 @@ require(["dcl"], function(dcl){
 define(["dcl"], function(dcl){
   ...
 });
+
+// or you can call the file directly:
+
+// AMD (code)
+require(["dcl/dcl"], function(dcl){
+  ...
+});
+
+// AMD (definition)
+define(["dcl/dcl"], function(dcl){
+  ...
+});
 {% endcodeblock %}
 
 ## Module API

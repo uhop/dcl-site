@@ -17,7 +17,7 @@ npm install dcl
 For your browser-based projects I suggest to use [volo.js][]:
 
 {% codeblock %}
-volo install uhop/dcl
+volo install -amd dcl
 {% endcodeblock %}
 
 You can always find the code here: [github.com/uhop/dcl](https://github.com/uhop/dcl)
