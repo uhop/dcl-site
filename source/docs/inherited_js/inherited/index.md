@@ -36,7 +36,7 @@ var B = dcl(A, {
 	    // Asking for a real price in three different yet equivalent ways:
 		var realPrice1 = this.inherited(arguments);
 		var realPrice2 = this.inherited(arguments, [x]);
-		var realPrice3 = this.inherited(B, "calcPrice1", x);
+		var realPrice3 = this.inherited(B, "calcPrice1", [x]);
 		// Now let's return it tripled.
 		return realPrice1 + realPrice2 + realPrice3;
 	},
@@ -56,7 +56,7 @@ var B = dcl(A, {
 		};
 	}),
 
-	// Another alternative is to use inherited.get():
+	// Another alternative is to use getInherited():
 	calcPrice3: function(x){
 		var sup = this.getInherited(B, "calcPrice3");
 		// In this example we don't check if `sup` is truthy:
@@ -105,12 +105,12 @@ use [getInherited()](/docs/inherited_js/getInherited).
 
 1. If a method is present in an `Object`, it will be the last in line of potential
    super calls.
-2. If a super method throws an exception, it is a programmer's responsibility to catch it,
-   to ignore it, or to pass it through.
+2. If a super method throws an exception, it is a programmer's responsibility
+   to catch it, to ignore it, or to pass it through.
 
 ## FAQ
 
-### Can I call built-in functions like that?
+### Can I call built-in functions with `inherited()`?
 
 Yes.
 
