@@ -71,8 +71,8 @@ Let's be uber-smart and call the method using `setTimeout()`:
 var Template = dcl(null, {
   ...
   constructor: function(){
-  	var self = this;
-  	setTimeout(function(){
+    var self = this;
+    setTimeout(function(){
       self.populateTemplate();
     }, 0);
   },
@@ -97,7 +97,7 @@ Unfortunately this thinking, while prevalent, fails on several accounts:
 about it in
 [More on 0ms timeouts](http://lazutkin.com/blog/2012/jul/28/more-on-0ms-timeouts/).
 * What if as soon as we constructed an object we started to use it without waiting
-for time slices? Making this condition part of a constract (e.g., by documenting it)
+for time slices? Making this condition part of a contract (e.g., by documenting it)
 makes use of such objects cumbersome.
   * This problem is present even if we use something like [nextTick()](http://nodejs.org/docs/v0.4.7/api/process.html#process.nextTick) of [node.js](http://nodejs.org)
   instead of `setTimeout()`.
