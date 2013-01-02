@@ -116,7 +116,7 @@ var Example3 = dcl(
 While we learned valuable techniques from above sections, the slot allocation has
 a lot of problems making it unsuitable as a generic solution:
 
-* It doesn't scale up well, if we insist that every mixin has its own parameter slot.
+* It doesn't scale up well, if we insist that every mixin had its own parameter slot.
 * It is error-prone to design, and to specify constructor parameters.
 * What if different mixins require the same or similar parameter?
   Should we duplicate them?
@@ -235,7 +235,7 @@ var x = new HRRecord({
 x.salut();
 ```
 
-We can override existing behavior, add new, or add more properties. Obviously
+We can override existing behavior and properties, or add new properties. Obviously
 for this to work, a parameter bag should be sanitized. It cannot contain random
 properties. Usually it is not a problem.
 
@@ -246,7 +246,7 @@ a lot of space or consume other precious resources. This problem can be easily s
 with [multi-stage construction](/docs/general/multi-stage-construction).
 
 `Mixer` above is a very helpful class, which is provided with `dcl`.
-Read all about it in documentation on [Mixer](/docs/bases/mixer).
+Read all about it in the documentation on [Mixer](/docs/bases/mixer).
 
 ### Replacer
 
@@ -306,21 +306,21 @@ var x = new HRRecord({
 typeof x.salut; // undefined
 ```
 
-`Replacer` is provided with `dcl`. Read all about it in documentation on
+`Replacer` is provided with `dcl`. Read all about it in the documentation on
 [Replacer](/docs/bases/replacer).
 
 ### More on mixers
 
-This concept can be extended to suit particual needs. One notable extension is to 
+This concept can be extended to suit particular needs. One notable extension is to 
 check types of instance properties, and enforce that copied properties are of
 the same type, or coerce it to that type. For example, `firstName` property above is
 defined as a string, so we san check that `firsName` parameter is a string too.
 
-Additionally we can implement some restrictions too, e.g., skip all function parameters,
-or skip all parameters that start with `_`.
+And we can implement some additional restrictions too, e.g., skip all function
+parameters, or skip all parameters that start with `_`.
 
 ## Summary
 
 Techniques described above are simple yet powerful. They go beyond constructors,
-and can be used for methods as well. Always take them into account while designing
-mixins and base classes for your project.
+and can be used for methods as well. Always take practical scalability
+into account while designing mixins and base classes for your project.
