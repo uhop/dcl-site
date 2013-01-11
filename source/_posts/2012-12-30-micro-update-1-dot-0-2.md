@@ -2,7 +2,7 @@
 layout: post
 title: "Micro update: 1.0.2"
 date: 2012-12-30 14:20
-comments: true
+comments: false
 categories: announce
 ---
 
