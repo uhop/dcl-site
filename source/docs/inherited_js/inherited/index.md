@@ -99,7 +99,7 @@ The example above demonstrates three possible ways to use `inherited()`:
 `inherited()` returns a result returned by a super method, whatever it may be.
 If there is no super method, the call is essentially a no-op and returns `undefined`.
 If you want to check for an existance of a super method,
-use [getInherited()](/docs/inherited_js/getInherited).
+use [getInherited()](/docs/inherited_js/getinherited).
 
 ## Notes
 
