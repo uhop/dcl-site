@@ -4,11 +4,13 @@
 .sass-cache
 .gist-cache
 .pygments-cache
+.AppleDouble
 _deploy
 public
 sass.old
 source.old
 source/_stash
-source/stylesheets/screen.css
+source/stylesheets/
 vendor
 node_modules
+*.sublime-*
