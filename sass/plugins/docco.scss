@@ -4,6 +4,9 @@
 
 // Docco styles
 
+$docco-panel: 450px;
+$docco-pad: 20px;
+
 .docco-section-end {
   display: none;
 }
@@ -14,11 +17,13 @@
   }
 }
 
-@media (min-width: 940px) {
+@media (min-width: (2 * ($docco-panel + $docco-pad))) {
   .collapse-sidebar .docco {
-    @include background-image(linear-gradient(left, transparent 470px, $pre-bg 470px));
-    padding-right: 20px;
-    min-width: 1000px;
+    @include background-image(linear-gradient(
+      left, transparent ($docco-panel + $docco-pad),
+      $pre-bg ($docco-panel + $docco-pad)));
+    min-width: ($docco-panel + $docco-pad);
+    padding-right: $docco-pad;
     > h1,
     > h2,
     > h3,
@@ -29,10 +34,10 @@
     > pre {
       float: left;
       clear: left;
-      width: 450px;
-      max-width: 450px;
-      min-width: 450px;
-      padding-right: 20px;
+      width: $docco-panel;
+      max-width: $docco-panel;
+      min-width: $docco-panel;
+      padding-right: $docco-pad;
     }
     figure {
       float: left;
