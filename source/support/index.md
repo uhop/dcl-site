@@ -25,5 +25,4 @@ If you found a bug, or a documentation error, or any other problem:
   * If you have a solution, do not hesitate to do a pull request, which should include
     a fix and its test.
 
-And you can always write to me:
-e<span></span>u<span></span>g<span></span>e<span></span>n<span></span>e@dcljs.org.
+And you can always write to me: eugene@dcljs.org.
