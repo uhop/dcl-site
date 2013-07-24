@@ -7,28 +7,36 @@ sharing: true
 footer: true
 ---
 
-If you plan to use it in your [node.js][] project install it
-like this:
+`dcl` can be installed with most popular package managers:
 
-{% codeblock %}
-npm install dcl
-{% endcodeblock %}
+* [node.js][]:
 
-For your browser-based projects I suggest to use [volo.js][]:
+  {% codeblock %}
+  npm install dcl
+  {% endcodeblock %}
 
-{% codeblock %}
-volo install -amd uhop/dcl
-{% endcodeblock %}
+* [volo.js][]:
 
-Alternatively you can use [jam.js][]:
+  {% codeblock %}
+  volo install -amd uhop/dcl
+  {% endcodeblock %}
 
-{% codeblock %}
-jam install dcl
-{% endcodeblock %}
+* [jam.js][]:
 
-You can always find the code here: [github.com/uhop/dcl](https://github.com/uhop/dcl)
+  {% codeblock %}
+  jam install dcl
+  {% endcodeblock %}
+
+* [bower.js][]:
+
+  {% codeblock %}
+  bower install dcl
+  {% endcodeblock %}
+
+You can always find the latest code here: [github.com/uhop/dcl](https://github.com/uhop/dcl)
 and copy necessary files manually, or clone the whole project, if you wish.
 
 [node.js]:  http://nodejs.org/   node.js
 [volo.js]:  http://volojs.org/   volo.js
 [jam.js]:   http://jamjs.org/    jam.js
+[bower.js]: http://bower.io/     Bower
