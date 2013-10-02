@@ -79,6 +79,9 @@ For your browser-based projects I suggest to use [volo.js][]:
 volo install -amd dcl
 {% endcodeblock %}
 
+You can find more details and instructions for some other package managers in
+[Installation guide](/docs/installation).
+
 Happy coding!
 
 [node.js]:  http://nodejs.org   node.js
