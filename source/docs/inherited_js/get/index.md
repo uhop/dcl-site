@@ -17,40 +17,40 @@ See [getInherited()](/docs/inherited_js/getinherited) for details.
 
 {% codeblock inherited.get() lang:js %}
 var B = dcl(A, {
-	// The inherited.get() way:
-	calcPrice1: function(x){
-		var sup = this.inherited.get.call(this, B, "calcPrice1");
-		if(sup){
-			return sup.apply(this, arguments);
-		}else{
-			// There is no super method.
-			return 0;
-		}
-	},
+  // The inherited.get() way:
+  calcPrice1: function(x){
+    var sup = this.inherited.get.call(this, B, "calcPrice1");
+    if(sup){
+      return sup.apply(this, arguments);
+    }else{
+      // There is no super method.
+      return 0;
+    }
+  },
 
-	// The getInherited() way:
-	calcPrice2: function(x){
-		var sup = this.getInherited(B, "calcPrice2");
-		if(sup){
-			return sup.apply(this, arguments);
-		}else{
-			// There is no super method.
-			return 0;
-		}
-	},
+  // The getInherited() way:
+  calcPrice2: function(x){
+    var sup = this.getInherited(B, "calcPrice2");
+    if(sup){
+      return sup.apply(this, arguments);
+    }else{
+      // There is no super method.
+      return 0;
+    }
+  },
 
-	// Compare it with dcl.superCall() example:
-	calcPrice3: dcl.superCall(function(sup){
-	    // Let's inflate price by 200%.
-		return function(x){
-			if(sup){
-				return sup.apply(this, arguments);
-			}else{
-				// There is no super method.
-				return 0;
-			}
-		};
-	})
+  // Compare it with dcl.superCall() example:
+  calcPrice3: dcl.superCall(function(sup){
+    // Let's inflate price by 200%.
+    return function(x){
+      if(sup){
+        return sup.apply(this, arguments);
+      }else{
+        // There is no super method.
+        return 0;
+      }
+    };
+  })
 });
 {% endcodeblock %}
 

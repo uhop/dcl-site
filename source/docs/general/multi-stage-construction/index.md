@@ -86,7 +86,7 @@ The thinking goes like that:
 > for a next time slice, we are guaranteed to run after all constructors.
 
 > What time slice? JavaScript systems are usually event-driven and
-> as such operate asynchronously responding to external events. 
+> as such operate asynchronously responding to external events.
 
 > Next time slice? I set a timer for 0ms, so my code will be called immediately
 > without any wait.

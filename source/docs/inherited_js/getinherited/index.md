@@ -32,42 +32,42 @@ prototyping:
 
 {% codeblock getInherited() lang:js %}
 var B = dcl(A, {
-	// The getInherited() way:
-	calcPrice1: function(x){
-		var sup = this.getInherited(B, "calcPrice1");
-		if(sup){
-		    // Let's inflate price by 200%.
-		    // Asking for a real price in three different
-		    // yet equivalent ways:
-			var realPrice1 = sup.apply(this, arguments);
-			var realPrice2 = sup.apply(this, [x]);
-			var realPrice3 = sup.call(this, x);
-			// Now let's return it tripled:
-			return realPrice1 + realPrice2 + realPrice3;
-		}else{
-			// There is no super method.
-			return 0;
-		}
-	},
+  // The getInherited() way:
+  calcPrice1: function(x){
+    var sup = this.getInherited(B, "calcPrice1");
+    if(sup){
+        // Let's inflate price by 200%.
+        // Asking for a real price in three different
+        // yet equivalent ways:
+      var realPrice1 = sup.apply(this, arguments);
+      var realPrice2 = sup.apply(this, [x]);
+      var realPrice3 = sup.call(this, x);
+      // Now let's return it tripled:
+      return realPrice1 + realPrice2 + realPrice3;
+    }else{
+      // There is no super method.
+      return 0;
+    }
+  },
 
-	// Compare it with dcl.superCall() example:
-	calcPrice2: dcl.superCall(function(sup){
-	    // Let's inflate price by 200%.
-		return function(x){
-			if(sup){
-			    // Asking for a real price in three different
-			    // yet equivalent ways:
-				var realPrice1 = sup.apply(this, arguments);
-				var realPrice2 = sup.apply(this, [x]);
-				var realPrice3 = sup.call(this, x);
-				// Now let's return it tripled:
-				return realPrice1 + realPrice2 + realPrice3;
-			}else{
-				// There is no super method.
-				return 0;
-			}
-		};
-	})
+  // Compare it with dcl.superCall() example:
+  calcPrice2: dcl.superCall(function(sup){
+    // Let's inflate price by 200%.
+    return function(x){
+      if(sup){
+          // Asking for a real price in three different
+          // yet equivalent ways:
+        var realPrice1 = sup.apply(this, arguments);
+        var realPrice2 = sup.apply(this, [x]);
+        var realPrice3 = sup.call(this, x);
+        // Now let's return it tripled:
+        return realPrice1 + realPrice2 + realPrice3;
+      }else{
+        // There is no super method.
+        return 0;
+      }
+    };
+  })
 });
 {% endcodeblock %}
 

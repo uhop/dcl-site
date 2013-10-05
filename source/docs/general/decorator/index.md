@@ -107,8 +107,8 @@ function postDecorator(f){
     }
     var json = JSON.stringify(result);
     if(params.callback){
-    	// JSONP
-    	return "(" + params.callback + ")(" + json + ")";
+      // JSONP
+      return "(" + params.callback + ")(" + json + ")";
     }
     return json;
 }

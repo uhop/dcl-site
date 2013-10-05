@@ -199,7 +199,7 @@ var Age = dcl(Mixer, {
   declaredClass: "Age",
   constructor: function(){
     if(!this.age){
-      this.age = null;    
+      this.age = null;
     }
   }
 });
@@ -279,7 +279,7 @@ var Age = dcl(Mixer, {
   // our constructor
   constructor: function(){
     if(!this.age){
-      this.age = null;    
+      this.age = null;
     }
   }
 });
@@ -311,7 +311,7 @@ typeof x.salut; // undefined
 
 ### More on mixers
 
-This concept can be extended to suit particular needs. One notable extension is to 
+This concept can be extended to suit particular needs. One notable extension is to
 check types of instance properties, and enforce that copied properties are of
 the same type, or coerce it to that type. For example, `firstName` property above is
 defined as a string, so we san check that `firsName` parameter is a string too.

@@ -30,45 +30,45 @@ for transitioning legacy code or fast prototyping:
 
 {% codeblock inherited() lang:js %}
 var B = dcl(A, {
-	// The inherited() way:
-	calcPrice1: function(x){
-	    // Let's inflate price by 200%.
-	    // Asking for a real price in three different yet equivalent ways:
-		var realPrice1 = this.inherited(arguments);
-		var realPrice2 = this.inherited(arguments, [x]);
-		var realPrice3 = this.inherited(B, "calcPrice1", [x]);
-		// Now let's return it tripled.
-		return realPrice1 + realPrice2 + realPrice3;
-	},
+  // The inherited() way:
+  calcPrice1: function(x){
+      // Let's inflate price by 200%.
+      // Asking for a real price in three different yet equivalent ways:
+    var realPrice1 = this.inherited(arguments);
+    var realPrice2 = this.inherited(arguments, [x]);
+    var realPrice3 = this.inherited(B, "calcPrice1", [x]);
+    // Now let's return it tripled.
+    return realPrice1 + realPrice2 + realPrice3;
+  },
 
-	// Compare it with dcl.superCall() example:
-	calcPrice2: dcl.superCall(function(sup){
-	    // Let's inflate price by 200%.
-		return function(x){
-			// In this example we don't check if `sup` is truthy:
-			// imagine that we know that statically.
-		    // Asking for a real price in three different yet equivalent ways:
-			var realPrice1 = sup.apply(this, arguments);
-			var realPrice2 = sup.apply(this, [x]);
-			var realPrice3 = sup.call(this, x);
-			// Now let's return it tripled:
-			return realPrice1 + realPrice2 + realPrice3;
-		};
-	}),
+  // Compare it with dcl.superCall() example:
+  calcPrice2: dcl.superCall(function(sup){
+      // Let's inflate price by 200%.
+    return function(x){
+      // In this example we don't check if `sup` is truthy:
+      // imagine that we know that statically.
+        // Asking for a real price in three different yet equivalent ways:
+      var realPrice1 = sup.apply(this, arguments);
+      var realPrice2 = sup.apply(this, [x]);
+      var realPrice3 = sup.call(this, x);
+      // Now let's return it tripled:
+      return realPrice1 + realPrice2 + realPrice3;
+    };
+  }),
 
-	// Another alternative is to use getInherited():
-	calcPrice3: function(x){
-		var sup = this.getInherited(B, "calcPrice3");
-		// In this example we don't check if `sup` is truthy:
-		// imagine that we know that statically.
-	    // Let's inflate price by 200%.
-	    // Asking for a real price in three different yet equivalent ways:
-		var realPrice1 = sup.apply(this, arguments);
-		var realPrice2 = sup.apply(this, [x]);
-		var realPrice3 = sup.call(this, x);
-		// Now let's return it tripled:
-		return realPrice1 + realPrice2 + realPrice3;
-	}
+  // Another alternative is to use getInherited():
+  calcPrice3: function(x){
+    var sup = this.getInherited(B, "calcPrice3");
+    // In this example we don't check if `sup` is truthy:
+    // imagine that we know that statically.
+      // Let's inflate price by 200%.
+      // Asking for a real price in three different yet equivalent ways:
+    var realPrice1 = sup.apply(this, arguments);
+    var realPrice2 = sup.apply(this, [x]);
+    var realPrice3 = sup.call(this, x);
+    // Now let's return it tripled:
+    return realPrice1 + realPrice2 + realPrice3;
+  }
 });
 {% endcodeblock %}
 
@@ -117,16 +117,16 @@ Yes.
 {% codeblock Calling toString() lang:js %}
 // non-strict mode
 var A = dcl(null, {
-	toString: function(){
-		return "prefix-" + this.inherited(arguments) + "-postfix";
-	}
+  toString: function(){
+    return "prefix-" + this.inherited(arguments) + "-postfix";
+  }
 });
 
 // strict mode
 var B = dcl(null, {
-	toString: function(){
-		return "prefix-" + this.inherited(B, "toString") + "-postfix";
-	}
+  toString: function(){
+    return "prefix-" + this.inherited(B, "toString") + "-postfix";
+  }
 });
 {% endcodeblock %}
 
@@ -143,15 +143,15 @@ just pass `arguments` object as your array of arguments:
 {% codeblock Calling Pass-through lang:js %}
 // non-strict mode
 var B = dcl(A, {
-	method: function(){
-		return this.inherited(arguments);
-	}
+  method: function(){
+    return this.inherited(arguments);
+  }
 });
 
 // strict mode
 var C = dcl(B, {
-	method: function(){
-		return this.inherited(C, "method", arguments);
-	}
+  method: function(){
+    return this.inherited(C, "method", arguments);
+  }
 });
 {% endcodeblock %}
