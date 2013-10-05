@@ -16,6 +16,7 @@ object level.
 * [Installation](/docs/installation) - *super-simple ways to install `dcl`*
 * [Tutorial](/docs/tutorial) - *hands-on with `dcl`*
 * [Cheatsheet](/docs/cheatsheet) - *look up common operations*
+* [ChangeLog](/docs/changelog) - *an official record of changes*
 
 ## Module documentation
 
@@ -34,6 +35,7 @@ AOP support*
   * [inherited()](/docs/inherited_js/inherited) - *super call*
 * [debug.js](/docs/debug_js) - *error-checking and introspection facility*
   * [dclDebug.log()](/docs/debug_js/log) - *log information of classes and objects*
+* [legacy.js](/docs/legacy_js) - *support for legacy browsers*
 
 ## Library documentation
 
