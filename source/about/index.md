@@ -7,7 +7,7 @@ sharing: true
 footer: true
 ---
 
-A minimalistic yet complete JavaScript package for [node.js][] and modern browsers.
+A minimalistic yet complete JavaScript package for [node.js][] and browsers.
 It implements [OOP][] with [mixins](http://en.wikipedia.org/wiki/Mixins) + [AOP][]
 at both "class" and object level.
 
@@ -30,10 +30,9 @@ and publicly available [on GitHub](https://github.com/uhop/dcl).
   * Easy to learn, easy to use.
   * Intentionally small set of orthogonal features.
 * Extensively tested.
-  * Uses [continuous integration](http://travis-ci.org/uhop/dcl) running
-    111 automated tests.
+  * Uses [continuous integration](http://travis-ci.org/uhop/dcl) running >100 automated tests.
 * Liberally licensed.
-  * Available under new [BSD][] or [AFL][] v2 &mdash; your choice.
+  * Available under new [BSD][] or [AFL][] v2 -- your choice.
   * Free for commercial and non-commercial use.
 * Legally clean code.
   * Developed in the open.
@@ -73,7 +72,7 @@ like this:
 npm install dcl
 {% endcodeblock %}
 
-For your browser-based projects I suggest to use [volo.js][]:
+For your browser-based projects I suggest using [volo.js][]:
 
 {% codeblock %}
 volo install -amd dcl
