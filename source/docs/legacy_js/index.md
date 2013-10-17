@@ -11,6 +11,25 @@ footer: true
 
 While it is possible to use `legacy.js` instead of [mini.js][] with `node.js` and modern browsers, it is not advised, because `legacy.js` is slower than [mini.js][].
 
+This module is meant to be used as a substitute for [mini.js][]. But there is one scenario when it can be used on its own: as the only `dcl` module in a small project. In this case, when no other `dcl` modules are used, it can be included directly from JavaScript:
+
+{% codeblock Include legacy lang:js %}
+// node.js
+var dcl = require("dcl/legacy");
+...
+
+// AMD (code)
+require(["dcl/legacy"], function(dcl){
+  ...
+});
+
+// AMD (definition)
+define(["dcl/legacy"], function(dcl){
+  ...
+});
+{% endcodeblock %}
+
+
 ## Background
 
 When `dcl` was released originally, it supported only modern environments. The major problem with legacy environments was not their obsolescence or backwardness, or lack of certain features, but shameful bugs in their implementation of JavaScript. The biggest of them is a `for in` loop bug, which skips some property names.

@@ -11,7 +11,13 @@ footer: true
 multiple inheritance using mixins, and super calls. Additionally it provides useful
 utilities to work with objects.
 
-It can be included with following commands:
+There is a drop-in replacement for `mini.js` (added in `dcl` 1.1.0), which supports
+legacy browsers (tested with IE8): [legacy.js](/docs/legacy_js). It has the same API,
+and the same functionality. While it can be used instead of `mini.js` on modern
+browsers, it is not recommended, because [legacy.js](/docs/legacy_js) is slower than
+`mini.js`.
+
+`mini.js` module can be included with following commands:
 
 {% codeblock Include mini lang:js %}
 // node.js
