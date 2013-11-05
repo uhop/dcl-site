@@ -7,7 +7,18 @@ sharing: true
 footer: true
 ---
 
-## 1.1.0
+## Major version: 1.1
+
+### 1.1.1
+
+Minor update that includes two bug fixes:
+
+* Bugfix: a stray comma in a test file, which acted up in legacy browsers.
+* Bugfix: [dcl.mix()](/docs/mini_js/mix) was called directly in the base modules preventing it from being monkey-patched.
+
+Blog entry: [Micro update: 1.1.1](/blog/2013/11/05/micro-update-1-dot-1-1).
+
+### 1.1.0
 
 Major update, which includes support for legacy browsers (IE < 9). It doesn't affect existing users, because it doesn't change the API or its semantics, but provides an option for legacy applications.
 
@@ -17,13 +28,15 @@ Major update, which includes support for legacy browsers (IE < 9). It doesn't af
 
 Blog entry: [1.1: legacy](/blog/2013/10/04/1-dot-1-legacy).
 
-## 1.0.4
+## Major version: 1.0
+
+### 1.0.4
 
 Technical release. No functional changes, just a new tag and new file with metadata for [Bower](http://bower.io/).
 
 Blog entry: [1.0.4: added to Bower](/blog/2013/07/24/1-dot-0-4-added-to-bower/).
 
-## 1.0.3
+### 1.0.3
 
 Minor update, which includes a bug fix, and improved testing.
 
@@ -34,7 +47,7 @@ Minor update, which includes a bug fix, and improved testing.
 
 Blog entry: [Update: 1.0.3](/blog/2013/05/30/update-1-dot-0-3).
 
-## 1.0.2
+### 1.0.2
 
 An update to accommodate some security restrictive embedded environments.
 
@@ -42,7 +55,7 @@ An update to accommodate some security restrictive embedded environments.
 
 Blog entry: [Micro update: 1.0.2](/blog/2012/12/30/micro-update-1-dot-0-2).
 
-## 1.0.1
+### 1.0.1
 
 Minor update, mostly housekeeping.
 
@@ -55,7 +68,7 @@ Minor update, mostly housekeeping.
 
 Blog entry: [1.0.1 is out](/blog/2012/12/18/1-dot-0-1-is-out).
 
-## 1.0.0
+### 1.0.0
 
 The initial public release.
 
