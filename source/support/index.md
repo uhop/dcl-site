@@ -17,6 +17,7 @@ If you have questions on `dcl` check out following resources:
   [dcljs@googlegroups.com](mailto:dcljs@googlegroups.com)*
 * [@dcl_js](http://twitter.com/dcl_js) - *follow on Twitter to get announcements
   (low volume)*
+* [+dcljs-oop-aop](http://google.com/+dcljs-oop-aop) - *follow on Google+ (low volume)*
 
 If you found a bug, or a documentation error, or any other problem:
 
