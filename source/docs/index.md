@@ -26,11 +26,18 @@ on browsers to conserve bandwidth*
   * [dcl.superCall()](/docs/mini_js/supercall) - *super call decorator*
 * [dcl.js](/docs/dcl_js) - *full `dcl` kernel that includes chaining control and
 AOP support*
-  * [dcl.advise()](/docs/dcl_js/advise) - *general advice decorator*
-  * [dcl.chainBefore()](/docs/dcl_js/chainbefore) - *"before" chaining directive*
-  * [dcl.chainAfter()](/docs/dcl_js/chainafter) - *"after" chaining directive*
+  * [dcl.advise()](/docs/dcl_js/advise) - *general advice decorator, includes useful shortcuts:*
+    * [dcl.before()](/docs/dcl_js/before) - *"before" advice decorator*
+    * [dcl.after()](/docs/dcl_js/after) - *"after" advice decorator*
+    * [dcl.around()](/docs/dcl_js/around) - *"around" advice decorator*
+  * *chaining directives:*
+    * [dcl.chainBefore()](/docs/dcl_js/chainbefore) - *"before" chaining directive*
+    * [dcl.chainAfter()](/docs/dcl_js/chainafter) - *"after" chaining directive*
 * [advise.js](/docs/advise_js) - *object-level AOP with dynamic advisement*
-  * [advise()](/docs/advise_js/advise) - *general advice directive*
+  * [advise()](/docs/advise_js/advise) - *general advice directive, includes useful shortcuts:*
+    * [advise.before()](/docs/advise_js/before) - *"before" advice decorator*
+    * [advise.after()](/docs/advise_js/after) - *"after" advice decorator*
+    * [advise.around()](/docs/advise_js/around) - *"around" advice decorator*
 * [inherited.js](/docs/inherited_js) - *dynamic super calls without decorators*
   * [inherited()](/docs/inherited_js/inherited) - *super call*
 * [debug.js](/docs/debug_js) - *error-checking and introspection facility*
