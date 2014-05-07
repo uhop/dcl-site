@@ -6,7 +6,7 @@ url: http://www.dcljs.org
 title: DCL
 subtitle: An elegant OOP with mixins + AOP for JavaScript.
 author: Eugene Lazutkin
-simple_search: http://google.com/search
+simple_search: https://www.google.com/search
 description: A minimalistic yet complete JavaScript package for node.js and browsers that implements OOP with mixins + AOP at both class and object level.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
