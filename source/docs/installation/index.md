@@ -18,7 +18,7 @@ footer: true
 * [volo.js][]:
 
   {% codeblock %}
-  volo install -amd uhop/dcl
+  volo add -amdoff uhop/dcl
   {% endcodeblock %}
 
 * [jam.js][]:
