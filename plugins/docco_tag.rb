@@ -118,7 +118,7 @@ module Jekyll
         end
         contents = contents.join "\n"
         # render the result
-        contents = pre_filter contents
+        #contents = pre_filter contents
         partial = Liquid::Template.parse contents
         context.stack do
           partial.render context
