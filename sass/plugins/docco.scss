@@ -42,7 +42,7 @@ $docco-pad: 20px;
     figure {
       float: left;
       clear: right;
-      @include single-box-shadow(transparent);
+      @include single-box-shadow(null, null, null, null, transparent);
       div.highlight {
         border: none !important;
         background: none !important;
