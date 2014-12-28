@@ -13,3 +13,7 @@ header[role=banner] {
     @include border-radius(.5em);
   }
 }
+
+.do-not-show {
+  visibility: hidden;
+}
