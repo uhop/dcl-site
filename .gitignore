@@ -13,4 +13,5 @@ source/_stash
 source/stylesheets/
 vendor
 node_modules
+Gemfile.lock
 *.sublime-*
