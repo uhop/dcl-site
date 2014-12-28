@@ -9,6 +9,12 @@ footer: true
 
 ## Major version: 1.1
 
+### 1.1.2
+
+Technical update: a massive cleanup of internals to make them more readable and maintainable.
+
+Blog entry: [1.1.2: technical release](/blog/2014/12/28/1-dot-1-2-technical-release).
+
 ### 1.1.1
 
 Minor update that includes two bug fixes:
