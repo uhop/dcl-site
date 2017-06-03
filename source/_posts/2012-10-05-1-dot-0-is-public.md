@@ -33,7 +33,7 @@ are legally clean and covered by CLA, so you can use it not only
 for pet projects, but at work too.
 
 For more information hop on [what is dcl?](/about) and learn more.
-Do not forget to look at extensive [documentation](/docs), or
+Do not forget to look at extensive [documentation](/1.x/docs), or
 [shoot me an email](mailto:eugene@dcljs.org), if you still have
 more questions.
 
