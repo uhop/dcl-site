@@ -11,6 +11,7 @@ If you have questions on `dcl` check out following resources:
 
 * [Documentation](/docs) - *the first stop for information on `dcl`, explanations,
   and examples.*
+  * [Docs 1.x](/1.x/docs) - *All 1.x-specific documentation.*
 * [Source code](https://github.com/uhop/dcl) - *use the source, Luke!*
 * [dcl.js forum](https://groups.google.com/d/forum/dcljs) - *dedicated mailing list,
   if you prefer to communicate by email use
