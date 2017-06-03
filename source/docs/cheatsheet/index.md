@@ -7,4 +7,4 @@ sharing: true
 footer: true
 ---
 
-{% docco cheatsheet.js %}
+{% docco /downloads/code/cheatsheet.js %}
