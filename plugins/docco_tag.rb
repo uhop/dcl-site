@@ -56,73 +56,65 @@ module Jekyll
     end
 
     def render(context)
-      code_dir = (context.registers[:site].config['code_dir'].sub(/^\//,'') || 'downloads/code')
-      code_path = (Pathname.new(context.registers[:site].source) + code_dir).expand_path
-      file = code_path + @file
-
-      if File.symlink?(code_path)
-        return "Code directory '#{code_path}' cannot be a symlink"
-      end
+      file = (Pathname.new(context.registers[:site].source) + @file.sub(/^\//, '')).expand_path
 
       unless file.file?
         return "File #{file} could not be found"
       end
 
-      Dir.chdir(code_path) do
-        contents = file.read
-        # skip possible front matter
-        if contents =~ /\A-{3}.+[^\A]-{3}\n(.+)/m
-          contents = $1.lstrip
-        end
-        sections, docs, code = [], [], []
-        if @type.nil?
-          # unknown language => everything is a code
-          sections << [docs, [contents]]
-        else
-          # parse a file
-          starts_with_comment = Regexp.new "^\\s*#{Regexp.escape(LANGUAGES[@type.to_sym][:single])}\\s?"
-          lines = contents.split "\n"
-          lines.each do |line|
-            if line.match starts_with_comment
-              if code.any?
-                sections << [docs, code]
-                docs, code = [], []
-              end
-              docs << line.sub(starts_with_comment, "")
-            else
-              code << line
+      contents = file.read
+      # skip possible front matter
+      if contents =~ /\A-{3}.+[^\A]-{3}\n(.+)/m
+        contents = $1.lstrip
+      end
+      sections, docs, code = [], [], []
+      if @type.nil?
+        # unknown language => everything is a code
+        sections << [docs, [contents]]
+      else
+        # parse a file
+        starts_with_comment = Regexp.new "^\\s*#{Regexp.escape(LANGUAGES[@type.to_sym][:single])}\\s?"
+        lines = contents.split "\n"
+        lines.each do |line|
+          if line.match starts_with_comment
+            if code.any?
+              sections << [docs, code]
+              docs, code = [], []
             end
-          end
-          sections << [docs, code] if docs.any? || code.any?
-        end
-        # generate a markdown
-        contents = []
-        sections.each do |section|
-          docs = section[0]
-          contents.push *docs
-          code = section[1]
-          empty_code = true
-          code.each do |line|
-            if empty_code && !line.strip.empty?
-              empty_code = false
-              #contents << "```#{LANGUAGES[@type.to_sym][:name]}"
-              contents << "{% codeblock file.js %}"
-            end
-            contents << line
-          end
-          if !empty_code
-            #contents << "```"
-            contents << "{% endcodeblock %}"
-            contents << "<div class='docco-section-end'></div>"
+            docs << line.sub(starts_with_comment, "")
+          else
+            code << line
           end
         end
-        contents = contents.join "\n"
-        # render the result
-        #contents = pre_filter contents
-        partial = Liquid::Template.parse contents
-        context.stack do
-          partial.render context
+        sections << [docs, code] if docs.any? || code.any?
+      end
+      # generate a markdown
+      contents = []
+      sections.each do |section|
+        docs = section[0]
+        contents.push *docs
+        code = section[1]
+        empty_code = true
+        code.each do |line|
+          if empty_code && !line.strip.empty?
+            empty_code = false
+            #contents << "```#{LANGUAGES[@type.to_sym][:name]}"
+            contents << "{% codeblock file.js %}"
+          end
+          contents << line
         end
+        if !empty_code
+          #contents << "```"
+          contents << "{% endcodeblock %}"
+          contents << "<div class='docco-section-end'></div>"
+        end
+      end
+      contents = contents.join "\n"
+      # render the result
+      #contents = pre_filter contents
+      partial = Liquid::Template.parse contents
+      context.stack do
+        partial.render context
       end
     end
   end
