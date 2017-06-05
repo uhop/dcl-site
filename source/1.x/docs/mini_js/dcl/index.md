@@ -123,7 +123,7 @@ console.log(b instanceof A);
 console.log(b instanceof B);
 // true
 
-var C = dcl(null, {
+var C = dcl(B, {
 	constructor: function(){
 		console.log("C is constructed");
 	},
@@ -154,7 +154,7 @@ We can base our classes on normal JavaScript constructors as well:
 function A(){
 	console.log("A is constructed manually");
 }
-A.prototype{
+A.prototype = {
 	hi: function(){
 		console.log("Hi from manual land!");
 	},

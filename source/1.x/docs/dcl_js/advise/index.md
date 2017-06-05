@@ -34,7 +34,7 @@ var B = dcl(A, {
     around: function(sup){
       return function(msg){
         // let's ignore our parameter
-        sub.call(this, "Canned response no matter what.");
+        sup.call(this, "Canned response no matter what.");
       };
     }
   })
