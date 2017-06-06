@@ -17,7 +17,7 @@ it works on objects, rather than "classes". All advices can be "unadvised" at an
 `advise()` is a function, which takes an object with properties `before`, `around`, and/or `after`, and
 combines an existing method with supplied advices.
 
-{% codeblock dcl.advise() lang:js %}
+{% codeblock advise() lang:js %}
 var a = ...
 
 var methodAdv = advise(a, "method", {

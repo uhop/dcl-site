@@ -15,7 +15,7 @@ This is a convenience function to weave a `before` advice based on [advise()](..
 
 This is a shortcut function to weave one `before` advice with an object's method. Logically it is defined as:
 
-{% codeblock dcl.before() lang:js %}
+{% codeblock advise.before() lang:js %}
 advise.before = function(object, name, advice){
   return advise(object, name, {
     before: advice

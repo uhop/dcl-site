@@ -15,7 +15,7 @@ This is a convenience function to weave an `around` advice based on [advise()](.
 
 This is a shortcut function to weave one `around` advice with an object's method. Logically it is defined as:
 
-{% codeblock dcl.around() lang:js %}
+{% codeblock advise.around() lang:js %}
 advise.around = function(object, name, advice){
   return advise(object, name, {
     around: advice

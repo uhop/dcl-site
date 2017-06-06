@@ -15,7 +15,7 @@ This is a convenience function to weave an `after` advice based on [advise()](..
 
 This is a shortcut function to weave one `after` advice with an object's method. Logically it is defined as:
 
-{% codeblock dcl.after() lang:js %}
+{% codeblock advise.after() lang:js %}
 advise.after = function(object, name, advice){
   return advise(object, name, {
     after: advice
