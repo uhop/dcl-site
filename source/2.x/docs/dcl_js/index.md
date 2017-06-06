@@ -27,8 +27,8 @@ While it is important by itself, it hosts a number of public properties.
   * [dcl.advise()](./dcl_js/advise) - *AOP advise decorator, used to weave methods*
   * Helpers:
     * [dcl.before()](./dcl_js/before) - *shortcut for a "before" advice*
-    * [dcl.around()](./dcl_js/around) - *shortcut for an "around" advice (synonym for [dcl.superCall()](../docs/dcl_js/supercall))*
     * [dcl.after()](./dcl_js/after) - *shortcut for an "after" advice*
+    * [dcl.around()](./dcl_js/around) - *shortcut for an "around" advice (synonym for [dcl.superCall()](../docs/dcl_js/supercall))*
 * Chaining:
   * [dcl.chainWith()](./dcl_js/chainwith) - *function to declare chaining with a weaver for a method*
   * Helpers:
@@ -54,4 +54,4 @@ While it is important by itself, it hosts a number of public properties.
 * Properties:
   * [dcl.Prop](./dcl_js/prop) - *constructor used by `dcl.prop()` to create a decorator*
   * [dcl.getPropertyDescriptor()](./dcl_js/getpropertydescriptor) - *finds a property descriptor across prototypes*
-  * [dcl.collectProperties()](./dcl_js/collectproperties) - *collects property descriptors for an object across prototypes*
+  * [dcl.collectPropertyDescriptors()](./dcl_js/collectpropertydescriptors) - *collects property descriptors for an object across prototypes*

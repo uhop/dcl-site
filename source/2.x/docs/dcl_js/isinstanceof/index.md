@@ -16,8 +16,8 @@ its counterpart for mixins.
 
 JavaScript provides `instanceof` operator to check if an object was produced with a certain constructor or its delegate.
 Unfortunately this functionality works only for a linear delegation. Mixins are by necessity mixed in, so they cannot be
-detected by `instanceof`. This functionality is provided by `dcl.isInstanceOf()` function, which takes an object and
-a constructor as parameters, and returns a Boolean value.
+detected by `instanceof`. This functionality is provided by `dcl.isInstanceOf()` function, which takes the object and
+the constructor as parameters, and returns `true`, when the object contains the supplied mixin or base constructor, and `false` otherwise.
 
 {% codeblock dcl.isInstanceOf() lang:js %}
 var A = dcl(null, {});

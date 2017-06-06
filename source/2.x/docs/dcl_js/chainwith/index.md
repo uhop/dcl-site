@@ -15,9 +15,9 @@ This function declares how methods with a certain name should be chained. In mos
 
 `dcl.chainWith()` sets a chaining rule for a method. It takes three parameters:
 
-* `Ctr` - a constructor function created by [dcl()](dcl).
-* `name` - a method name to be chained in `Ctr`'s prototype.
-* `weaver` - a weaver object, which defines how chaining is done.
+* `Ctr` - the constructor function created by [dcl()](dcl).
+* `name` - the method name to be chained in `Ctr`'s prototype.
+* `weaver` - the weaver object, which defines how chaining is done.
 
 Following rules should be followed:
 
@@ -31,13 +31,13 @@ The function returns `true`, if it was able to define a required chaining, `fals
 
 A weaver object has at least two named properties:
 
-* `name` - a weaver's name.
-* `weave` - a weaver function.
+* `name` - the weaver's name.
+* `weave` - the weaver function.
 
 A weaver function is called in the context of a weaver object, and takes two parameters:
 
-* `chains` - an array of property descriptions that correspond to a given method chain.
-* `utils` - an object that defines numerous utilities to be used while weaving methods:
+* `chains` - the array of property descriptions that correspond to a given method chain.
+* `utils` - the object that defines numerous utilities to be used while weaving methods:
   * `adaptValue(f)` - adapts a function value by returning a getter for that value, or `null`.
   * `adaptGet(f)` - adapts a function getter by returning a function, which uses the getter to call its value as a function, or `null`.
   * `convertToValue(descriptor)` - converts a property `descriptor` from a getter to a value descriptor, or returns the old value `descriptor`.

@@ -13,7 +13,7 @@ This is a decorator, which is used to weave AOP advices while building new "clas
 
 ## Description
 
-`dcl.advise()` is a decorator function, which takes an advice object with properties `before`, `around`, and/or `after` and
+`dcl.advise()` is a decorator function, which takes the advice object with properties `before`, `around`, and/or `after` and
 combines an existing method with supplied advices.
 
 Alternatively it can take [dcl.Prop](prop) object, and advise its `get`, `set`, or `value` properties. For more info on property descriptors see [Object.defineProperties()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties).
@@ -103,7 +103,7 @@ This is a regular function. It is called with the same context as an advised met
 * `makeReturn(value)` - a procedure, which can be called to supply a new returned value.
 * `makeThrow(value)` - a procedure, which can be called to emulate an exception. In this case `value` is assumed to be a valid exception value, e.g., an `Error` object.
 
-Both `makeReturn()` and `makeThrow()` can be called several times. The last value is used the result.
+Both `makeReturn()` and `makeThrow()` can be called several times. The last value is used as the result.
 
 The returned value of an after advice is ignored.
 
@@ -184,7 +184,7 @@ As you can see it is not necessary to call a super in `around` advices &mdash; `
 
 ## Examples
 
-{% codeblock dcl.after() changes return values lang:js %}
+{% codeblock dcl.advise() changes return values lang:js %}
 var A = dcl({
     m: function (x) { return x; }
   });
@@ -217,7 +217,6 @@ try {
 // evil even number!
 {% endcodeblock %}
 
-
 ## Notes
 
 ### Shortcuts
@@ -242,14 +241,14 @@ var B2 = dcl(A, {
 
 {% codeblock dcl.after() lang:js %}
 var B3 = dcl(A, {
-  method: dcl.after(function (args, result) {
+  method: dcl.after(function () {
     console.log("Method has finished.");
   })
 });
 // is equivalent to
 var B4 = dcl(A, {
   method: dcl.advise({
-    after: function (args, result) {
+    after: function () {
       console.log("Method has finished.");
     }
   })

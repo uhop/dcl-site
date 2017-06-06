@@ -42,20 +42,20 @@ dcl(props, options); // based on Object with default options
 
 Arguments and the return value:
 
-* `base` is a base "class". It can be one of three:
+* `base` - the base "class". It can be one of three:
   * `null` - no base "class" &rArr; base it directly on `Object`.
   * **constructor function** - function created with `dcl` or a generic JavaScript constructor function. New "class" will be based on it using a single inheritance.
   * **array of constructors** - [C3 superclass linearization](http://en.wikipedia.org/wiki/C3_linearization) will be performed on this array, and the result will be used to create a new constructor using a single inheritance. This array should be non-empty.
-* `props` - object, whose properties are used to specify unique features of the "class" &mdash; methods, and
+* `props` - the object, whose properties are used to specify unique features of the "class" &mdash; methods, and
   class-level variables.
-  `props` can be an object of [dcl.Prop](prop). In this case, it specifies property descriptors directly, like for [Object.defineProperties()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties) or [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create).
+  `props` can be an instance of [dcl.Prop](prop). In this case, it specifies property descriptors directly, like for [Object.defineProperties()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties) or [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create).
   Following properties have a special meaning for `dcl()`:
-  * `constructor` - optional function, which will be called when an object is created. A base constructor (if any) is
+  * `constructor` - the optional function, which will be called when an object is created. A base constructor (if any) is
     always called before a derived constructor. There is no restrictions on what arguments can be used for
     a constructor. A return value of constructor (if any) is ignored.
-  * `declaredClass` - optional human-readable string, which is used to identify the created class in error messages
+  * `declaredClass` - the optional human-readable string, which is used to identify the created class in error messages
     or logs. See [debug.js][] for more details.
-* `options` - optional object, which specifies defaults for a descriptor of  [Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty).
+* `options` - the optional object, which specifies defaults for a descriptor of  [Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty).
   * Following property names are recognized: `enumerable`, `configurable`, `writable`, `detectProps`.
   * If `detectProps` is `true`:
     * All regular properties are checked to be an object.
@@ -65,7 +65,7 @@ Arguments and the return value:
   * `enumerable`, `configurable`, or `writable` can be a procedure with two arguments:
     * `descriptor` is a property descriptor object, which can be inspected and augmented/corrected, if needed.
     * `name` is a property name as a string.
-* `dcl()` returns a constructor created according to user' specifications.
+* `dcl()` returns the constructor created according to user' specifications.
 
 `dcl()` hosts additional properties. Look at specific modules to learn what public properties are available.
 

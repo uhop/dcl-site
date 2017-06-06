@@ -41,12 +41,12 @@ method: dcl.after(advice)
 
 This is a regular function. It is called with the same context as an advised method. It takes up to four parameters:
 
-* `args` - an `arguments` object (a pseudo-array) used to call an advised method.
-* `result` - a returned value or a thrown exception object.
-* `makeReturn(value)` - a procedure, which can be called to supply a new returned value.
-* `makeThrow(value)` - a procedure, which can be called to emulate an exception. In this case `value` is assumed to be a valid exception value, e.g., an `Error` object.
+* `args` - the `arguments` object (a pseudo-array) used to call an advised method.
+* `result` - the returned value or a thrown exception object.
+* `makeReturn(value)` - the procedure, which can be called to supply a new returned value.
+* `makeThrow(value)` - the procedure, which can be called to emulate an exception. In this case `value` is assumed to be a valid exception value, e.g., an `Error` object.
 
-Both `makeReturn()` and `makeThrow()` can be called several times. The last value is used the result.
+Both `makeReturn()` and `makeThrow()` can be called several times. The last value is used as the result.
 
 The returned value of an after advice is ignored.
 

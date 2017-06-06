@@ -16,8 +16,8 @@ This function declares that methods with a certain name should be chained in the
 
 `dcl.chainBefore()` sets the `before` chaining rule for a method. It takes two parameters:
 
-* `Ctr` - a constructor function created by [dcl()](dcl).
-* `name` - a method name to be chained in `Ctr`'s prototype.
+* `Ctr` - the constructor function created by [dcl()](dcl).
+* `name` - the method name to be chained in `Ctr`'s prototype.
 
 Following rules should be followed:
 
