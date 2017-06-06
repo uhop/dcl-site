@@ -1,19 +1,21 @@
 ---
 layout: page
 title: "advise.before()"
-date: 2012-07-29 00:04
+date: 2017-06-05 00:04
 comments: false
 sharing: true
 footer: true
 ---
 
-This is a convenience function to weave a `before` advice based on [advise()](/docs/advise_js/advise).
+*Version 2.x*
+
+This is a convenience function to weave a `before` advice based on [advise()](advise).
 
 ## Description
 
 This is a shortcut function to weave one `before` advice with an object's method. Logically it is defined as:
 
-{% codeblock dcl.before() lang:js %}
+{% codeblock advise.before() lang:js %}
 advise.before = function(object, name, advice){
   return advise(object, name, {
     before: advice
@@ -40,12 +42,8 @@ var adv = advice.before(object, name, advice);
 This type of advice is a regular function. It is called with the same context and the same arguments as
 an advised method. Its return value is ignored.
 
-It is not recommended to modify parameters inside `before` advice. Use `around` advice for that.
+It is not recommended to modify parameters inside `before` advice. Use `after` or `around` advice for that.
 
 ### Returned value
 
-Just like [advise()](/docs/advise_js/advise) it is based on, it returns an opaque object with a single method:
-`unadvise()`. Calling it without parameters removes all advices set with that call to `advise()`.
-
-In order to be compatible with general destruction mechanisms it defines one more method: `destroy()`, which is
-an alias to `unadvise()`.
+Just like [advise()](advise) it is based on, it returns the object, which defines the method `unadvise()`. When called without parameters, it removes the corresponding advice from the object, no matter when it was defined. For convenience, this method is aliased as `remove()`, and `destroy()`.

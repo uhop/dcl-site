@@ -1,13 +1,15 @@
 ---
 layout: page
 title: "advise.around()"
-date: 2012-07-29 00:04
+date: 2017-06-05 00:04
 comments: false
 sharing: true
 footer: true
 ---
 
-This is a convenience function to weave an `around` advice based on [advise()](/docs/advise_js/advise).
+*Version 2.x*
+
+This is a convenience function to weave an `around` advice based on [advise()](advise).
 
 ## Description
 
@@ -37,26 +39,21 @@ var adv = advice.around(object, name, advice);
 
 ### Advice function
 
-Essentially it is the same as [dcl.superCall()](/docs/mini_js/supercall). It uses the same double function pattern,
-and its behavior is the same.
+Essentially it is the same as [dcl.superCall()](../dcl_js/supercall), but applied dynamically to an object. It uses the same double function pattern, and its behavior is the same.
 
 ### Returned value
 
-Just like [advise()](/docs/advise_js/advise) it is based on, it returns an opaque object with a single method:
-`unadvise()`. Calling it without parameters removes all advices set with that call to `advise()`.
-
-In order to be compatible with general destruction mechanisms it defines one more method: `destroy()`, which is
-an alias to `unadvise()`.
+Just like [advise()](advise) it is based on, it returns the object, which defines the method `unadvise()`. When called without parameters, it removes the corresponding advice from the object, no matter when it was defined. For convenience, this method is aliased as `remove()`, and `destroy()`.
 
 ## Notes
 
 Don't forget that **around advices always follow the double function pattern**:
 
 {% codeblock Around advice lang:js %}
-function aroundAdvice(sup){
-  return function(...){...};
+function aroundAdvice (sup) {
+  return function (...) {...};
 }
 {% endcodeblock %}
 
-See details in [dcl.superCall()](/docs/mini_js/supercall), [dcl.advise()](/docs/dcl_js/advise). and
-[advise()](/docs/advise_js/advise).
+See details in [dcl.superCall()](../dcl_js/supercall), [dcl.advise()](../dcl_js/advise), and
+[advise()](advise).

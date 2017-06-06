@@ -1,19 +1,21 @@
 ---
 layout: page
 title: "advise.after()"
-date: 2012-07-29 00:04
+date: 2017-06-05 00:04
 comments: false
 sharing: true
 footer: true
 ---
 
-This is a convenience function to weave an `after` advice based on [advise()](/docs/advise_js/advise).
+*Version 2.x*
+
+This is a convenience function to weave an `after` advice based on [advise()](advise).
 
 ## Description
 
 This is a shortcut function to weave one `after` advice with an object's method. Logically it is defined as:
 
-{% codeblock dcl.after() lang:js %}
+{% codeblock advise.after() lang:js %}
 advise.after = function(object, name, advice){
   return advise(object, name, {
     after: advice
@@ -37,19 +39,22 @@ var adv = advice.after(object, name, advice);
 
 ### Advice function
 
-This type of advice is a regular function. It is called with the same context as an advised method. It takes
-two parameters: `args` is an `arguments` object (a pseudo-array) used to call an advised method, and `result`,
-which is a returned value or a thrown exception object. Its returned value is ignored.
+This is a regular function. It is called with the same context as an advised method. It takes up to four parameters:
 
-It is not recommended to modify parameters or a returned value inside `after` advice. Use `around` advice for that.
+* `args` - the `arguments` object (a pseudo-array) used to call an advised method.
+* `result` - the returned value or a thrown exception object.
+* `makeReturn(value)` - the procedure, which can be called to supply a new returned value.
+* `makeThrow(value)` - the procedure, which can be called to emulate an exception. In this case `value` is assumed to be a valid exception value, e.g., an `Error` object.
+
+Both `makeReturn()` and `makeThrow()` can be called several times. The last value is used as the result.
+
+The returned value of an after advice is ignored.
+
+It is not recommended to modify parameters or a returned value inside `after` advice. Use `makeReturn()`, or `makeThrow()` for that. Or consider using `around` advice.
 
 It is recommended to derive all exception objects from the standard `Error` object, so erroneous and normal
-result values would be distinct.
+result values would be easily distinguished.
 
 ### Returned value
 
-Just like [advise()](/docs/advise_js/advise) it is based on, it returns an opaque object with a single method:
-`unadvise()`. Calling it without parameters removes all advices set with that call to `advise()`.
-
-In order to be compatible with general destruction mechanisms it defines one more method: `destroy()`, which is
-an alias to `unadvise()`.
+Just like [advise()](advise) it is based on, it returns the object, which defines the method `unadvise()`. When called without parameters, it removes the corresponding advice from the object, no matter when it was defined. For convenience, this method is aliased as `remove()`, and `destroy()`.
