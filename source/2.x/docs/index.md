@@ -23,6 +23,7 @@ object level.
 ## Module documentation
 
 * [dcl.js](./docs/dcl_js) - *`dcl` kernel that includes chaining control and AOP support*
+  * [dcl.superCall()](./docs/dcl_js/supercall) - *super call decorator*
   * [dcl.advise()](./docs/dcl_js/advise) - *general advice decorator, includes useful shortcuts:*
     * [dcl.before()](./docs/dcl_js/before) - *"before" advice decorator*
     * [dcl.after()](./docs/dcl_js/after) - *"after" advice decorator*
@@ -30,6 +31,8 @@ object level.
   * *chaining directives:*
     * [dcl.chainBefore()](./docs/dcl_js/chainbefore) - *"before" chaining directive*
     * [dcl.chainAfter()](./docs/dcl_js/chainafter) - *"after" chaining directive*
+  * *property directive:*
+    * [dcl.prop()](./docs/dcl_js/prop) - *custom property decorator, useful for getters/setters*
 * [advise.js](./docs/advise_js) - *object-level AOP with dynamic advisement*
   * [advise()](./docs/advise_js/advise) - *general advice directive, includes useful shortcuts:*
     * [advise.before()](./docs/advise_js/before) - *"before" advice decorator*
