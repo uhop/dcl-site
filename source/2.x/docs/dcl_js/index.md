@@ -9,8 +9,9 @@ footer: true
 
 *Version 2.x*
 
-`dcl.js` is a standard kernel of `dcl`. It implements OOP facilities,
-supercalls, AOP, chaining, and more utilities.
+`dcl.js` is a standard kernel of `dcl`. It implements OOP facilities, supercalls, AOP, chaining, and more utilities.
+
+It is defined in `dcl/dcl.js`, but being the main module can be available directly from `dcl`.
 
 ## Module API
 

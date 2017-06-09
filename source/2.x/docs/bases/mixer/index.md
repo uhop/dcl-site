@@ -1,34 +1,17 @@
 ---
 layout: page
 title: "Mixer"
-date: 2012-07-29 13:55
+date: 2017-06-08 13:55
 comments: false
 sharing: true
 footer: true
 ---
 
-`Mixer` is a simple base class that mixes properties from its only argument
-directly on its instance. It can be used to add new properties, or override
-existing properties on an instance including methods. `Mixer` is very simple
-yet extremely powerful, when used correctly.
+*Version 2.x*
 
-It can be included with following commands:
+`Mixer` is a simple base class that mixes properties from its only argument directly on its instance. It can be used to add new properties, or override existing properties on an instance including methods. `Mixer` is very simple yet extremely powerful, when used correctly.
 
-{% codeblock Include Mixer lang:js %}
-// node.js
-var Mixer = require("dcl/bases/Mixer");
-...
-
-// AMD (code)
-require(["dcl/bases/Mixer"], function(Mixer){
-  ...
-});
-
-// AMD (definition)
-define(["dcl/bases/Mixer"], function(Mixer){
-  ...
-});
-{% endcodeblock %}
+It is defined in `dcl/bases/Mixer.js`.
 
 ## Description
 
@@ -37,19 +20,17 @@ Here is its definition:
 {% codeblock Mixer lang:js %}
 var Mixer = dcl(null, {
 	declaredClass: "dcl/bases/Mixer",
-	constructor: function(x){
-		dcl.mix(this, x);
+	constructor: function (x) {
+    Object.defineProperties(this,
+      dcl.collectPropertyDescriptors({}, x));
 	}
 });
 {% endcodeblock %}
 
 As you can see that in a nutshell it is a one-liner that uses
-[dcl.mix()](/docs/mini_js/mix) to do the work. `Mixer` can be used
-as a base, or as a mixin, but usually it serves as the most deepest
-base to take care of parameters.
+[dcl.collectPropertyDescriptors()](../dcl_js/collectpropertydescriptors) to do the work. `Mixer` can be used as a base, or as a mixin, but usually it serves as the most deepest base to take care of parameters.
 
-Refer to [Best practices for constructors](/docs/general/constructors)
-for discussion on constructor' signatures.
+Refer to [Best practices for constructors](../general/constructors) for discussion on constructor' signatures.
 
 ## Examples
 
@@ -59,20 +40,20 @@ var Person = dcl(Mixer, {
   firstName:  "",
   middleName: "",
   lastName:   ""
-  constructor: function(){
+  constructor: function () {
     // no need to deal with parameters - they are already copied
     // on this instance by Mixer
     console.log("Hello " + this.firstName);
   },
-  getFullName: function(){
+  getFullName: function () {
     var name = [];
-    if(this.firstName){
+    if (this.firstName) {
       name.push(this.firstName);
     }
-    if(this.middleName){
+    if (this.middleName) {
       name.push(this.middleName);
     }
-    if(this.lastName){
+    if (this.lastName) {
       name.push(this.lastName);
     }
     return name.join(" ");

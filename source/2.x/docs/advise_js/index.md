@@ -12,6 +12,8 @@ footer: true
 `advise.js` provides general AOP facilities to advise object methods dynamically. Unlike [dcl.js][] it is not used
 to weave methods of "classes", but works with objects.
 
+It is defined in `dcl/advise.js`.
+
 ## Module API
 
 The return value of this module is a function, which is called `advise()` in this documentation.

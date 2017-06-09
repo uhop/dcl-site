@@ -1,41 +1,23 @@
 ---
 layout: page
 title: "time()"
-date: 2012-07-29 13:55
+date: 2017-06-08 13:55
 comments: false
 sharing: true
 footer: true
 ---
 
-`time()` creates a named timer using a standard `console` interface:
-`console.time(name)` and `console.timeEnd(name)`.
+*Version 2.x*
 
-It can be included with following commands:
+`time(name)` creates a named timer using a standard `console` interface: `console.time(name)` and `console.timeEnd(name)`.
 
-{% codeblock Include time() lang:js %}
-// node.js
-var time = require("dcl/advices/time");
-...
-
-// AMD (code)
-require(["dcl/advices/time"], function(time){
-  ...
-});
-
-// AMD (definition)
-define(["dcl/advices/time"], function(time){
-  ...
-});
-{% endcodeblock %}
+It is defined in `dcl/advices/time.js`.
 
 ## Description
 
-The result value of `time` module is a function, which takes a string parameter
-`name`, and returns an advice object, which can be used directly
-with [dcl.advise()](/docs/dcl_js/advise) or [advise()](/docs/advise_js/advise).
+The result value of `time` module is a function, which takes a string parameter `name`, and returns an advice object, which can be used directly with [dcl.advise()](../dcl_js/advise) or [advise()](../advise_js/advise).
 
-The advice prints on console when a method was invoked, and when it finished.
-Recursive calls are allowed, but only first invokation is printed.
+The advice prints on console when a method was invoked, and when it finished. Recursive calls are allowed, but only first invocation is printed.
 
 If `name` is not specified, a unique name is generated.
 
@@ -44,20 +26,20 @@ If `name` is not specified, a unique name is generated.
 {% codeblock time() example lang:js %}
 var Stack = dcl(null, {
   declaredClass: "Stack",
-  constructor: function(){
+  constructor: function () {
     this.stack = [];
   },
-  push: function(n){
+  push: function (n) {
     return this.stack.push(n);
   },
-  pop: function(){
+  pop: function () {
     return this.stack.pop();
   },
-  sum: function(init){
+  sum: function (init) {
     // expensive, yet frequently called method
     // it has a linear complexity on stack size
     var acc = init;
-    for(var i = 0; i < this.stack.length; ++i){
+    for (var i = 0; i < this.stack.length; ++i) {
       acc += this.stack[i];
     }
     return acc;
@@ -75,6 +57,6 @@ var n = x.sum(0);
 
 The example above will print something like that:
 
-{% codeblock %}
+{% codeblock output lang:text %}
 sum: 0.089ms
 {% endcodeblock %}

@@ -1,34 +1,17 @@
 ---
 layout: page
 title: "Destroyable"
-date: 2012-07-29 13:56
+date: 2017-06-08 13:56
 comments: false
 sharing: true
 footer: true
 ---
 
-`Destroyable` forces all methods called `destroy()` to be chained in
-the "before" fashion (opposite to constructors). It is meant to provide
-a destruction foundation, so objects can be destroyed explicitly in
-a unified fashion.
+*Version 2.x*
 
-It can be included with following commands:
+`Destroyable` forces all methods called `destroy()` to be chained in the "before" fashion (opposite to constructors). It is meant to provide a destruction foundation, so objects can be destroyed explicitly in a unified fashion.
 
-{% codeblock Include Destroyable lang:js %}
-// node.js
-var Destroyable = require("dcl/mixins/Destroyable");
-...
-
-// AMD (code)
-require(["dcl/mixins/Destroyable"], function(Destroyable){
-  ...
-});
-
-// AMD (definition)
-define(["dcl/mixins/Destroyable"], function(Destroyable){
-  ...
-});
-{% endcodeblock %}
+It is defined in `dcl/mixins/Destroyable.js`.
 
 ## Description
 
@@ -41,28 +24,26 @@ var Destroyable = dcl(null, {
 dcl.chainBefore(Destroyable, "destroy");
 {% endcodeblock %}
 
-As you can see it containes no code! The only important part is a chaining directive.
-When you mix it in to your "classes" it will weave all found `destroy()` methods
-properly.
+As you can see it contains no code! The only important part is the chaining directive. When you mix it into your "classes" it will weave all found `destroy()` methods properly.
 
-Read a background on destruction in [Destructors](/docs/general/destructors).
+Read a background on destruction in [Destructors](../general/destructors).
 
 ## Examples
 
 {% codeblock Destroyable example lang:js %}
 var A = dcl(Destroyable, {
   declaredClass: "A",
-  constructor: function(){
+  constructor: function () {
     // our controlled resource:
     this.node = document.createElement("div");
     // if we do not remove it from a document,
     // when deleting an instance, it will persist
     ...
   },
-  destroy: function(){
+  destroy: function () {
     // we should remove our controlled resource
     // from a document
-  	if(this.node && this.node.parentNode){
+    if (this.node && this.node.parentNode) {
       this.node.parentNode.removeChild(this.node);
       this.node = null;
     }

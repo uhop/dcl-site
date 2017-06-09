@@ -9,9 +9,9 @@ footer: true
 
 *Version 2.x*
 
-`dcl` is a micro library written in JavaScript for [node.js](http://nodejs.org)
-and modern browsers that implements OOP with mixins + AOP at both "class" and
-object level.
+`dcl` is a micro library written in JavaScript for [node.js](http://nodejs.org) and modern browsers that implements OOP with mixins + AOP at both "class" and object level.
+
+Its repository is hosted at https://github.com/uhop/dcl -- version 2.x branch is called `dev2x`.
 
 ## Getting started
 

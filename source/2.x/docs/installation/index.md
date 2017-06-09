@@ -11,27 +11,29 @@ footer: true
 
 `dcl` can be installed with most popular package managers:
 
-* `npm`:
+```
+npm install --save dcl@2
+```
 
-  ```txt
-  npm install --save dcl
-  ```
+```
+yarn add dcl@2
+```
 
-* `yarn`:
+When the package is installed, you can refer to individual files mentioned in the documentation.
 
-  ```txt
-  yarn add dcl
-  ```
-
-`dcl` uses UMD, so it can be used by `node` as is. AMD loaders (used in browsers)
-are supported out of box too. If you prefer to use globals in your project,
-just source `dcl` from `/dist/` directory:
+`dcl` uses UMD, so it can be used by `node` as is. AMD loaders (used in browsers) are supported out of box too. If you prefer to use globals in your project, just source `dcl` from `/dist/` directory:
 
 ```html
 <script src='node_modules/dcl/dist/dcl.js'></script>
 ```
 
-Alternatively, you can use https://unpkg.com/ with AMD or globals. For example:
+Alternatively, you can use https://unpkg.com/ with AMD:
+
+```html
+<script src='https://unpkg.com/dcl@latest/dcl.js'></script>
+```
+
+or globals:
 
 ```html
 <script src='https://unpkg.com/dcl@latest/dist/dcl.js'></script>
@@ -39,3 +41,24 @@ Alternatively, you can use https://unpkg.com/ with AMD or globals. For example:
 
 You can always find the latest code in [github.com/uhop/dcl](https://github.com/uhop/dcl),
 and copy necessary files manually, or clone the whole project, if you wish.
+
+## Globals
+
+Here is the full list of global names used by a version in `/dist/` directory:
+
+<div class="table-begins"></div>
+
+| File name               | Comment                 | Main global              |
+|-------------------------|-------------------------|--------------------------|
+| `dcl.js`                | main OOP + AOP + chains | `dcl`                    |
+| `advise.js`             | object-level AOP        | `advise`                 |
+| `debug.js`              | debugging               | `dcl`                    |
+| `advices/counter.js`    | advice                  | `dcl.advices.counter`    |
+| `advices/flow.js`       | advice                  | `dcl.advices.flow`       |
+| `advices/memoize.js`    | advice                  | `dcl.advices.memoize`    |
+| `advices/time.js`       | advice                  | `dcl.advices.time`       |
+| `advices/trace.js`      | advice                  | `dcl.advices.trace`      |
+| `bases/Mixer.js`        | base "class"            | `dcl.bases.Mixer`        |
+| `bases/Replacer.js`     | base "class"            | `dcl.bases.Replacer`     |
+| `mixins/Cleanup.js`     | mixin                   | `dcl.mixins.Cleanup`     |
+| `mixins/Destroyable.js` | mixin                   | `dcl.mixins.Destroyable` |

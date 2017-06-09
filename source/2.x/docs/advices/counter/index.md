@@ -1,73 +1,54 @@
 ---
 layout: page
 title: "counter()"
-date: 2012-07-29 13:54
+date: 2017-06-08 13:54
 comments: false
 sharing: true
 footer: true
 ---
 
-`counter()` returns an instance of an object, which can be used as an AOP advice
-to track how many times a method (or methods) was called, and how many times
-it produced an error (thrown an exception based on `Error`).
+*Version 2.x*
+
+`counter()` returns an instance of an object, which can be used as an AOP advice to track how many times a method (or methods) was called, and how many times it produced an error (thrown an exception based on `Error`).
 
 This advice is used mainly to profile and to debug methods.
 
-It can be included with following commands:
-
-{% codeblock Include counter() lang:js %}
-// node.js
-var counter = require("dcl/advices/counter");
-...
-
-// AMD (code)
-require(["dcl/advices/counter"], function(counter){
-  ...
-});
-
-// AMD (definition)
-define(["dcl/advices/counter"], function(counter){
-  ...
-});
-{% endcodeblock %}
+It is defined in `dcl/advices/counter.js`.
 
 ## Description
 
-The value of this module is a factory function that returns an object used
-to provide an AOP advice to profile/debug methods. This is an API of that object:
+The value of this module is a factory function that returns an object used to provide an AOP advice to profile/debug methods. This is an API of that object:
 
 {% codeblock Counter lang:js %}
 var Counter = new dcl(null, {
   declaredClass: "dcl/advices/counter/Counter",
   calls: 0,
   errors: 0,
-  constructor: function(){...},
-  reset: function(){...},
-  advice: function(){...}
+  constructor: function () {...},
+  reset: function () {...},
+  advice: function () {...}
 });
 {% endcodeblock %}
 
 ### `calls`
 
-`calls` is a numeric parameter that counts how many times the method was called.
+`calls` is a numeric property that counts how many times the method was called.
 
 ### `errors`
 
-`errors` is a numeric parameter that counts how many times the method returned an error (threw an exception based on `Error`).
+`errors` is a numeric property that counts how many times the method returned an error (threw an exception based on `Error`).
 
 ### Constructor
 
-The constructor initializes an internal state by setting `calls` and errors` to 0.
+The constructor initializes an internal state by setting `calls` and `errors` to 0.
 
 ### `reset()`
 
-Sets `calls` and errors` to 0.
+Sets `calls` and `errors` to 0.
 
 ### `advice()`
 
-Returns an advice object that can be weaved with any given method. It can be used
-directly with [dcl.advise()](/docs/dcl_js/advise) or
-[advise()](/docs/advise_js/advise).
+Returns an advice object that can be weaved with any given method. It can be used directly with [dcl.advise()](../dcl_js/advise) or [advise()](../advise_js/advise).
 
 ## Examples
 
@@ -77,9 +58,9 @@ We can use a counter to track calls for all instances at the same time:
 // our object:
 var A = dcl(null, {
   declaredClass: "A",
-  showThis: function(){...},
-  showThat: function(){...},
-  hide:     function(){...}
+  showThis: function () {...},
+  showThat: function () {...},
+  hide:     function () {...}
 });
 
 // our counters
@@ -119,14 +100,6 @@ countHides.reset();
 Or we can work with them on per-instance basis:
 
 {% codeblock counter() object-level example lang:js %}
-// our object:
-var A = dcl(null, {
-  declaredClass: "A",
-  showThis: function(){...},
-  showThat: function(){...},
-  hide:     function(){...}
-});
-
 // our instances:
 var x = A();
 var y = A();
