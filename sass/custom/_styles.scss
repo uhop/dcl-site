@@ -1,6 +1,8 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
+// Site header
+
 header[role=banner] {
   background-image: url(/images/hieroglyphs.jpg);
   h1, h2 {
@@ -11,5 +13,57 @@ header[role=banner] {
     padding-left: 10pt;
     padding-right: 10pt;
     @include border-radius(.5em);
+  }
+}
+
+// Tables
+
+div.table-begins + table {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e7e3e7;
+
+  th, td {
+    border-style: dashed;
+    border-width: 1px;
+    border-color: #e7e3e7;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+  th {
+    border-style: solid;
+    font-weight: bold;
+    background: url("/images/noise.png") repeat scroll left top #F7F3F7;
+  }
+  th[align="left"], td[align="left"] {
+    text-align: left;
+  }
+  th[align="right"], td[align="right"] {
+    text-align: right;
+  }
+
+  th[align="center"], td[align="center"] {
+    text-align: center;
+  }
+}
+
+// Definition lists
+
+dl {
+  margin: 2em 0;
+  padding: 0 1em;
+  background: url("/images/noise.png") repeat scroll left top #F7F3F7;
+
+  dt {
+    position: relative;
+    left: 0;
+    top: 1.5em;
+    width: 25%;
+    font-weight: bold;
+  }
+  dd {
+    margin: 0 0 0 25%;
+    padding: 0 0 0.5em 0.5em;
+    border-left: 1px solid black;
   }
 }
