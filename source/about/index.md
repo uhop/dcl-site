@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "About"
-date: 2012-07-21 13:03
+date: 2017-06-08 13:03
 comments: false
 sharing: true
 footer: true
@@ -24,13 +24,13 @@ and publicly available [on GitHub](https://github.com/uhop/dcl).
 
 ## Overview
 
-* Works in [node.js][] and browsers, fully supports [AMD][].
+* Works in [node.js][] and browsers (both [AMD][], and globals).
   * Fully compatible with strict mode.
 * Small codebase.
   * Easy to learn, easy to use.
   * Intentionally small set of orthogonal features.
 * Extensively tested.
-  * Uses [continuous integration](http://travis-ci.org/uhop/dcl) running >100 automated tests.
+  * Uses [continuous integration](http://travis-ci.org/uhop/dcl) running >150 automated tests.
 * Liberally licensed.
   * Available under new [BSD][] or [AFL][] v2 -- your choice.
   * Free for commercial and non-commercial use.
@@ -43,7 +43,7 @@ and publicly available [on GitHub](https://github.com/uhop/dcl).
 * Targets [OOP][] with mixins technology.
   * Supports a Python-like multiple inheritance (implements the same
     [C3 MRO algorithm](http://www.python.org/download/releases/2.3/mro/)).
-  * Efficient [supercalls](/docs/mini_js/supercall) &mdash; no run-time penalty,
+  * Efficient [supercalls](/2.x/docs/dcl_js/supercall) &mdash; no run-time penalty,
     ultimate debuggability.
   * Automatic constructor chaining, and you can specify chaining for any method.
 * Full support for [AOP][] (before, around, after returning, and
@@ -65,29 +65,22 @@ to step over unnecessary stubs. In places where stubs are unavoidable
 
 ## Installation
 
-If you plan to use it in your [node.js][] project install it
-like this:
+```
+npm install --save dcl
+```
 
-{% codeblock %}
-npm install dcl
-{% endcodeblock %}
+```
+yarn add dcl
+```
 
-For your browser-based projects I suggest using [volo.js][]:
-
-{% codeblock %}
-volo add -amdoff uhop/dcl
-{% endcodeblock %}
-
-You can find more details and instructions for some other package managers in
-[Installation guide](/docs/installation).
+You can find more details and instructions in [Installation guide 2.x](/2.x/docs/installation) (for 1.x version -- [Installation guide 1.x](/1.x/docs/installation)).
 
 Happy coding!
 
 [node.js]:  http://nodejs.org   node.js
-[volo.js]:  http://volojs.org   volo.js
-[OOP]:      http://en.wikipedia.org/wiki/Object-oriented_programming
-[AOP]:      http://en.wikipedia.org/wiki/Aspect-oriented_programming
-[DRY]:      http://en.wikipedia.org/wiki/Don%27t_repeat_yourself
-[AMD]:      http://en.wikipedia.org/wiki/Asynchronous_module_definition
-[BSD]:      http://en.wikipedia.org/wiki/New_BSD
-[AFL]:      http://en.wikipedia.org/wiki/Academic_Free_License
+[OOP]: http://en.wikipedia.org/wiki/Object-oriented_programming
+[AOP]: http://en.wikipedia.org/wiki/Aspect-oriented_programming
+[DRY]: http://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[AMD]: http://en.wikipedia.org/wiki/Asynchronous_module_definition
+[BSD]: http://en.wikipedia.org/wiki/New_BSD
+[AFL]: http://en.wikipedia.org/wiki/Academic_Free_License
