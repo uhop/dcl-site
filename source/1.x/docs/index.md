@@ -13,6 +13,8 @@ footer: true
 and modern browsers that implements OOP with mixins + AOP at both "class" and
 object level.
 
+Its repository is hosted at https://github.com/uhop/dcl -- version 1.x branch is called `dev1x`.
+
 ## Getting started
 
 * [Installation](./docs/installation) - *super-simple ways to install `dcl`*

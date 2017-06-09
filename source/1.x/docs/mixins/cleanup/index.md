@@ -79,9 +79,11 @@ Please do so only after it was successfully removed with `removeCleanup()`.
 
 ### `popCleanup(dontRun)`
 
+
 `popCleanup()` is a counterpart of `pushCleanup()`. It runs a cleanup code for
-the last pushed resource. If `dontRun` is a truthy value, the cleanup run is skipped,
-and the last object is simply removed from stack.
+the last pushed resource returning nothing. If `dontRun` is a truthy value,
+the cleanup run is skipped, and the last object is simply removed from stack
+and the function to clean it up is returned.
 
 ### `removeCleanup(f)`
 

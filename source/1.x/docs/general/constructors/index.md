@@ -259,14 +259,14 @@ available on an instance and will be copied automatically. Let's rewrite our HR
 mixins again:
 
 ```js
-var Person = dcl(replacer, {
+var Person = dcl(Replacer, {
   declaredClass: "Person",
   // our parameters:
   firstName: "",
   lastName:  ""
 });
 
-var FullName = dcl(Mixer, {
+var FullName = dcl(Person, {
   declaredClass: "FullName",
   constructor: function(){
     this.fullName = this.firstName + " " +
@@ -274,16 +274,10 @@ var FullName = dcl(Mixer, {
   }
 });
 
-var Age = dcl(Mixer, {
+var Age = dcl(Replacer, {
   declaredClass: "Age",
   // our parameters:
-  age: null,
-  // our constructor
-  constructor: function(){
-    if(!this.age){
-      this.age = null;
-    }
-  }
+  age: null
 });
 
 var HRRecord = dcl(
@@ -316,7 +310,7 @@ typeof x.salut; // undefined
 This concept can be extended to suit particular needs. One notable extension is to
 check types of instance properties, and enforce that copied properties are of
 the same type, or coerce it to that type. For example, `firstName` property above is
-defined as a string, so we san check that `firsName` parameter is a string too.
+defined as a string, so we can check that `firsName` parameter is a string too.
 
 And we can implement some additional restrictions too, e.g., skip all function
 parameters, or skip all parameters that start with `_`.

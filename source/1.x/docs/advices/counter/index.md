@@ -59,11 +59,11 @@ var Counter = new dcl(null, {
 
 ### Constructor
 
-The constructor initializes an internal state by setting `calls` and errors` to 0.
+The constructor initializes an internal state by setting `calls` and `errors` to 0.
 
 ### `reset()`
 
-Sets `calls` and errors` to 0.
+Sets `calls` and `errors` to 0.
 
 ### `advice()`
 

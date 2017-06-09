@@ -19,13 +19,13 @@ meta-programming, and used extensively in different programming languages.
 
 In general a method decorator is a function that receives a function, optional parameters,
 and return a new function (or the same but updated). The goal is to modify its behavior in
-a predictable generic way. So esentially a decorator looks like that:
+a predictable generic way. So essentially a decorator looks like that:
 
 {% codeblock Generic method decorator lang:js %}
 var f = function(...){...};
 f = decorator(f);
 
-// or more requently you can see them like that:
+// or more frequently you can see them like that:
 A.prototype.f = decorator(function(...){
   ...
 });
@@ -41,7 +41,7 @@ transaction management for our database-aware functions/methods:
 {% codeblock Transaction decorator lang:js %}
 // assumptions:
 // - global variable `currentTransaction`
-// - global constructor Transaction
+// - global constructor `Transaction`
 
 function transactionDecorator(f){
   return function(){
@@ -143,5 +143,5 @@ var A = dcl(B, {
 });
 {% endcodeblock %}
 
-You know that these are not some magic, but simple functions that communicate with
-`dcl` your directives on how you want to assemble objects.
+You know that these are not some magic, but simple functions that communicate to
+`dcl` how you want to assemble objects.

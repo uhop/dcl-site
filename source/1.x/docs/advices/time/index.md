@@ -37,7 +37,7 @@ The result value of `time` module is a function, which takes a string parameter
 with [dcl.advise()](../dcl_js/advise) or [advise()](../advise_js/advise).
 
 The advice prints on console when a method was invoked, and when it finished.
-Recursive calls are allowed, but only first invokation is printed.
+Recursive calls are allowed, but only first invocation is printed.
 
 If `name` is not specified, a unique name is generated.
 

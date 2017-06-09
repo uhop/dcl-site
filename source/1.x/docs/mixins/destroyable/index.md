@@ -43,7 +43,7 @@ var Destroyable = dcl(null, {
 dcl.chainBefore(Destroyable, "destroy");
 {% endcodeblock %}
 
-As you can see it containes no code! The only important part is a chaining directive.
+As you can see it contains no code! The only important part is a chaining directive.
 When you mix it in to your "classes" it will weave all found `destroy()` methods
 properly.
 

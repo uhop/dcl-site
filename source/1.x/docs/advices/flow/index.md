@@ -39,7 +39,7 @@ define(["dcl/advices/flow"], function(flow){
 This module allows to mark a flow (calls to specific methods) with a unique name,
 and check if those methods were part of our call stack at the moment.
 Additionally it provides counters to see how many times those methods were called
-in this flow to detect recusions.
+in this flow to detect recursions.
 
 For example, we can define two distinct flows that are triggered by different methods
 to collect information, and to distribute it. Other methods that are called in

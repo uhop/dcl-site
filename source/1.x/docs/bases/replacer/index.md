@@ -71,7 +71,7 @@ var Person = dcl(Replacer, {
   lastName:   ""
   constructor: function(){
     // no need to deal with parameters - they are already copied
-    // on this instance by Mixer
+    // on this instance by Replacer
     console.log("Hello " + this.firstName);
   },
   getFullName: function(){
@@ -101,5 +101,5 @@ var bob = new Person({
 
 console.log(bob.getFullName()); // Robert 'Bob' Smith
 console.log(bob.firstName);     // Robert
-console.log(bob.shortName);     // unknown
+console.log(bob.shortName);     // undefined
 {% endcodeblock %}

@@ -180,9 +180,9 @@ var InstrumentedAckermann = dcl(Ackermann, {
   declaredName: "InstrumentedAckermann",
   m0: dcl.advise(memoize.advice("m0")),
   n0: dcl.advise(memoize.advice("n0")),
-  a:  dcl.advise(memoize.advice("a"), function(self, args){
+  a:  dcl.advise(memoize.advice("a", function(self, args){
     return args[0] + "-" + args[1];
-  })
+  }))
 });
 
 var x = new InstrumentedAckermann();

@@ -14,7 +14,8 @@ footer: true
 * [node.js][]:
 
   {% codeblock %}
-  npm install dcl
+  npm install --save dcl@1
+  yarn add dcl@1
   {% endcodeblock %}
 
 * [volo.js][]:

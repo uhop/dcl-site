@@ -14,8 +14,10 @@ This is a facility that allows us to augment behavior of existing objects, pavin
 objects into a collection of small incremental "classes". If used correctly, such "classes" can provide a completely
 orthogonal set of building blocks, which will help us to keep an overall complexity down.
 
-While JavaScript provides means to delegate methods of one object to another, there is no native provisions for
+While ES5 provides means to delegate methods of one object to another, there is no native provisions for
 supercalls. It means that it should be provided by a helper.
+
+(ES6 introduces super calls, but with some restrictions. For example, methods, which use `super`, when copied to a different object are not rebound to a new super method. Below we discuss ES5 exclusively. There is a different version of `dcl`, which supports ES6 and TypeScript.)
 
 ## Available solutions
 
