@@ -11,7 +11,7 @@ footer: true
 
 Currently it exists in two versions:
 
-* [2.x](./2.x/docs) - *targets ES5 browsers with support for property descriptors, and getters/setters.*
-* [1.x](./1.x/docs) - *targets legacy browsers (goes back at least to IE8).*
+* [2.x](/2.x/docs) - *targets ES5 browsers with support for property descriptors, and getters/setters.*
+* [1.x](/1.x/docs) - *targets legacy browsers (goes back at least to IE8).*
 
 Both versions work fine on [node.js](http://nodejs.org).
