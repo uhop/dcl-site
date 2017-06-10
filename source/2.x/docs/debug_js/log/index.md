@@ -1,38 +1,34 @@
 ---
 layout: page
-title: "dclDebug.log()"
-date: 2012-07-29 00:12
+title: "dcl.log()"
+date: 2017-06-09 00:12
 comments: false
 sharing: true
 footer: true
 ---
 
-The main method of this module logs on console debugging details about an object.
-Provided details includes an ordered list of dependencies, super calls, and
-both class-level and object-level AOP advises.
+*Version 2.x*
+
+The main method of this module logs on console debugging details about an object. Provided details includes an ordered list of dependencies, super calls, and both class-level and object-level AOP advises.
 
 ## Description
 
-Working with non-trivial inheritance chains can be puzzling. While the C3 MRO algorithm
-used by `dcl` takes care of duplicates and ordering of mixins, in some cases programmer
-needs to know exact details of such linearization.
+Working with non-trivial inheritance chains can be puzzling. While the C3 MRO algorithm used by `dcl` takes care of duplicates and ordering of mixins, in some cases programmer needs to know the exact details of such linearization.
 
-Even more puzzling can be ordering of call chains, and/or advices both static and dynamic.
+Even more puzzling can be ordering of call chains and/or advices, both static and dynamic.
 
-`dclDebug.log()` provides both types of information, and inspects what constructor was used
-to create an object.
+`dcl.log()` provides both types of information, and inspects what constructor was used to create an object.
 
 ## Examples
 
-{% codeblock dclDebug.log() lang:js %}
-var dcl      = require("dcl"),
-	advise   = require("dcl/advise"),
-	dclDebug = require("dcl/debug");
+{% codeblock dcl.log() lang:js %}
+var dcl    = require("dcl/debug"),
+	advise   = require("dcl/advise");
 
 // A defines an "after" advise
 var A = dcl(null, {
   declaredClass: "A",
-  sleep: dcl.after(function(){
+  sleep: dcl.after(function () {
     console.log("*zzzzzzzzzzzzz*");
   })
 });
@@ -40,7 +36,7 @@ var A = dcl(null, {
 // B provides an "around" method
 var B = dcl(A, {
   declaredClass: "B",
-  sleep: function(){
+  sleep: function () {
     console.log("Time to hit the pillow!");
   }
 });
@@ -51,25 +47,18 @@ advise.after(george, "sleep", function(){
   console.log("*ZzZzZzZzZzZzZ*")
 });
 
-dclDebug.log(george);
+dcl.log(george);
 {% endcodeblock %}
 
 The snippet above will produce a following output on console:
 
-{% codeblock %}
+{% codeblock lang:text %}
 *** object of class B
-*** class B depends on 1 classes
-    dependencies: A
-    class method constructor is CHAINED AFTER (length: 0)
-    class method sleep is UNCHAINED BUT CONTAINS ADVICE(S),
-      and has an AOP stub (before: 0, around: 1, after: 1)
-    object method sleep has an AOP stub (before: 0, around: 1, after: 2)
+*** class B depends on 1 class: A
+*** class B has 2 weavers: constructor: after, sleep: super
+    sleep: object-level advice (before 0, after 2)
 {% endcodeblock %}
 
 ## Notes
 
-1. It is always a good idea to specify a property called `declaredClass`,
-which can be any readable text used to identify your "class" definition.
-It is used by `dclDebug` facilities to provide a human-readable information.
-Common convention is to specify a name to reflect its logical "path", like
-"dcl/debug" or "dcl/debug/CycleError".
+It is always a good idea to specify a property called `declaredClass`, which can be any readable text used to identify your "class" definition. It is used by `dcl/debug` facilities to provide a human-readable information. Common convention is to specify a name to reflect its logical "path", like `"dcl/debug"` or `"dcl/bases/Mixer"`.
