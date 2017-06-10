@@ -23,7 +23,7 @@ It is defined in `dcl/advices/trace.js`.
 
 The result value of `trace` module is a function, which takes two parameters. The first parameter `name` is a string that is used to indicate a method call. Usually it is a method name. The second optional parameter `level` is a Boolean value. If it is true, a level number is printed and indentation is used to indicate how method calls are embedded. Otherwise (the default), the level information is not printed.
 
-It returns an advice object, which can be used directly with [dcl.advise()](../dcl_js/advise) or [advise()](../advise_js/advise).
+It returns an advice object, which can be used directly with [dcl.advise()](/2.x/docs/dcl_js/advise/) or [advise()](/2.x/docs/advise_js/advise/).
 
 ## Examples
 

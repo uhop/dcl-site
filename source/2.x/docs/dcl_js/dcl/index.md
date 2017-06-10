@@ -48,7 +48,7 @@ Arguments and the return value:
   * **array of constructors** - [C3 superclass linearization](http://en.wikipedia.org/wiki/C3_linearization) will be performed on this array, and the result will be used to create a new constructor using a single inheritance. This array should be non-empty.
 * `props` - the object, whose properties are used to specify unique features of the "class" &mdash; methods, and
   class-level variables.
-  `props` can be an instance of [dcl.Prop](prop). In this case, it specifies property descriptors directly, like for [Object.defineProperties()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties) or [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create).
+  `props` can be an instance of [dcl.Prop](/2.x/docs/dcl_js/prop/). In this case, it specifies property descriptors directly, like for [Object.defineProperties()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties) or [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create).
   Following properties have a special meaning for `dcl()`:
   * `constructor` - the optional function, which will be called when an object is created. A base constructor (if any) is
     always called before a derived constructor. There is no restrictions on what arguments can be used for
@@ -245,10 +245,9 @@ If `F` can be based on `D`, our right-most list of dependencies should look like
 `dcl()` cannot preserve this list because `C` should go before `B` as defined in `E`. It forces `dcl()` to base `F`
 directly on `Object`.
 
-For available debugging facilities take a look at [log()](../debug_js/log) method defined by [debug.js][].
+For available debugging facilities take a look at [log()](/2.x/docs/debug_js/log/) method defined by [debug.js][].
 
-If you want to test if an object is inherited directly (in JavaScript sense) or indirectly (e.g., as a mixin), consider
-using [isInstanceOf()](isinstanceof).
+If you want to test, whether or not an object is inherited directly (in JavaScript sense) or indirectly (e.g., as a mixin), consider using [isInstanceOf()](/2.x/docs/dcl_js/isinstanceof/).
 
 ### Make all properties read-only
 
@@ -278,7 +277,7 @@ var A = dcl({
 
 ### Define a property using a descriptor
 
-For that, we will need [dcl.prop()](prop).
+For that, we will need [dcl.prop()](/2.x/docs/dcl_js/prop/).
 
 {% codeblock Define a property lang:js %}
 var A = dcl({
@@ -343,7 +342,7 @@ base constructor.
 
 ### How can I detect, if my class inherits directly or indirectly from `A`?
 
-You can always use [isInstanceOf()](isinstanceof):
+You can always use [isInstanceOf()](/2.x/docs/dcl_js/isinstanceof/):
 
 {% codeblock isInstanceOf() lang:js %}
 var A = dcl({declaredClass: "A"});
@@ -398,7 +397,7 @@ facilities like super calls, or class-level advices, but other than that they ca
 
 ### Is it possible to chain methods other than constructor?
 
-Yes. See [chainBefore()](chainbefore) and [chainAfter()](chainafter) directives.
+Yes. See [chainBefore()](/2.x/docs/dcl_js/chainbefore/) and [chainAfter()](/2.x/docs/dcl_js/chainafter/) directives.
 
 ### Is it possible to use advices with constructors?
 
@@ -409,7 +408,7 @@ Yes. The full set of advices can be used with constructors.
 While it is not advised due to possible violation of object invariants, and potential maintenance problems, you can do
 it with super calls &mdash; just define a super call and doesn't call a super.
 
-See [superCall()](supercall) for more details.
+See [superCall()](/2.x/docs/dcl_js/supercall/) for more details.
 
 See discussion of object invariants in [OOP and JS](http://lazutkin.com/blog/2012/jan/18/oop-and-js/) and in
 [OOP in JS revisited](http://lazutkin.com/blog/2012/jul/17/oop-n-js-slides/).
@@ -429,4 +428,4 @@ If you do not calculate bases, it is easier to skip them completely, rather than
 Yes, but why? The former will create an additional array object, which will be discarded right after the `dcl()` call
 increasing the load on the garbage collector. The latter is clearly cheaper, and more intentional.
 
-[debug.js]: ../debug_js debug.js
+[debug.js]: /2.x/docs/debug_js/ debug.js

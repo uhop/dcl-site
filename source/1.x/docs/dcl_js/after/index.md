@@ -9,7 +9,7 @@ footer: true
 
 *Version 1.x*
 
-This is a convenience decorator to define a `after` advice based on [dcl.advise()](../dcl_js/advise).
+This is a convenience decorator to define a `after` advice based on [dcl.advise()](/1.x/docs/dcl_js/advise/).
 
 ## Description
 

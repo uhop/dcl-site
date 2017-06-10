@@ -27,6 +27,6 @@ try {
 
 Other exceptions are based on it:
 
-* [dcl.CycleError](cycleerror) - *thrown when there is an unresolvable cycle in list of declared bases*
-* [dcl.SuperError](supererror) - *thrown when the next-in-line property is not a function, and a super call cannot be made*
-* [dcl.ChainingError](chainingerror) - *thrown when composing a class with different chaining directives for the same method*
+* [dcl.CycleError](/2.x/docs/debug_js/cycleerror/) - *thrown when there is an unresolvable cycle in list of declared bases*
+* [dcl.SuperError](/2.x/docs/debug_js/supererror/) - *thrown when the next-in-line property is not a function, and a super call cannot be made*
+* [dcl.ChainingError](/2.x/docs/debug_js/chainingerror/) - *thrown when composing a class with different chaining directives for the same method*

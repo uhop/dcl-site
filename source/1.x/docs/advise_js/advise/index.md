@@ -9,7 +9,7 @@ footer: true
 
 *Version 1.x*
 
-This is a function that weaves AOP advices dynamically. Unlike [dcl.advise()](../dcl_js/advise)
+This is a function that weaves AOP advices dynamically. Unlike [dcl.advise()](/1.x/docs/dcl_js/advise/)
 it works on objects, rather than "classes". All advices can be "unadvised" at any moment.
 
 ## Description
@@ -66,14 +66,14 @@ result values would be distinct.
 
 ### Around
 
-Essentially this advice is the same as [dcl.superCall()](../mini_js/supercall). It uses the same double
+Essentially this advice is the same as [dcl.superCall()](/1.x/docs/mini_js/supercall/). It uses the same double
 function pattern, and its behavior is the same.
 
 ### Order of advices
 
 Advices are always applied in the following order regardless of their declaration order:
 
-1. Advices created with [dcl.advise()][/docs/dcl_js/advise] and `advise()` are equivalent in all respects.
+1. Advices created with [dcl.advise()](/1.x/docs/dcl_js/advise/) and `advise()` are equivalent in all respects.
 2. All `before` advices go first in the reverse chronological order (the last one goes first).
 3. All `around` advices go next in the reverse chronological order (the last one goes first). The next `around` advice
 is called only if its previous `around` advice yielded control explicitly by calling its super method.
@@ -131,5 +131,5 @@ advise(a, "method", {
 });
 {% endcodeblock %}
 
-You can find those methods documented respectively in [advise.before()](../advise_js/before),
-[advise.after()](../advise_js/after), and [advise.around()](../advise_js/around).
+You can find those methods documented respectively in [advise.before()](/1.x/docs/advise_js/before/),
+[advise.after()](/1.x/docs/advise_js/after/), and [advise.around()](/1.x/docs/advise_js/around/).

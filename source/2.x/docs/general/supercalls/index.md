@@ -186,7 +186,7 @@ Cons:
 
 All techniques have pros and cons. Usually a programmer makes a conscience decision selecting strong features and trade-offs, which are right for their application. A library writer cannot afford to make choices that penalize application developers. An example of such decision would be a performance.
 
-Out of last three techniques the double function one is virtually without a run-time penalty per call (only a small setup "fee" per "class" is expected), makes debugging comfortable, and does not incurr any penalty if not used. Thus it was selected to be implemented as the mechanism for supercalls: [dcl.superCall()](../dcl_js/supercall).
+Out of last three techniques the double function one is virtually without a run-time penalty per call (only a small setup "fee" per "class" is expected), makes debugging comfortable, and does not incurr any penalty if not used. Thus it was selected to be implemented as the mechanism for supercalls: [dcl.superCall()](/2.x/docs/dcl_js/supercall/).
 
 It is worth noting that [dcl 1.x](/1.x/docs/) implements both the double function method and `this.inherited()` to support legacy code.
 

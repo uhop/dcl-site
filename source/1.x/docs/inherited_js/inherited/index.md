@@ -12,7 +12,7 @@ footer: true
 This function calls a super method dynamically.
 
 While it is slower than the normal way to do supercalls with `dcl` (see the decorator
-[dcl.superCall()](../mini_js/supercall) for details), it doesn't require to modify
+[dcl.superCall()](/1.x/docs/mini_js/supercall/) for details), it doesn't require to modify
 a method according to the double function pattern, and can be applied to
 undecorated methods, which makes it suitable for fast prototyping, and
 transitioning legacy code.
@@ -24,7 +24,7 @@ newly created objects, so you don't need to use the result of the module directl
 
 ## Description
 
-Unlike the decorator [dcl.superCall()](../mini_js/supercall), which supplies
+Unlike the decorator [dcl.superCall()](/1.x/docs/mini_js/supercall/), which supplies
 a supercall method statically, `inherited()` does the same dynamically at some
 run-time expense. While doing so, it doesn't require to decorate a method, and
 can be used to add a supercall to any arbitrary method, which makes it suitable
@@ -101,7 +101,7 @@ The example above demonstrates three possible ways to use `inherited()`:
 `inherited()` returns a result returned by a super method, whatever it may be.
 If there is no super method, the call is essentially a no-op and returns `undefined`.
 If you want to check for an existance of a super method,
-use [getInherited()](../inherited_js/getinherited).
+use [getInherited()](/1.x/docs/inherited_js/getinherited/).
 
 ## Notes
 

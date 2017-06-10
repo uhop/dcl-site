@@ -9,7 +9,7 @@ footer: true
 
 *Version 2.x*
 
-This is a function that weaves AOP advices dynamically. Unlike [dcl.advise()](../dcl_js/advise)
+This is a function that weaves AOP advices dynamically. Unlike [dcl.advise()](/2.x/docs/dcl_js/advise/)
 it works on objects, rather than when defining "classes". All advices can be "unadvised" at any moment.
 
 ## Description
@@ -17,13 +17,13 @@ it works on objects, rather than when defining "classes". All advices can be "un
 `advise()` is a function, which takes three parameters:
 
 * `obj` - the object to advise. Any object would do, including objects produced without `dcl`-made constructors.
-* `name` - the method name. If the method had AOP advices defined by [dcl()](../dcl_js/dcl), and/or previous calls
+* `name` - the method name. If the method had AOP advices defined by [dcl()](/2.x/docs/dcl_js/dcl/), and/or previous calls
 to `advise()`, they will be properly combined.
-* `advice` - the object with properties `before`, `around`, and/or `after`. See [dcl.advise()](../dcl_js/advise) for more details.
+* `advice` - the object with properties `before`, `around`, and/or `after`. See [dcl.advise()](/2.x/docs/dcl_js/advise/) for more details.
 
 It returns the object, which defines the method `unadvise()`. When called without parameters, it removes the corresponding advice from the object, no matter when it was defined. For convenience, this method is aliased as `remove()`, and `destroy()`.
 
-How to use advices is described in details in [dcl.advise()](../dcl_js/advise).
+How to use advices is described in details in [dcl.advise()](/2.x/docs/dcl_js/advise/).
 
 {% codeblock advise() lang:js %}
 var a = {
@@ -54,7 +54,7 @@ methodAdv.unadvise();
 // Now all previous advices are removed from the object.
 {% endcodeblock %}
 
-Like [dcl.advise()](../dcl_js/advise), `advise()` can be used to advise getters and setters. Unlike [dcl.advise()](../dcl_js/advise), it cannot dynamically convert values to getters, and getters to values. So if you want to advise a getter (or a setter), they should be already defined.
+Like [dcl.advise()](/2.x/docs/dcl_js/advise/), `advise()` can be used to advise getters and setters. Unlike [dcl.advise()](/2.x/docs/dcl_js/advise/), it cannot dynamically convert values to getters, and getters to values. So if you want to advise a getter (or a setter), they should be already defined.
 
 {% codeblock advise() with getters/setters lang:js %}
 var a = {
@@ -151,5 +151,5 @@ advise(a, "method", {
 });
 {% endcodeblock %}
 
-You can find those methods documented respectively in [advise.before()](before),
-[advise.after()](after), and [advise.around()](around).
+You can find those methods documented respectively in [advise.before()](/2.x/docs/advise_js/before/),
+[advise.after()](/2.x/docs/advise_js/after/), and [advise.around()](/2.x/docs/advise_js/around/).

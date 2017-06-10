@@ -33,6 +33,6 @@ At the same time it continues to support successful familiar features:
 * Special debugging facilities, which helped our users with tricky cases.
 * Rigorously documented.
 
-[Version 1.x](/1.x/docs) is still supported and will continue to be available for legacy browsers.
+[Version 1.x](/1.x/docs/) is still supported and will continue to be available for legacy browsers.
 
-Check out the [full documentation](/2.x/docs). Use the [installation guide](/2.x/docs/installation) to start using the new `dcl` in your projects.
+Check out the [full documentation](/2.x/docs/). Use the [installation guide](/2.x/docs/installation/) to start using the new `dcl` in your projects.

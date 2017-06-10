@@ -14,9 +14,9 @@ multiple inheritance using mixins, and super calls. Additionally it provides use
 utilities to work with objects.
 
 There is a drop-in replacement for `mini.js` (added in `dcl` 1.1.0), which supports
-legacy browsers (tested with IE8): [legacy.js](./legacy_js). It has the same API,
+legacy browsers (tested with IE8): [legacy.js](/1.x/docs/legacy_js/). It has the same API,
 and the same functionality. While it can be used instead of `mini.js` on modern
-browsers, it is not recommended, because [legacy.js](./legacy_js) is slower than
+browsers, it is not recommended, because [legacy.js](/1.x/docs/legacy_js/) is slower than
 `mini.js`.
 
 `mini.js` module can be included with following commands:
@@ -41,19 +41,19 @@ define(["dcl/mini"], function(dcl){
 
 The return value of this module is a function, which is called `dcl()` in this documentation.
 
-[dcl()](./mini_js/dcl) is the main "class" composition engine. While it is important by itself, it hosts a number of
+[dcl()](/1.x/docs/mini_js/dcl/) is the main "class" composition engine. While it is important by itself, it hosts a number of
 public properties.
 
 Main properties:
 
-* [dcl.superCall()](./mini_js/supercall) - *super call decorator*
+* [dcl.superCall()](/1.x/docs/mini_js/supercall/) - *super call decorator*
 
 Utilities:
 
-* [dcl.mix()](./mini_js/mix) - *mix in one object with another*
-* [dcl.delegate()](./mini_js/delegate) - *delegate from one object to another*
+* [dcl.mix()](/1.x/docs/mini_js/mix/) - *mix in one object with another*
+* [dcl.delegate()](/1.x/docs/mini_js/delegate/) - *delegate from one object to another*
 
 Auxiliary properties:
 
-* [dcl.Super](./mini_js/super) - *constructor used by [dcl.superCall()](./mini_js/supercall)
+* [dcl.Super](/1.x/docs/mini_js/super/) - *constructor used by [dcl.superCall()](/1.x/docs/mini_js/supercall/)
   to create a decorator*

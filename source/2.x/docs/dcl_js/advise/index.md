@@ -16,7 +16,7 @@ This is a decorator, which is used to weave AOP advices while building new "clas
 `dcl.advise()` is a decorator function, which takes the advice object with properties `before`, `around`, and/or `after` and
 combines an existing method with supplied advices.
 
-Alternatively it can take [dcl.Prop](prop) object, and advise its `get`, `set`, or `value` properties. For more info on property descriptors see [Object.defineProperties()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties).
+Alternatively it can take [dcl.Prop](/2.x/docs/dcl_js/prop/) object, and advise its `get`, `set`, or `value` properties. For more info on property descriptors see [Object.defineProperties()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties).
 
 {% codeblock dcl.advise() lang:js %}
 var A = dcl({
@@ -114,7 +114,7 @@ result values would be easily distinguished.
 
 ### Around
 
-Essentially it is the same as [dcl.superCall()](supercall). It uses the same double function pattern,
+Essentially it is the same as [dcl.superCall()](/2.x/docs/dcl_js/supercall/). It uses the same double function pattern,
 and its behavior is the same.
 
 ### Order of advices
@@ -286,8 +286,8 @@ var B7 = dcl(A, {
 });
 {% endcodeblock %}
 
-You can find those methods documented respectively in [dcl.before()](before),
-[dcl.after()](after), and [dcl.around()](around).
+You can find those methods documented respectively in [dcl.before()](/2.x/docs/dcl_js/before/),
+[dcl.after()](/2.x/docs/dcl_js/after/), and [dcl.around()](/2.x/docs/dcl_js/around/).
 
 ### More on order of advices
 
@@ -359,4 +359,4 @@ wrapAfter(x, "a", function () { console.log("after"); });
 
 In general the relative order of different wrapper-based advices will depend on their definition order, while in true AOP it is rigid. In our faux-AOP example, if our around advice doesn't call its super for any reason, `before` and/or `after` advices, depending on their order of wrapping, are never called, which is incorrect, and breaks the invariant.
 
-While the order difference looks harmless, it prevents from using some important AOP techniques. For example, it prevents setting up a hook function (an after advice) that runs after all "normal" methods. See [multi-stage construction](../general/multi-stage-construction) for an interesting use case.
+While the order difference looks harmless, it prevents from using some important AOP techniques. For example, it prevents setting up a hook function (an after advice) that runs after all "normal" methods. See [multi-stage construction](/2.x/docs/general/multi-stage-construction/) for an interesting use case.

@@ -46,11 +46,11 @@ var Mixer = dcl(null, {
 {% endcodeblock %}
 
 As you can see that in a nutshell it is a one-liner that uses
-[dcl.mix()](../mini_js/mix) to do the work. `Mixer` can be used
+[dcl.mix()](/1.x/docs/mini_js/mix/) to do the work. `Mixer` can be used
 as a base, or as a mixin, but usually it serves as the most deepest
 base to take care of parameters.
 
-Refer to [Best practices for constructors](../general/constructors)
+Refer to [Best practices for constructors](/1.x/docs/general/constructors/)
 for discussion on constructor' signatures.
 
 ## Examples

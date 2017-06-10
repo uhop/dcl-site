@@ -34,16 +34,16 @@ define(["dcl/advise"], function(advise){
 
 The return value of this module is a function, which is called `advise()` in this documentation.
 
-[advise()](./advise_js/advise) is an AOP composition engine. Additionally it hosts a raft of public properties.
+[advise()](/1.x/docs/advise_js/advise/) is an AOP composition engine. Additionally it hosts a raft of public properties.
 
 Helpers:
 
-* [advise.before()](./advise_js/before) - *shortcut for a "before" advice*
-* [advise.around()](./advise_js/around) - *shortcut for an "around" advice*
-* [advise.after()](./advise_js/after) - *shortcut for an "after" advice*
+* [advise.before()](/1.x/docs/advise_js/before/) - *shortcut for a "before" advice*
+* [advise.around()](/1.x/docs/advise_js/around/) - *shortcut for an "around" advice*
+* [advise.after()](/1.x/docs/advise_js/after/) - *shortcut for an "after" advice*
 
 Auxiliary properties:
 
-* [advise.Node](./advise_js/node) - *constructor used by [advise()](./advise_js/advise) to advise a method*
+* [advise.Node](/1.x/docs/advise_js/node/) - *constructor used by [advise()](/1.x/docs/advise_js/advise/) to advise a method*
 
-[dcl.js]:  ./dcl_js  dcl.js
+[dcl.js]:  /1.x/docs/dcl_js/  dcl.js

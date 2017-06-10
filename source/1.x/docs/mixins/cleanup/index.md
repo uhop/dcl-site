@@ -11,8 +11,8 @@ footer: true
 
 `Cleanup` is an elaborate facility to handle cleanups for multiple
 dependent objects even in completely dynamic environments. It is built on
-[Destroyable](../mixins/destroyable), and can consume other objects,
-which support [Destroyable](../mixins/destroyable) protocol
+[Destroyable](/1.x/docs/mixins/destroyable/), and can consume other objects,
+which support [Destroyable](/1.x/docs/mixins/destroyable/) protocol
 (define `destroy()` method).
 
 It can be included with following commands:
@@ -35,7 +35,7 @@ define(["dcl/mixins/Cleanup"], function(Cleanup){
 
 ## Description
 
-Read a background on destruction in [Destructors](../general/destructors).
+Read a background on destruction in [Destructors](/1.x/docs/general/destructors/).
 
 `Cleanup` defines following API:
 
@@ -68,7 +68,7 @@ function, which can be used to dispose of `resource`. During the cleanup phase:
 
 1. If `cleanup` was present, it is called passing `resource` as the only parameter.
 2. If `cleanup` was not present, it is assumed that `resource` supports
-[Destroyable](../mixins/destroyable) protocol, and its `destroy()` method
+[Destroyable](/1.x/docs/mixins/destroyable/) protocol, and its `destroy()` method
 will be called.
 
 `pushCleanup()` returns a function object that uniquely identifies the pushed
@@ -106,7 +106,7 @@ Cleans up all accumulated resources removing them from the stack.
 
 ### `destroy()`
 
-A required method for [Destroyable](../mixins/destroyable) protocol.
+A required method for [Destroyable](/1.x/docs/mixins/destroyable/) protocol.
 It simply calls `cleanup()`.
 
 ## Examples

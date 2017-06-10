@@ -9,7 +9,11 @@ footer: true
 
 *Version 2.x*
 
-`dcl.SuperError` is present only when `dcl/debug` is imported. It is thrown, when various errors related to super calls are detected. It works for supercalls in class-level and object-level advices.
+`dcl.SuperError` is present only when `dcl/debug` is imported. Otherwise, `Error` will be thrown.
+
+It is thrown, when various errors related to super calls are detected. It works for supercalls in class-level and object-level advices.
+
+`dcl.SuperError` is based on [dcl.DclError](/2.x/docs/debug_js/dclerror/).
 
 ## Examples
 

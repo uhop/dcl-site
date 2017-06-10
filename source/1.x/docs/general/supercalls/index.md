@@ -234,10 +234,10 @@ application developers. An example of such decision would be a performance.
 Out of last three techniques the double function one is virtually without
 a run-time penalty per call (only a small setup "fee" per "class" is expected),
 and makes debugging comfortable. Thus it was selected to be implemented as
-a major mechanism for supercalls: [dcl.superCall()](../mini_js/supercall).
+a major mechanism for supercalls: [dcl.superCall()](/1.x/docs/mini_js/supercall/).
 
 Building on experience with [Dojo][] `this.inherited()` technique was selected
-for implementation too: [inherited.js](../inherited_js). Its strong suit is
+for implementation too: [inherited.js](/1.x/docs/inherited_js/). Its strong suit is
 user-friendliness, and known price per supercall, while method calls come
 always for free. Both Dojo-like and strict mode friendly versions are
 implemented.
@@ -248,7 +248,7 @@ The double function technique is recommended for all new code, while
 `this.inherited()` technique is more suitable when refactoring legacy code
 because it doesn't require much modifications to call a super method. Working
 with an existing codebase a programmer can start by converting their "classes"
-to [dcl()](../mini_js/dcl) syntax, and calling super methods with
+to [dcl()](/1.x/docs/mini_js/dcl/) syntax, and calling super methods with
 `this.inherited()`, while the final product should use the double function
 technique.
 

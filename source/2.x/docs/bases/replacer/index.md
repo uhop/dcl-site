@@ -9,7 +9,7 @@ footer: true
 
 *Version 2.x*
 
-`Replacer` is a simple base class, which is very similar to [Mixer](mixer). The difference is that it is used to override only existing properties, it doesn't add new properties to instance.
+`Replacer` is a simple base class, which is very similar to [Mixer](/2.x/docs/bases/mixer/). The difference is that it is used to override only existing properties, it doesn't add new properties to instance.
 
 It is defined in `dcl/bases/Replacer.js`.
 
@@ -31,9 +31,9 @@ var Replacer = dcl(null, {
 });
 {% endcodeblock %}
 
-As you can see it overrides existing properties with non-default values. All other properties are ignored. It is a "tame" version of [Mixer](mixer), which can be used to keep instances clean of unwanted properties. `Replacer` can be used as a base, or as a mixin, but usually it serves as the most deepest base to take care of parameters.
+As you can see it overrides existing properties with non-default values. All other properties are ignored. It is a "tame" version of [Mixer](/2.x/docs/bases/mixer/), which can be used to keep instances clean of unwanted properties. `Replacer` can be used as a base, or as a mixin, but usually it serves as the most deepest base to take care of parameters.
 
-Refer to [Best practices for constructors](../general/constructors) for discussion on constructor' signatures.
+Refer to [Best practices for constructors](/2.x/docs/general/constructors/) for discussion on constructor' signatures.
 
 ## Examples
 

@@ -9,7 +9,7 @@ footer: true
 
 *Version 1.x*
 
-This is a convenience function to weave an `around` advice based on [advise()](../advise_js/advise).
+This is a convenience function to weave an `around` advice based on [advise()](/1.x/docs/advise_js/advise/).
 
 ## Description
 
@@ -39,12 +39,12 @@ var adv = advice.around(object, name, advice);
 
 ### Advice function
 
-Essentially it is the same as [dcl.superCall()](../mini_js/supercall). It uses the same double function pattern,
+Essentially it is the same as [dcl.superCall()](/1.x/docs/mini_js/supercall/). It uses the same double function pattern,
 and its behavior is the same.
 
 ### Returned value
 
-Just like [advise()](../advise_js/advise) it is based on, it returns an opaque object with a single method:
+Just like [advise()](/1.x/docs/advise_js/advise/) it is based on, it returns an opaque object with a single method:
 `unadvise()`. Calling it without parameters removes all advices set with that call to `advise()`.
 
 In order to be compatible with general destruction mechanisms it defines one more method: `destroy()`, which is
@@ -60,5 +60,5 @@ function aroundAdvice(sup){
 }
 {% endcodeblock %}
 
-See details in [dcl.superCall()](../mini_js/supercall), [dcl.advise()](../dcl_js/advise). and
-[advise()](../advise_js/advise).
+See details in [dcl.superCall()](/1.x/docs/mini_js/supercall/), [dcl.advise()](/1.x/docs/dcl_js/advise/). and
+[advise()](/1.x/docs/advise_js/advise/).

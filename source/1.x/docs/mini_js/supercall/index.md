@@ -11,7 +11,7 @@ footer: true
 
 `dcl.superCall()` is a light-weight way to call a method with the same name from the base "class", if any. Essentially
 it is a way to call a method that was overridden by the current method. It is used as a method
-[decorator](../general/decorator).
+[decorator](/1.x/docs/general/decorator/).
 
 It is defined as a property on `dcl` returned by [mini.js][] and [dcl.js][].
 
@@ -67,7 +67,7 @@ injected `sup` will be falsy. It is a good idea to check `sup` for presence.
 {% endcodeblock %}
 
 
-The reason to use the double function pattern is described in [Supercalls in JS](../general/supercalls).
+The reason to use the double function pattern is described in [Supercalls in JS](/1.x/docs/general/supercalls/).
 
 Transitioning from a regular method to a method, which can execute a supercall is very simple:
 
@@ -198,8 +198,8 @@ var c = new C();
 // C
 {% endcodeblock %}
 
-The same can be done with any chained method. See [chainBefore()](../dcl_js/chainbefore) and
-[chainAfter()](../dcl_js/chainafter) for more details.
+The same can be done with any chained method. See [chainBefore()](/1.x/docs/dcl_js/chainbefore/) and
+[chainAfter()](/1.x/docs/dcl_js/chainafter/) for more details.
 
-[mini.js]:  ../mini_js  mini.js
-[dcl.js]:   ../dcl_js   dcl.js
+[mini.js]:  /1.x/docs/mini_js/  mini.js
+[dcl.js]:   /1.x/docs/dcl_js/   dcl.js

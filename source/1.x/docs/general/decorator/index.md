@@ -126,7 +126,7 @@ or advices do not return a function. Instead they return an object with
 meta-information, which is used later to assemble objects producing required
 functions and methods.
 
-All such objects are based on [dcl.Super](../mini_js/super).
+All such objects are based on [dcl.Super](/1.x/docs/mini_js/super/).
 
 Now if you see a code like this:
 

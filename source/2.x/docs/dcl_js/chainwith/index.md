@@ -9,13 +9,13 @@ footer: true
 
 *Version 2.x*
 
-This function declares how methods with a certain name should be chained. In most cases, end users do not use this function directly, opting for more declarative and easy to use alternatives: [dcl.chainBefore()](chainbefore) and [dcl.chainAfter()](chainafter).
+This function declares how methods with a certain name should be chained. In most cases, end users do not use this function directly, opting for more declarative and easy to use alternatives: [dcl.chainBefore()](/2.x/docs/dcl_js/chainbefore/) and [dcl.chainAfter()](/2.x/docs/dcl_js/chainafter/).
 
 ## Description
 
 `dcl.chainWith()` sets a chaining rule for a method. It takes three parameters:
 
-* `Ctr` - the constructor function created by [dcl()](dcl).
+* `Ctr` - the constructor function created by [dcl()](/2.x/docs/dcl_js/dcl/).
 * `name` - the method name to be chained in `Ctr`'s prototype.
 * `weaver` - the weaver object, which defines how chaining is done.
 
@@ -27,7 +27,7 @@ Following rules should be followed:
 * It is an error to mix "classes" with different chaining rules for the same method.
 * It is possible to declare chaining for a method without actually declaring the method.
 
-The function returns `true`, if it was able to define a required chaining, `false`, if a constructor was not defined by [dcl()](dcl), and throws an error, if a chaining conflict was detected.
+The function returns `true`, if it was able to define a required chaining, `false`, if a constructor was not defined by [dcl()](/2.x/docs/dcl_js/dcl/), and throws an error, if a chaining conflict was detected.
 
 A weaver object has at least two named properties:
 
@@ -51,10 +51,10 @@ A weaver function should return a property descriptor, which will be defined for
 
 ## Notes
 
-In general, this is a mechanism to define custom weavers to extend [dcl()](dcl).
+In general, this is a mechanism to define custom weavers to extend [dcl()](/2.x/docs/dcl_js/dcl/).
 
 `dcl` defines following weaver objects:
 
-* [dcl.weaveBefore](weavebefore) - weaves chains using `before` method (the last one is called first). It is used by [dcl.chainBefore()](chainbefore), and by `before` advices.
-* [dcl.weaveAfter](weaveafter) - weaves chains using `after` method (the first one is called first). It is used by [dcl.chainAfter()](chainafter), and by `after` advices.
-* [dcl.weaveSuper](weavesuper) - weaves chains using `around` method (the last one is called first, and has a chance to call the next one in chain explicitly). It is used by super calls and `around` advices automatically (no need to specify it explicitly).
+* [dcl.weaveBefore](/2.x/docs/dcl_js/weavebefore/) - weaves chains using `before` method (the last one is called first). It is used by [dcl.chainBefore()](/2.x/docs/dcl_js/chainbefore/), and by `before` advices.
+* [dcl.weaveAfter](/2.x/docs/dcl_js/weaveafter/) - weaves chains using `after` method (the first one is called first). It is used by [dcl.chainAfter()](/2.x/docs/dcl_js/chainafter/), and by `after` advices.
+* [dcl.weaveSuper](/2.x/docs/dcl_js/weavesuper/) - weaves chains using `around` method (the last one is called first, and has a chance to call the next one in chain explicitly). It is used by super calls and `around` advices automatically (no need to specify it explicitly).

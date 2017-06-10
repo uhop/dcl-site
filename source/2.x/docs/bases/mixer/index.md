@@ -28,9 +28,9 @@ var Mixer = dcl(null, {
 {% endcodeblock %}
 
 As you can see that in a nutshell it is a one-liner that uses
-[dcl.collectPropertyDescriptors()](../dcl_js/collectpropertydescriptors) to do the work. `Mixer` can be used as a base, or as a mixin, but usually it serves as the most deepest base to take care of parameters.
+[dcl.collectPropertyDescriptors()](/2.x/docs/dcl_js/collectpropertydescriptors/) to do the work. `Mixer` can be used as a base, or as a mixin, but usually it serves as the most deepest base to take care of parameters.
 
-Refer to [Best practices for constructors](../general/constructors) for discussion on constructor' signatures.
+Refer to [Best practices for constructors](/2.x/docs/general/constructors/) for discussion on constructor' signatures.
 
 ## Examples
 

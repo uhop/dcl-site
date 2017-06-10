@@ -48,7 +48,7 @@ Sets `calls` and `errors` to 0.
 
 ### `advice()`
 
-Returns an advice object that can be weaved with any given method. It can be used directly with [dcl.advise()](../dcl_js/advise) or [advise()](../advise_js/advise).
+Returns an advice object that can be weaved with any given method. It can be used directly with [dcl.advise()](/2.x/docs/dcl_js/advise/) or [advise()](/2.x/docs/advise_js/advise/).
 
 ## Examples
 

@@ -15,7 +15,7 @@ It is defined in `dcl/advices/time.js`.
 
 ## Description
 
-The result value of `time` module is a function, which takes a string parameter `name`, and returns an advice object, which can be used directly with [dcl.advise()](../dcl_js/advise) or [advise()](../advise_js/advise).
+The result value of `time` module is a function, which takes a string parameter `name`, and returns an advice object, which can be used directly with [dcl.advise()](/2.x/docs/dcl_js/advise/) or [advise()](/2.x/docs/advise_js/advise/).
 
 The advice prints on console when a method was invoked, and when it finished. Recursive calls are allowed, but only first invocation is printed.
 

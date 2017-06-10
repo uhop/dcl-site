@@ -26,9 +26,9 @@ There are several categories of resources, which are pure memory, yet should be 
 
 Just like constructors, destructors should be chained but in a reverse order -- the only way to preserve object invariants. Again, JS doesn't help here (ditto Java with its finalizers), and we have to chain inherited finalizers manually. Obviously this process is error-prone, yet stupidly simple, and can be easily automated.
 
-With `dcl` you can always chain your life-cycle methods with [dcl.chainBefore()](../dcl_js/chainbefore) for destructor-like methods and [dcl.chainAfter()](../dcl_js/chainafter) for constructor-like methods.
+With `dcl` you can always chain your life-cycle methods with [dcl.chainBefore()](/2.x/docs/dcl_js/chainbefore/) for destructor-like methods and [dcl.chainAfter()](/2.x/docs/dcl_js/chainafter/) for constructor-like methods.
 
-Additionally `dcl` offers two library components: mixins [Destroyable](../mixins/destroyable) to automatically chain `destroy()` method, and [Cleanup](../mixins/cleanup), which leverages `Destroyable` to provide a foundation for an elaborate integrated life-cycle management.
+Additionally `dcl` offers two library components: mixins [Destroyable](/2.x/docs/mixins/destroyable/) to automatically chain `destroy()` method, and [Cleanup](/2.x/docs/mixins/cleanup/), which leverages `Destroyable` to provide a foundation for an elaborate integrated life-cycle management.
 
 ## Note on specialized cleanup methods
 

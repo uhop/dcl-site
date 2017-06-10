@@ -9,7 +9,12 @@ footer: true
 
 *Version 2.x*
 
-`dcl.ChainingError` is present only when `dcl/debug` is required. It is thrown, when `dcl` is used to mix bases with different chaining orders for the same method.
+`dcl.ChainingError` is present only when `dcl/debug` is imported. Otherwise, `Error` will be thrown.
+
+It is thrown, when `dcl` is used to mix bases with different chaining orders for the same method.
+
+`dcl.ChainingError` is based on [dcl.DclError](/2.x/docs/debug_js/dclerror/).
+
 
 ## Examples
 

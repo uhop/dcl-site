@@ -9,13 +9,13 @@ footer: true
 
 *Version 2.x*
 
-`Cleanup` is an elaborate facility to handle cleanups for multiple dependent objects even in completely dynamic environments. It is built on [Destroyable](destroyable), and can consume other objects, which support [Destroyable](destroyable) protocol: define `destroy()` method.
+`Cleanup` is an elaborate facility to handle cleanups for multiple dependent objects even in completely dynamic environments. It is built on [Destroyable](/2.x/docs/mixins/destroyable/), and can consume other objects, which support `Destroyable` protocol: define `destroy()` method.
 
 It is defined in `dcl/mixins/Cleanup.js`.
 
 ## Description
 
-Read a background on destruction in [Destructors](../general/destructors).
+Read a background on destruction in [Destructors](/2.x/docs/general/destructors/).
 
 `Cleanup` defines following API:
 
@@ -44,7 +44,7 @@ Constructor initializes an internal state required for `Cleanup` to function. It
 `pushCleanup()` and `popCleanup()` operate in a [LIFO](http://en.wikipedia.org/wiki/LIFO) fashion. `resource` is any resource you want to keep track of. `cleanup` is an optional function, which can be used to dispose of `resource`. During the cleanup phase:
 
 1. If `cleanup` was present, it is called passing `resource` as the only parameter.
-2. If `cleanup` was not present, it is assumed that `resource` supports [Destroyable](destroyable) protocol, and its `destroy()` method will be called.
+2. If `cleanup` was not present, it is assumed that `resource` supports [Destroyable](/2.x/docs/dcl_js/destroyable/) protocol, and its `destroy()` method will be called.
 
 `pushCleanup()` returns a function object that uniquely identifies the pushed resource. It can be used later with `removeCleanup()`.
 
@@ -72,7 +72,7 @@ Cleans up all accumulated resources removing them from the stack.
 
 ### `destroy()`
 
-A required method for [Destroyable](destroyable) protocol. It simply calls `cleanup()`.
+A required method for [Destroyable](/2.x/docs/dcl_js/destroyable/) protocol. It simply calls `cleanup()`.
 
 ## Examples
 

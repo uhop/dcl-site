@@ -69,7 +69,7 @@ result values would be distinct.
 
 ### Around
 
-Essentially it is the same as [dcl.superCall()](../mini_js/supercall). It uses the same double function pattern,
+Essentially it is the same as [dcl.superCall()](/1.x/docs/mini_js/supercall/). It uses the same double function pattern,
 and its behavior is the same.
 
 ### Order of advices
@@ -137,8 +137,8 @@ var B6 = dcl(A, {
 });
 {% endcodeblock %}
 
-You can find those methods documented respectively in [dcl.before()](../dcl_js/before),
-[dcl.after()](../dcl_js/after), and [dcl.around()](../dcl_js/around).
+You can find those methods documented respectively in [dcl.before()](/1.x/docs/dcl_js/before/),
+[dcl.after()](/1.x/docs/dcl_js/after/), and [dcl.around()](/1.x/docs/dcl_js/around/).
 
 ### More on order of advices
 
@@ -214,4 +214,4 @@ while in true AOP it is rigid.
 
 While the order difference looks harmless, it prevents from using some important AOP techniques. For example,
 it prevents setting up a hook function (an after advice) that runs after all "normal" methods.
-See [multi-stage construction](../general/multi-stage-construction) for an interesting use case.
+See [multi-stage construction](/1.x/docs/general/multi-stage-construction/) for an interesting use case.

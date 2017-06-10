@@ -9,11 +9,11 @@ footer: true
 
 *Version 1.x*
 
-This function is an alias for [getInherited()](../inherited_js/getinherited).
+This function is an alias for [getInherited()](/1.x/docs/inherited_js/getinherited/).
 
 ## Description
 
-See [getInherited()](../inherited_js/getinherited) for details.
+See [getInherited()](/1.x/docs/inherited_js/getinherited/) for details.
 
 ## Examples
 
@@ -60,4 +60,4 @@ var B = dcl(A, {
 ### When should I use `inherited.get()`?
 
 It is there mostly for legacy reasons. In general it is recommended to use
-[getInherited()](../inherited_js/getinherited).
+[getInherited()](/1.x/docs/inherited_js/getinherited/).

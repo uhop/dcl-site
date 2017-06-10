@@ -11,8 +11,8 @@ footer: true
 
 For programmer's convenience `dcl` provides following general advices:
 
-* [counter](./advices/counter) - *counts how many times a certain method was called and how many times it failed (had thrown an exception)*
-* [flow](./advices/flow) - *classic AOP flow helper, which keeps track if we were called in a process of executing of a certain method, and how many times it was recursed*
-* [memoize](./advices/memoize) - *another classic AOP helper, which provides simple generic cache for read-only methods*
-* [time](./advices/time) - *timer, which uses `console` timing interface to measure an execution time of a method*
-* [trace](./advices/trace) - *tracer, which logs `console` beginning and ending of a method including its arguments, and a return value*
+* [counter](/2.x/docs/advices/counter/) - *counts how many times a certain method was called and how many times it failed (had thrown an exception)*
+* [flow](/2.x/docs/advices/flow/) - *classic AOP flow helper, which keeps track if we were called in a process of executing of a certain method, and how many times it was recursed*
+* [memoize](/2.x/docs/advices/memoize/) - *another classic AOP helper, which provides simple generic cache for read-only methods*
+* [time](/2.x/docs/advices/time/) - *timer, which uses `console` timing interface to measure an execution time of a method*
+* [trace](/2.x/docs/advices/trace/) - *tracer, which logs `console` beginning and ending of a method including its arguments, and a return value*

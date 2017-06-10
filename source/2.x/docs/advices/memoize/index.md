@@ -39,7 +39,7 @@ This method creates an advice object that can bypass the original method, if its
 
 `keyMaker` should return an object (usually a string) that uniquely identifies the combination of arguments in cache. If `keyMaker` is not present, the first arguments' string representation is used as a cache key.
 
-The return value of `advice()` is an advice object, which can be used directly with [dcl.advise()](../dcl_js/advise) or [advise()](../advise_js/advise).
+The return value of `advice()` is an advice object, which can be used directly with [dcl.advise()](/2.x/docs/dcl_js/advise/) or [advise()](/2.x/docs/advise_js/advise/).
 
 ### `guard(name)`
 
@@ -47,7 +47,7 @@ This method creates an advice object that clears the named cache.
 
 `name` parameter indicates, which cache we want to clear on an object. This name is the same as used by `advice(name, keyMaker)`.
 
-It returns an advice object, which can be used directly with [dcl.advise()](../dcl_js/advise) or [advise()](../advise_js/advise).
+It returns an advice object, which can be used directly with [dcl.advise()](/2.x/docs/dcl_js/advise/) or [advise()](/2.x/docs/advise_js/advise/).
 
 ## Examples
 

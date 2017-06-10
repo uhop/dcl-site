@@ -28,7 +28,7 @@ Blog entry: [1.1.2: technical release](/blog/2014/12/28/1-dot-1-2-technical-rele
 Minor update that includes two bug fixes:
 
 * Bugfix: a stray comma in a test file, which acted up in legacy browsers.
-* Bugfix: [dcl.mix()](./mini_js/mix) was called directly in the base modules preventing it from being monkey-patched.
+* Bugfix: [dcl.mix()](/1.x/docs/mini_js/mix/) was called directly in the base modules preventing it from being monkey-patched.
 
 Blog entry: [Micro update: 1.1.1](/blog/2013/11/05/micro-update-1-dot-1-1).
 
@@ -38,7 +38,7 @@ Major update, which includes support for legacy browsers (IE < 9). It doesn't af
 
 * Added metadata for an extended Dojo release.
 * Internal code is better formatted, better documented, variables are renamed to use more suggestive names.
-* Added [legacy.js](./legacy_js) module, which is a substitute for [mini.js](./mini_js) in legacy environments.
+* Added [legacy.js](/1.x/docs/legacy_js/) module, which is a substitute for [mini.js](/1.x/docs/mini_js/) in legacy environments.
 
 Blog entry: [1.1: legacy](/blog/2013/10/04/1-dot-1-legacy).
 
@@ -73,7 +73,7 @@ Blog entry: [Micro update: 1.0.2](/blog/2012/12/30/micro-update-1-dot-0-2).
 
 Minor update, mostly housekeeping.
 
-* Added [getInherited()](./inherited_js/getinherited) as an alias for [inherited.get()](./inherited_js/get) to simplify its use. Now there is no need to use `call()` or `apply()` to specify its instance.
+* Added [getInherited()](/1.x/docs/inherited_js/getinherited/) as an alias for [inherited.get()](/1.x/docs/inherited_js/get/) to simplify its use. Now there is no need to use `call()` or `apply()` to specify its instance.
 * Added tests for `dcl` exceptions.
 * Added tests for canned advices and mixins.
 * Changed export names for `<script>` inclusion.

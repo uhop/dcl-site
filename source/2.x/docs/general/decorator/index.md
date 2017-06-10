@@ -116,7 +116,7 @@ Similarly we can add different formatters, like XML, and so on. The important id
 
 While `dcl` can work with classic method decorators, decorators for supercalls, or advices do not return a function. Instead they return an object with meta-information, which is used later to assemble objects producing required functions and methods.
 
-All such objects are based on [dcl.Super](../dcl_js/super).
+All such objects are based on [dcl.Super](/2.x/docs/dcl_js/super/).
 
 Now if you see a code like this:
 

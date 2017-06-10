@@ -10,11 +10,11 @@ footer: true
 *Version 1.x*
 
 This function determines a super method dynamically. It returns it as result, but unlike
-[inherited()](../inherited_js/inherited) it doesn't call it immediately. If there is
+[inherited()](/1.x/docs/inherited_js/inherited/) it doesn't call it immediately. If there is
 no super method, a falsy value is returned.
 
 While it is slower than the normal way to do supercalls with `dcl` (see the decorator
-[dcl.superCall()](../mini_js/supercall) for details), it doesn't require to modify
+[dcl.superCall()](/1.x/docs/mini_js/supercall/) for details), it doesn't require to modify
 a method according to the double function pattern, and can be applied to
 undecorated methods, which makes it suitable for fast prototyping, and
 transitioning legacy code.
@@ -26,8 +26,8 @@ newly created objects, so you don't need to use the result of the module directl
 
 ## Description
 
-This is a companion method for [inherited()](../inherited_js/inherited). In fact,
-it is used in its implementation. Just like [inherited()](../inherited_js/inherited),
+This is a companion method for [inherited()](/1.x/docs/inherited_js/inherited/). In fact,
+it is used in its implementation. Just like [inherited()](/1.x/docs/inherited_js/inherited/),
 it doesn't require to decorate a method, and can be used to add a supercall to any
 arbitrary method, which makes it suitable for transitioning legacy code or fast
 prototyping:
@@ -73,13 +73,13 @@ var B = dcl(A, {
 });
 {% endcodeblock %}
 
-As you can see both `getInherited()` and [dcl.superCall()](../mini_js/supercall) look
+As you can see both `getInherited()` and [dcl.superCall()](/1.x/docs/mini_js/supercall/) look
 almost identical. The difference is:
 
-* [dcl.superCall()](../mini_js/supercall) works statically and does not incur run-time penalties.
-* [dcl.superCall()](../mini_js/supercall) requires a double function pattern described in [Supercalls in JS](../general/supercalls).
+* [dcl.superCall()](/1.x/docs/mini_js/supercall/) works statically and does not incur run-time penalties.
+* [dcl.superCall()](/1.x/docs/mini_js/supercall/) requires a double function pattern described in [Supercalls in JS](/1.x/docs/general/supercalls/).
 
-For more details please take a look [inherited()](../inherited_js/inherited).
+For more details please take a look [inherited()](/1.x/docs/inherited_js/inherited/).
 
 ## FAQ
 
@@ -89,10 +89,10 @@ There are three common scenarios when using `getInherited()` is beneficial:
 
 1. A method should make several calls to its super method. By using `getInherited()`
    and reusing its result, you save CPU ticks making the whole method faster. For even
-   faster results consider using [dcl.superCall()](../mini_js/supercall).
+   faster results consider using [dcl.superCall()](/1.x/docs/mini_js/supercall/).
 2. Your code behaves differently when there is no super method, and the default
-   provided by [inherited()](../inherited_js/inherited) just doesn't work for you.
-3. While debugging, you don't want to go inside [inherited()](../inherited_js/inherited)
+   provided by [inherited()](/1.x/docs/inherited_js/inherited/) just doesn't work for you.
+3. While debugging, you don't want to go inside [inherited()](/1.x/docs/inherited_js/inherited/)
    (it is debugging-friendly, yet you may want to skip it completely while debugging).
    In this case you step over calls to `getInherited()` and debug your super methods
    directly.

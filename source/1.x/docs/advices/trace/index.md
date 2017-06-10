@@ -46,7 +46,7 @@ to indicate how method calls are embedded. Otherwise (the default), the level
 information is not printed.
 
 It returns an advice object, which can be used directly with
-[dcl.advise()](../dcl_js/advise) or [advise()](../advise_js/advise).
+[dcl.advise()](/1.x/docs/dcl_js/advise/) or [advise()](/1.x/docs/advise_js/advise/).
 
 ## Examples
 

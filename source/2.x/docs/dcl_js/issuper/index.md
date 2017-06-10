@@ -18,7 +18,7 @@ used by end-users, and useful only for extending `dcl` itself.
 
 ## Notes
 
-It is defined in terms [dcl.Super](super):
+It is defined in terms [dcl.Super](/2.x/docs/dcl_js/super/):
 
 {% codeblock Implementation of dcl.isSuper() lang:js %}
 dcl.isSuper = function (f) {

@@ -43,7 +43,7 @@ and publicly available [on GitHub](https://github.com/uhop/dcl).
 * Targets [OOP][] with mixins technology.
   * Supports a Python-like multiple inheritance (implements the same
     [C3 MRO algorithm](http://www.python.org/download/releases/2.3/mro/)).
-  * Efficient [supercalls](/2.x/docs/dcl_js/supercall) &mdash; no run-time penalty,
+  * Efficient [supercalls](/2.x/docs/dcl_js/supercall/) &mdash; no run-time penalty,
     ultimate debuggability.
   * Automatic constructor chaining, and you can specify chaining for any method.
 * Full support for [AOP][] (before, around, after returning, and
@@ -73,7 +73,7 @@ npm install --save dcl
 yarn add dcl
 ```
 
-You can find more details and instructions in [Installation guide 2.x](/2.x/docs/installation) (for 1.x version -- [Installation guide 1.x](/1.x/docs/installation)).
+You can find more details and instructions in [Installation guide 2.x](/2.x/docs/installation/) (for 1.x version -- [Installation guide 1.x](/1.x/docs/installation/)).
 
 Happy coding!
 

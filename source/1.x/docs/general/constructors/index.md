@@ -245,14 +245,14 @@ One obvious drawback is copying properties that should not be copied, e.g.,
 they are used as a source data for some other properties, but never used directly.
 And keeping them around just in case can be troublesome, especially if they take up
 a lot of space or consume other precious resources. This problem can be easily solved
-with [multi-stage construction](../general/multi-stage-construction).
+with [multi-stage construction](/1.x/docs/general/multi-stage-construction/).
 
 `Mixer` above is a very helpful class, which is provided with `dcl`.
-Read all about it in the documentation on [Mixer](../bases/mixer).
+Read all about it in the documentation on [Mixer](/1.x/docs/bases/mixer/).
 
 ### Replacer
 
-`Replacer` is a variation on [Mixer](../bases/mixer), which replaces properties
+`Replacer` is a variation on [Mixer](/1.x/docs/bases/mixer/), which replaces properties
 on an instance ignoring new properties. This is a form of automatic sanitation of
 "dirty" parameter bags. With `Replacer` we statically define what properties are
 available on an instance and will be copied automatically. Let's rewrite our HR
@@ -303,7 +303,7 @@ typeof x.salut; // undefined
 ```
 
 `Replacer` is provided with `dcl`. Read all about it in the documentation on
-[Replacer](../bases/replacer).
+[Replacer](/1.x/docs/bases/replacer/).
 
 ### More on mixers
 

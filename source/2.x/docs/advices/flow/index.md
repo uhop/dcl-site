@@ -34,7 +34,7 @@ var flow = {
 
 ### `advice(name)`
 
-Returns an advice object, which marks a call to a method with a flow `name`. It can be used directly with [dcl.advise()](../dcl_js/advise) or [advise()](../advise_js/advise).
+Returns an advice object, which marks a call to a method with a flow `name`. It can be used directly with [dcl.advise()](/2.x/docs/dcl_js/advise/) or [advise()](/2.x/docs/advise_js/advise/).
 
 There is no special requirements on `name`. Usually it is selected to be a unique and descriptive string.
 

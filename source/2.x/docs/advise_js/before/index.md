@@ -9,7 +9,7 @@ footer: true
 
 *Version 2.x*
 
-This is a convenience function to weave a `before` advice based on [advise()](advise).
+This is a convenience function to weave a `before` advice based on [advise()](/2.x/docs/advise_js/advise/).
 
 ## Description
 
@@ -46,4 +46,4 @@ It is not recommended to modify parameters inside `before` advice. Use `after` o
 
 ### Returned value
 
-Just like [advise()](advise) it is based on, it returns the object, which defines the method `unadvise()`. When called without parameters, it removes the corresponding advice from the object, no matter when it was defined. For convenience, this method is aliased as `remove()`, and `destroy()`.
+Just like [advise()](/2.x/docs/advise_js/advise/) it is based on, it returns the object, which defines the method `unadvise()`. When called without parameters, it removes the corresponding advice from the object, no matter when it was defined. For convenience, this method is aliased as `remove()`, and `destroy()`.

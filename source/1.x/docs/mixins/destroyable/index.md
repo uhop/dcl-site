@@ -47,7 +47,7 @@ As you can see it contains no code! The only important part is a chaining direct
 When you mix it in to your "classes" it will weave all found `destroy()` methods
 properly.
 
-Read a background on destruction in [Destructors](../general/destructors).
+Read a background on destruction in [Destructors](/1.x/docs/general/destructors/).
 
 ## Examples
 

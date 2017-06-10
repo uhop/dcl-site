@@ -11,8 +11,8 @@ footer: true
 
 For programmer's convenience `dcl` provides following general base "classes":
 
-* [Mixer](./bases/mixer) - *"class", which constructor mixes an object
+* [Mixer](/1.x/docs/bases/mixer/) - *"class", which constructor mixes an object
 (its only argument) in its instance*
-* [Replacer](./bases/replacer) - *"class", which constructor mixes an object
+* [Replacer](/1.x/docs/bases/replacer/) - *"class", which constructor mixes an object
 (its only argument) in its instance by replacing existing properties;
 all non-existing properties will be ignored*

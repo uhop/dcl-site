@@ -120,6 +120,6 @@ Unlikely -- it was never tested on IE6, and so far no requests were made for suc
 
 Gentle reader, be warned: IE6 had even more implementation bugs than IE7/IE8.
 
-[mini.js]:  ./mini_js  mini.js
+[mini.js]:  /1.x/docs/mini_js/  mini.js
 [MSDN: @cc_on]: http://msdn.microsoft.com/en-us/library/ie/8ka90k2e(v=vs.94).aspx
 [MSDN: About conditional comments]: http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx

@@ -9,7 +9,11 @@ footer: true
 
 *Version 2.x*
 
-`dcl.CycleError` is present only when `dcl/debug` is imported. It is thrown, when `dcl` encounters an impossible inheritance. For example, when `A` depends on `B`, and `B` depends on `A`.
+`dcl.CycleError` is present only when `dcl/debug` is imported. Otherwise, `Error` will be thrown.
+
+It is thrown, when `dcl` encounters an impossible inheritance. For example, when `A` depends on `B`, and `B` depends on `A`.
+
+`dcl.CycleError` is based on [dcl.DclError](/2.x/docs/debug_js/dclerror/).
 
 ## Examples
 

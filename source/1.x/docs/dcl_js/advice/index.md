@@ -14,7 +14,7 @@ It is not intended to be used by end-users, and useful only for extending `dcl` 
 
 ## Description
 
-`dcl.advise()` produces objects based on `dcl.Advice`, which, in turn, is derived from [dcl.Super](../mini_js/super).
+`dcl.advise()` produces objects based on `dcl.Advice`, which, in turn, is derived from [dcl.Super](/1.x/docs/mini_js/super/).
 It is only useful for extending `dcl`.
 
 By default a "before" advice (if present) is exposed as a property `b` on a decorator object, an "after" advice as
