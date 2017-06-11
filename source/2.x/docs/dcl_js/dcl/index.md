@@ -415,7 +415,7 @@ See discussion of object invariants in [OOP and JS](http://lazutkin.com/blog/201
 
 ### Can I use `[]` instead of `null` as my base?
 
-No, it wouldn't work.
+Yes, but it is not recommended.
 
 In any case `null` is a constant, which is shared, while `[]` is a newly-created object. The latter comes with
 a penalty (it has to be created, and it will add a load to the garbage collector afterwards. `null` is cheaper, and
