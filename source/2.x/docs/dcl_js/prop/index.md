@@ -17,7 +17,7 @@ The constructor creates a super-simple object with one property: `x`, which is a
 
 ## `dcl.prop()`
 
-`dcl.prop(arg)` is a function that takes the property descriptor, and returns an instance of `dcl.Prop`.
+`dcl.prop(arg)` is a function that takes the property descriptor (described in [Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)), and returns an instance of `dcl.Prop`.
 
 This is its full definition:
 
@@ -61,6 +61,3 @@ var A = dcl(dcl.prop({
   }));
 {% endcodeblock %}
 
-## Notes
-
-Property descriptors are defined in [Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty).
