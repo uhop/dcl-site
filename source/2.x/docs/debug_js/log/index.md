@@ -15,9 +15,11 @@ The main method of this module logs on console debugging details about an object
 
 Working with non-trivial inheritance chains can be puzzling. While the C3 MRO algorithm used by `dcl` takes care of duplicates and ordering of mixins, in some cases programmer needs to know the exact details of such linearization.
 
-Even more puzzling can be ordering of call chains and/or advices, both static and dynamic.
+When `dcl.log()` prints what weaver was used for a given property, it uses names of weavers explained in [dcl.chainWith()](/2.x/docs/dcl_js/chainwith/). Specifically, if a property has a weaver named:
 
-`dcl.log()` provides both types of information, and inspects what constructor was used to create an object.
+* "before" -- it was chained with [dcl.chainBefore()](/2.x/docs/dcl_js/chainBefore/), which uses [dcl.weaverBefore](/2.x/docs/dcl_js/weaverbefore/).
+* "after" -- it was chained with [dcl.chainAfter()](/2.x/docs/dcl_js/chainAfter/), which uses [dcl.weaverAfter](/2.x/docs/dcl_js/weaverafter/).
+* "super" -- somewhere in its chain, an AOP advise (or a supercall) was used, which requires using [dcl.weaverSuper](/2.x/docs/dcl_js/weaversuper/).
 
 ## Examples
 
