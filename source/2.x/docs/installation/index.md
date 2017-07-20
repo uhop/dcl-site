@@ -30,8 +30,8 @@ When the package is installed, you can refer to individual files mentioned in th
 For ES6-based projects, especially ones using [Babel](https://babeljs.io/) (e.g, [React](https://facebook.github.io/react/), or anything [webpack](https://webpack.github.io/)-based), starting with 2.0.3 the special distribution is generated in `/es6/` directory, which can be used like that:
 
 ```js
-import dcl from `dcl/es6/dcl`;
-import advise from `dcl/es6/advise`;
+import dcl from 'dcl/es6/dcl';
+import advise from 'dcl/es6/advise';
 ```
 
 Alternatively, you can use https://unpkg.com/ with AMD:

@@ -24,9 +24,9 @@ This feature is modeled after `/dist/` directory, which hosts processed modules 
 In order to use `dcl` in your ES6-based project just import its modules like that:
 
 ```js
-import dcl from `dcl/es6/dcl`;
-import advise from `dcl/es6/advise`;
+import dcl from 'dcl/es6/dcl';
+import advise from 'dcl/es6/advise';
 
 // more examples
-import registry from `dcl/es6/utils/registry`;
+import registry from 'dcl/es6/utils/registry';
 ```
