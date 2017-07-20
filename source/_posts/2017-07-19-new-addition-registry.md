@@ -33,10 +33,8 @@ var B = dcl(A, {
   
 // let's inspect the registry
 var keys = registry.keys();
-console.log('We have', keys.length, 'registered classes:');
-keys.forEach(function (name) {
-  console.log(name);
-});
+console.log('We have', keys.length,
+  'registered classes:', keys.join(', '));
 
 var b = new (registry.get('B'))();
 
