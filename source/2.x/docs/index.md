@@ -48,6 +48,7 @@ Its repository is hosted at https://github.com/uhop/dcl -- version 2.x branch is
 * [Advices](/2.x/docs/advices/) - *various debugging, cache, and AOP helpers*
 * [Bases](/2.x/docs/bases/) - *constructor helpers*
 * [Mixins](/2.x/docs/mixins/) - *life-cycle helpers*
+* [Utils](/2.x/docs/utils/) - *utilities*
 
 ## Advanced topics
 
