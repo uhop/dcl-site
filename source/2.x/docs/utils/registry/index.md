@@ -54,6 +54,18 @@ The registry is updated automatically every time new constructor is created with
 {% codeblock Using registry lang:js %}
 var registry = require('dcl/utils/registry');
 
+// next constructor will be registered automatically
+var A = dcl({
+    declaredClass: 'A'
+    // ...
+  });
+console.log(registry.has('A'));    // true
+console.log(!!registry.get('A'));  // true
+
+// let's unregister it
+console.log(registry.delete('A')); // true
+console.log(registry.has('A'));    // false
+
 // ...
 
 // enumerate all constructors
