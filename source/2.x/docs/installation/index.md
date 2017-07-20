@@ -27,6 +27,13 @@ When the package is installed, you can refer to individual files mentioned in th
 <script src='node_modules/dcl/dist/dcl.js'></script>
 ```
 
+For ES6-based projects, especially ones using [Babel](https://babeljs.io/) (e.g, [React](https://facebook.github.io/react/), or anything [webpack](https://webpack.github.io/)-based), starting with 2.0.3 the special distribution is generated in `/es6/` directory, which can be used like that:
+
+```js
+import dcl from `dcl/es6/dcl`;
+import advise from `dcl/es6/advise`;
+```
+
 Alternatively, you can use https://unpkg.com/ with AMD:
 
 ```html
@@ -39,8 +46,7 @@ or globals:
 <script src='https://unpkg.com/dcl@latest/dist/dcl.js'></script>
 ```
 
-You can always find the latest code in [github.com/uhop/dcl](https://github.com/uhop/dcl),
-and copy necessary files manually, or clone the whole project, if you wish.
+You can always find the latest code in [github.com/uhop/dcl](https://github.com/uhop/dcl), and copy necessary files manually, or clone the whole project, if you wish.
 
 ## Globals
 
@@ -62,3 +68,4 @@ Here is the full list of global names used by a version in `/dist/` directory:
 | `bases/Replacer.js`     | base "class"            | `dcl.bases.Replacer`     |
 | `mixins/Cleanup.js`     | mixin                   | `dcl.mixins.Cleanup`     |
 | `mixins/Destroyable.js` | mixin                   | `dcl.mixins.Destroyable` |
+| `utils/registry.js`     | utility                 | `dcl.utils.registry`     |
