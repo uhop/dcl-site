@@ -34,7 +34,7 @@ var adv = advise(object, name, {
 It is possible to write a shorter version:
 
 {% codeblock Short lang:js %}
-var adv = advice.after(object, name, advice);
+var adv = advise.after(object, name, advice);
 {% endcodeblock %}
 
 ### Advice function
